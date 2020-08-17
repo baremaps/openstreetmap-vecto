@@ -1,0 +1,31 @@
+id: 'openstreetmap'
+center:
+  lon: 6.6323
+  lat: 46.5197
+  zoom: 12
+bounds:
+  minLon: -180
+  maxLon: 180
+  minLat: -90
+  maxLat: 90
+  minZoom: 0
+  maxZoom: 18
+layers:
+  - id: 'aeroway'
+    type: 'geometry'
+    queries:
+      - minZoom: 12
+        maxZoom: 10
+        sql: SELECT id, tags, geom FROM osm_nodes WHERE tags ? 'aeroway'
+      - minZoom: 10
+        maxZoom: 18
+        sql: SELECT id, tags, geom FROM osm_ways WHERE tags ? 'aeroway'
+      - minZoom: 10
+        maxZoom: 18
+        sql: SELECT id, tags, geom FROM osm_relations WHERE tags ? 'aeroway' AND tags -> 'type' = 'multipolygon'
+  - id: 'boundary'
+    type: 'geometry'
+    queries:
+      - minZoom: 5
+        maxZoom: 18
+        sql: SELECT id, tags, geom FROM osm_ways WHERE tags ? 'boundary'
