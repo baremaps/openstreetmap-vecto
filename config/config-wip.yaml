@@ -1,3 +1,16 @@
+  - id: 'aeroway'
+    type: 'geometry'
+    queries:
+      - minZoom: 12
+        maxZoom: 10
+        sql: SELECT id, tags, geom FROM osm_nodes WHERE tags ? 'aeroway'
+      - minZoom: 10
+        maxZoom: 18
+        sql: SELECT id, tags, geom FROM osm_ways WHERE tags ? 'aeroway'
+      - minZoom: 10
+        maxZoom: 18
+        sql: SELECT id, tags, geom FROM osm_relations WHERE tags ? 'aeroway' AND tags -> 'type' = 'multipolygon'
+
 - id: 'waterway'
     type: 'geometry'
     queries:
