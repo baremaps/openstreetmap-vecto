@@ -1,0 +1,149 @@
+id: leisure
+styles:
+  - id: leisure_dog_park
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, dog_park]
+    ]
+    paint:
+      fill-color: rgb(224, 252, 227)
+      fill-antialias: true
+  - id: leisure_garden
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, garden]
+    ]
+    paint:
+      fill-color: rgb(205, 235, 176)
+      fill-antialias: true
+  - id: leisure_golf_course
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, golf_course]
+    ]
+    paint:
+      fill-color: rgb(181, 226, 181)
+      fill-antialias: true
+  - id: leisure_ice_rink
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, ice_rink]
+    ]
+    paint:
+      fill-color: rgb(221, 236, 236)
+      fill-antialias: true
+      fill-outline-color: rgb(140, 220, 189)
+  - id: leisure_marina
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, marina]
+    ]
+    paint:
+      fill-color: rgb(181, 208, 208)
+      fill-antialias: true
+      fill-outline-color: rgb(164, 187, 212)
+  - id: leisure_miniature_golf
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, miniature_golf]
+    ]
+    paint:
+      fill-color: rgb(181, 226, 181)
+      fill-antialias: true
+  - id: leisure_nature_reserve
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, nature_reserve]
+    ]
+    paint:
+      fill-color: rgb(230, 233, 222)
+      fill-antialias: true
+  - id: leisure_pitch
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, pitch]
+    ]
+    paint:
+      fill-color: rgb(170, 224, 203)
+      fill-antialias: true
+  - id: leisure_sport_center
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, sport_center]
+    ]
+    paint:
+      fill-color: rgb(223, 252, 226)
+      fill-antialias: true
+  - id: leisure_stadium
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, stadium]
+    ]
+    paint:
+      fill-color: rgb(223, 252, 226)
+      fill-antialias: true
+  - id: leisure_swimming_pool
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, swimming_pool]
+    ]
+    paint:
+      fill-color: rgb(170, 211, 223)
+      fill-antialias: true
+      fill-outline-color: rgb(120, 183, 202)
+  - id: leisure_track
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, track]
+    ]
+    paint:
+      fill-color: rgb(196, 224, 203)
+      fill-antialias: true

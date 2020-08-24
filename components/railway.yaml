@@ -1,0 +1,51 @@
+id: railway
+styles:
+  - id: railway_light_rail
+    layer: railway
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      any,
+      [==, railway, miniature],
+      [==, railway, narrow_gauge],
+      [==, railway, preserved],
+    ]
+    paint:
+      line-width: 1
+      line-color: rgb(102, 102, 102)
+  - id: railway_rail
+    layer: railway
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      any,
+      [==, railway, rail],
+      [==, railway, funicular],
+      [==, railway, light_rail],
+      [==, railway, monorail],
+      [==, railway, tram],
+      [==, railway, subway],
+    ]
+    paint:
+      line-width: 2
+      line-color: rgb(102, 102, 102)
+  - id: railway_bridge
+    layer: railway
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      any,
+      [==, bridge, "yes"],
+    ]
+    paint:
+      line-width: 4
+      line-color: rgb(197, 197, 196)

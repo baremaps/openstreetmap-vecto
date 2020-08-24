@@ -1,0 +1,10 @@
+id: aerialway
+type: linestring
+queries:
+  - minZoom: 12
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom
+      FROM osm_ways 
+      WHERE geometrytype(geom) LIKE 'LINESTRING'
+        AND tags ? 'aerialway'

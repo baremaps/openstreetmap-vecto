@@ -1,0 +1,17 @@
+id: building
+type: polygon
+queries:
+  - minZoom: 14
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways 
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'building'
+  - minZoom: 14
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_relations 
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'building'

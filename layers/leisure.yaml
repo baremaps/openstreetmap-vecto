@@ -1,0 +1,17 @@
+id: leisure
+type: polygon
+queries:
+  - minZoom: 12
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'leisure'
+  - minZoom: 12
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_relations 
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'leisure'

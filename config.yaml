@@ -1,0 +1,36 @@
+id: OpenStreetMapVecto
+server:
+  host: localhost
+  port: 9000
+center:
+  lon: 6.6323
+  lat: 46.5197
+  zoom: 12
+bounds:
+  minLon: -180
+  minLat: -85.05113
+  maxLon: 180
+  maxLat: 85.05113
+  minZoom: 0
+  maxZoom: 20
+components:
+  - ref: components/points.yaml
+  - ref: components/aerialway.yaml
+  - ref: components/railway.yaml
+  - ref: components/highway.yaml
+  - ref: components/building.yaml
+  - ref: components/amenity.yaml
+  - ref: components/leisure.yaml
+  - ref: components/landuse.yaml
+  - ref: components/water.yaml
+  - ref: components/background.yaml
+layers:
+  - ref: layers/aerialway.yaml
+  - ref: layers/amenity.yaml
+  - ref: layers/building.yaml
+  - ref: layers/highway.yaml
+  - ref: layers/landuse.yaml
+  - ref: layers/leisure.yaml
+  - ref: layers/points.yaml
+  - ref: layers/railway.yaml
+  - ref: layers/water.yaml

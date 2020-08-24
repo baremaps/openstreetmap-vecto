@@ -1,0 +1,8 @@
+id: background
+styles:
+  - id: background
+    type: background
+    layout:
+      visibility: visible
+    paint:
+      background-color: rgb(239,239,239)

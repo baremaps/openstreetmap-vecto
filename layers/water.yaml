@@ -1,0 +1,17 @@
+id: water
+type: polygon
+queries:
+  - minZoom: 12
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways 
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
+  - minZoom: 12
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_relations 
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))

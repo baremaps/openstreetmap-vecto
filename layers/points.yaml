@@ -1,0 +1,9 @@
+id: points
+type: point
+queries:
+  - minZoom: 14
+    maxZoom: 18
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_nodes
+      WHERE geometrytype(geom) LIKE '%POINT%'

@@ -1,0 +1,43 @@
+id: points
+styles:
+  - id: natural_trunk
+    layer: points
+    type: circle
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, tree]
+    ]
+    paint:
+      circle-color: rgb(129, 94, 39)
+      circle-opacity: 1
+      circle-radius:
+        stops: [
+          [14, 0.25],
+          [15, 0.5],
+          [16, 1],
+          [17, 2],
+          [18, 4],
+        ]
+  - id: natural_tree
+    layer: points
+    type: circle
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, tree]
+    ]
+    paint:
+      circle-color: rgb(113, 205, 111)
+      circle-opacity: 1
+      circle-radius:
+        stops: [
+          [14, 0.75],
+          [15, 1.5],
+          [16, 3],
+          [17, 6],
+          [18, 8],
+        ]
+  
