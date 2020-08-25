@@ -14,23 +14,25 @@ bounds:
   minZoom: 0
   maxZoom: 20
 components:
-  - ref: components/points.yaml
-  - ref: components/aerialway.yaml
-  - ref: components/railway.yaml
-  - ref: components/highway.yaml
-  - ref: components/building.yaml
-  - ref: components/amenity.yaml
-  - ref: components/leisure.yaml
-  - ref: components/landuse.yaml
-  - ref: components/water.yaml
-  - ref: components/background.yaml
+  - components/points.yaml
+  - components/aerialway.yaml
+  - components/railway.yaml
+  - components/highway.yaml
+  - components/building.yaml
+  - components/waterway.yaml
+  - components/water.yaml
+  - components/leisure.yaml
+  - components/landuse.yaml
+  - components/amenity.yaml
+  - components/background.yaml
 layers:
-  - ref: layers/aerialway.yaml
-  - ref: layers/amenity.yaml
-  - ref: layers/building.yaml
-  - ref: layers/highway.yaml
-  - ref: layers/landuse.yaml
-  - ref: layers/leisure.yaml
-  - ref: layers/points.yaml
-  - ref: layers/railway.yaml
-  - ref: layers/water.yaml
+  - layers/aerialway.yaml
+  - layers/amenity.yaml
+  - layers/building.yaml
+  - layers/highway.yaml
+  - layers/landuse.yaml
+  - layers/leisure.yaml
+  - layers/points.yaml
+  - layers/railway.yaml
+  - layers/waterway.yaml
+  - layers/water.yaml

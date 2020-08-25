@@ -76,7 +76,7 @@ styles:
       fill-antialias: true
   - id: leisure_nature_reserve
     layer: leisure
-    type: fill
+    type: line
     layout:
       visibility: visible
     filter: [
@@ -84,8 +84,8 @@ styles:
       [==, leisure, nature_reserve]
     ]
     paint:
-      fill-color: rgb(230, 233, 222)
-      fill-antialias: true
+      line-width: 5
+      line-color: rgba(230, 233, 222, 0.5)
   - id: leisure_pitch
     layer: leisure
     type: fill

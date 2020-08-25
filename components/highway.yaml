@@ -1,4 +1,4 @@
-id: 'highway'
+id: highway
 styles:
   - id: highway_motorway
     layer: highway
