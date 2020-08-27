@@ -12,6 +12,7 @@ styles:
       [==, railway, miniature],
       [==, railway, narrow_gauge],
       [==, railway, preserved],
+      [==, railway, turntable],
     ]
     paint:
       line-width: 1
