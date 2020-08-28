@@ -3,9 +3,9 @@ server:
   host: localhost
   port: 9000
 center:
-  lon: 6.6323
-  lat: 46.5197
-  zoom: 12
+  lon: 6.5743
+  lat: 46.5189
+  zoom: 14
 bounds:
   minLon: -180
   minLat: -85.05113
