@@ -7,7 +7,6 @@ It is used to generate vector tiles and to produce a Mapbox style inspired by [O
 
 ![OpenStreetMap Vecto](screenshot.png)
 
-
 ## Getting started
 
 In order to experiment with OpenStreetMap Vecto, you first need to clone the current repository.
@@ -45,6 +44,18 @@ docker exec -ti osmvecto bash -c scripts/start.sh
 Your browser ([http://localhost:9000/](http://localhost:9000/)) should now preview OpenStreetMap Vecto.
 Notice that a change in the configuration files (`config.yaml`) will automatically be reloaded by the browser.
 
+## Improving the configuration
+
+The `config.yaml` file is the main configuration files.
+As the format is still evolving and it has not yet been properly documented.
+
+In this file:
+- The `server` property let you define the host and the port used by the tile server;
+- The `center` property let you define the area which is loaded when opening the browser for the first time;
+- The `bounds` property let you define minimal and maximal bounds for the map;
+- The `layers` property let you define the SQL queries that will be used to create the vector tiles;
+- The `stylesheets` property let you define style fragments that will be assembled together to form a [Mapbox styles](https://docs.mapbox.com/mapbox-gl-js/style-spec/).
+
 ## Updating the docker image
 
 The following commands are used to publish the docker image.
@@ -56,4 +67,4 @@ docker push baremaps/osmvecto
 
 ## Contributing
 
-As a lot remains to be done, contributions are welcome. 
+As a lot remains to be done, contributions and feedbacks are welcome. 
