@@ -11,7 +11,7 @@ bounds:
   minLat: -85.05113
   maxLon: 180
   maxLat: 85.05113
-  minZoom: 12
+  minZoom: 0
   maxZoom: 18
 layers:
   - config/aerialway/layer.yaml

@@ -1,6 +1,11 @@
 id: water
 type: polygon
 queries:
+  - minZoom: 0
+    maxZoom: 12
+    sql: |
+      SELECT fid, hstore(''), geometry
+      FROM osm_simplified_water_polygons
   - minZoom: 12
     maxZoom: 18
     sql: |
