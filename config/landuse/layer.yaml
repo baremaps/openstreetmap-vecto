@@ -1,28 +1,119 @@
 id: landuse
 type: polygon
 queries:
+  - minZoom: 0
+    maxZoom: 1
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z0
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 1
+    maxZoom: 2
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z1
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 2
+    maxZoom: 3
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z2
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 3
+    maxZoom: 4
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z3
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 4
+    maxZoom: 5
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z4
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 5
+    maxZoom: 6
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z5
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 6
+    maxZoom: 7
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z6
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 7
+    maxZoom: 8
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z7
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 8
+    maxZoom: 9
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z8
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 9
+    maxZoom: 10
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z9
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 10
+    maxZoom: 11
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z10
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 11
+    maxZoom: 12
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z11
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
   - minZoom: 12
+    maxZoom: 13
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z12
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'landuse'
+  - minZoom: 13
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags ? 'landuse'
-  - minZoom: 12
+  - minZoom: 13
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
       FROM osm_relations 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags ? 'landuse'
-  - minZoom: 12
+  - minZoom: 13
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags -> 'highway' = 'pedestrian'
-  - minZoom: 12
+  - minZoom: 13
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
