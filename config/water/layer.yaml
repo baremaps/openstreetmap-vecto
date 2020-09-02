@@ -6,6 +6,20 @@ queries:
     sql: |
       SELECT fid, hstore(''), geometry
       FROM osm_simplified_water_polygons
+  - minZoom: 10
+    maxZoom: 12
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_simplified_ways_z12
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
+  - minZoom: 10
+    maxZoom: 12
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_simplified_relations_z12
+      WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
   - minZoom: 12
     maxZoom: 18
     sql: |
