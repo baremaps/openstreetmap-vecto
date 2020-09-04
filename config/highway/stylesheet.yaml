@@ -13,7 +13,12 @@ styles:
       [==, highway, motorway_link]
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(233, 144, 161)
   - id: highway_motorway_casing
     layer: highway
@@ -28,7 +33,12 @@ styles:
       [==, highway, motorway_link]
     ]
     paint:
-      line-width: 8
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 16]
+        ]
       line-color: rgb(227, 82, 126)
   - id: highway_trunk
     layer: highway
@@ -43,7 +53,12 @@ styles:
       [==, highway, trunk_link]
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(250, 193, 172)
   - id: highway_trunk_casing
     layer: highway
@@ -58,7 +73,12 @@ styles:
       [==, highway, trunk_link]
     ]
     paint:
-      line-width: 8
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 16]
+        ]
       line-color: rgb(217, 111, 78)
   - id: highway_primary
     layer: highway
@@ -73,7 +93,12 @@ styles:
       [==, highway, primary_link]
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(253, 221, 179)
   - id: highway_primary_casing
     layer: highway
@@ -88,7 +113,12 @@ styles:
       [==, highway, primary_link]
     ]
     paint:
-      line-width: 8
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 16]
+        ]
       line-color: rgb(192, 147, 62)
   - id: highway_secondary
     layer: highway
@@ -103,7 +133,12 @@ styles:
       [==, highway, secondary_link]
     ]
     paint:
-      line-width: 4
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(248, 250, 202)
   - id: highway_secondary_casing
     layer: highway
@@ -118,7 +153,12 @@ styles:
       [==, highway, secondary_link]
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(154, 166, 67)
   - id: highway_tertiary
     layer: highway
@@ -133,7 +173,12 @@ styles:
       [==, highway, tertiary_link]
     ]
     paint:
-      line-width: 4
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(254, 254, 254)
   - id: highway_tertiary_casing
     layer: highway
@@ -148,7 +193,12 @@ styles:
       [==, highway, tertiary_link]
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(190, 189, 188)
   - id: highway_unclassified
     layer: highway
@@ -162,7 +212,12 @@ styles:
       [==, highway, unclassified],
     ]
     paint:
-      line-width: 4
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(254, 254, 254)
   - id: highway_unclassified_casing
     layer: highway
@@ -176,7 +231,12 @@ styles:
       [==, highway, unclassified],
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(211, 207, 206)
   - id: highway_residential
     layer: highway
@@ -190,7 +250,12 @@ styles:
       [==, highway, residential],
     ]
     paint:
-      line-width: 4
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(254, 254, 254)
   - id: highway_residential_casing
     layer: highway
@@ -204,7 +269,12 @@ styles:
       [==, highway, residential],
     ]
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(211, 207, 206)
   - id: highway_living_street
     layer: highway
@@ -218,7 +288,12 @@ styles:
       [==, highway, living_street],
     ]
     paint:
-      line-width: 3
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
       line-color: rgb(237, 237, 237)
   - id: highway_living_street_casing
     layer: highway
@@ -232,7 +307,12 @@ styles:
       [==, highway, living_street],
     ]
     paint:
-      line-width: 5
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(207, 207, 207)
   - id: highway_service
     layer: highway
@@ -246,7 +326,12 @@ styles:
       [==, highway, service],
     ]
     paint:
-      line-width: 3
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
       line-color: rgb(254, 254, 254)
   - id: highway_service_casing
     layer: highway
@@ -260,7 +345,12 @@ styles:
       [==, highway, service],
     ]
     paint:
-      line-width: 5
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(213, 211, 211)
   - id: highway_road
     layer: highway
@@ -274,7 +364,12 @@ styles:
       [==, highway, road],
     ]
     paint:
-      line-width: 3
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
       line-color: rgb(221, 221, 221)
   - id: highway_road_casing
     layer: highway
@@ -288,7 +383,12 @@ styles:
       [==, highway, road],
     ]
     paint:
-      line-width: 5
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(201, 201, 200)
   - id: highway_pedestrian
     layer: highway
@@ -302,7 +402,12 @@ styles:
       [==, highway, pedestrian],
     ]
     paint:
-      line-width: 3
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
       line-color: rgb(221, 221, 233)
   - id: highway_pedestrian_casing
     layer: highway
@@ -316,7 +421,12 @@ styles:
       [==, highway, pedestrian],
     ]
     paint:
-      line-width: 5
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(184, 183, 182)
   - id: highway_track
     layer: highway

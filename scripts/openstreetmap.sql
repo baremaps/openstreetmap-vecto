@@ -1,3 +1,4 @@
+
 CREATE VIEW osm_simplified_ways AS 
 SELECT id, tags, geom
 FROM osm_ways
@@ -6,21 +7,14 @@ WHERE geom IS NOT NULL AND (
    tags ? 'amenity' OR 
    tags ? 'boundary' OR 
    tags ? 'amenity' OR 
-   tags -> 'highway' IN (
-       'motorway', 'motorway_link', 
-       'trunk', 'trunk_link', 
-       'primary', 'primary_link', 
-       'secondary', 'secondary_link', 
-       'tertiary', 'tertiary_link'
-       'unclassified', 
-       'residential') OR 
+   tags ? 'building' OR
+   tags ? 'highway' OR 
    tags ? 'landuse' OR 
    tags ? 'natural' OR 
    tags ? 'power' OR 
    tags ? 'railway' OR 
-   tags -> 'waterway' IN (
-       'river', 
-       'riverbank'));
+   tags ? 'route' OR 
+   tags ? 'waterway');
 
 CREATE VIEW osm_simplified_relations AS 
 SELECT id, tags, geom
@@ -30,22 +24,14 @@ WHERE geom IS NOT NULL AND (
    tags ? 'amenity' OR 
    tags ? 'boundary' OR 
    tags ? 'amenity' OR 
-   tags -> 'highway' IN (
-       'motorway', 'motorway_link', 
-       'trunk', 'trunk_link', 
-       'primary', 'primary_link', 
-       'secondary', 'secondary_link', 
-       'tertiary', 'tertiary_link'
-       'unclassified', 
-       'residential') OR 
+   tags ? 'building' OR
+   tags ? 'highway' OR 
    tags ? 'landuse' OR 
    tags ? 'natural' OR 
    tags ? 'power' OR 
    tags ? 'railway' OR 
-   tags -> 'waterway' IN (
-       'river', 
-       'riverbank'));
-
+   tags ? 'route' OR 
+   tags ? 'waterway');
 
 CREATE OR REPLACE FUNCTION osm_simplify_geometry(name text, zoom int, tolerance float) RETURNS void AS $$
 BEGIN
@@ -58,5 +44,6 @@ $$ LANGUAGE plpgsql;
 
 SELECT osm_simplify_geometry(name, zoom, tolerance) FROM (
     SELECT unnest AS name, generate_series AS zoom, 78271.516953125 / POWER(2, generate_series) AS tolerance
-    FROM generate_series(0, 12), unnest(ARRAY['osm_simplified_ways', 'osm_simplified_relations'])
+    FROM generate_series(0, 13), unnest(ARRAY['osm_simplified_ways', 'osm_simplified_relations'])
 ) AS parameters;
+

@@ -1,0 +1,13 @@
+id: boundary
+styles:
+  - id: boundary
+    layer: boundary
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    paint:
+      line-width: 1
+      line-color: rgb(207, 155, 203)
+      line-dasharray: [8, 2, 2, 2]

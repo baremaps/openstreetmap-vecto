@@ -8,5 +8,10 @@ styles:
       line-cap: round
       line-join: round
     paint:
-      line-width: 6
+      line-width: 
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 12]
+        ]
       line-color: rgb(170, 211, 223)

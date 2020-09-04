@@ -1,7 +1,20 @@
 id: railway
 type: linestring
 queries:
+  - minZoom: 0
+    maxZoom: 12
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_simplified_ways_z${zoom}
+      WHERE tags -> 'railway' IN ('rail', 'subway', 'tram', 'narrow_gauge', 'monorail', 'light_rail')
+        AND NOT tags ? 'service'
   - minZoom: 12
+    maxZoom: 14
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_simplified_ways_z${zoom}
+      WHERE tags ? 'railway'
+  - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 

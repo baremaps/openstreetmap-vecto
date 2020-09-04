@@ -1,7 +1,7 @@
 id: aerialway
 type: linestring
 queries:
-  - minZoom: 12
+  - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom

@@ -68,6 +68,7 @@ function import_openstreetmap() {
     baremaps import \
         --input 'openstreetmap.pbf' \
         --database "jdbc:postgresql://localhost:5432/osmvecto?allowMultiQueries=true&user=osmvecto&password=osmvecto"
+    psql -d "host=localhost port=5432 dbname=osmvecto user=osmvecto password=osmvecto" < ../scripts/openstreetmap.sql
 }
 
 function main {

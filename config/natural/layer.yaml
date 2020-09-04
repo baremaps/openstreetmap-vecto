@@ -1,4 +1,4 @@
-id: landuse
+id: natural
 type: polygon
 queries:
   - minZoom: 0
@@ -7,25 +7,25 @@ queries:
       SELECT id, tags, geom 
       FROM osm_simplified_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'landuse'
+        AND tags ? 'natural'
   - minZoom: 0
     maxZoom: 14
     sql: |
       SELECT id, tags, geom 
       FROM osm_simplified_relations_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'landuse'
+        AND tags ? 'natural'
   - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways 
+      FROM osm_ways
       WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'landuse'
+        AND tags ? 'natural'
   - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
       FROM osm_relations 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'landuse'
+        AND tags ? 'natural'

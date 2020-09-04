@@ -1,0 +1,14 @@
+id: route
+styles:
+  - id: route_ferry
+    layer: route
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    paint:
+      line-width: 1
+      line-color: rgb(102, 102, 255)
+      line-dasharray: [4, 4]
+  

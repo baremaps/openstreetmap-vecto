@@ -2,32 +2,32 @@ id: water
 type: polygon
 queries:
   - minZoom: 0
-    maxZoom: 12
+    maxZoom: 14
     sql: |
       SELECT fid, hstore(''), geometry
       FROM osm_simplified_water_polygons
-  - minZoom: 10
-    maxZoom: 12
+  - minZoom: 0
+    maxZoom: 14
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z12
+      FROM osm_simplified_ways_z${zoom} 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 10
-    maxZoom: 12
+  - minZoom: 0
+    maxZoom: 14
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_relations_z12
+      FROM osm_simplified_relations_z${zoom} 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 12
+  - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 12
+  - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 

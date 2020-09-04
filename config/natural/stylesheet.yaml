@@ -1,0 +1,110 @@
+id: natural
+styles:
+  - id: natural_glacier
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, glacier]
+    ]
+    paint:
+      fill-color: rgb(221, 236, 236)
+      fill-antialias: true
+  - id: natural_wood
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, wood]
+    ]
+    paint:
+      fill-color: rgb(157, 202, 138)
+      fill-antialias: true
+  - id: natural_scrub
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, scrub]
+    ]
+    paint:
+      fill-color: rgb(201, 216, 173)
+      fill-antialias: true
+  - id: natural_heath
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, heath]
+    ]
+    paint:
+      fill-color: rgb(214, 217, 159)
+      fill-antialias: true
+  - id: natural_grassland
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, grassland]
+    ]
+    paint:
+      fill-color: rgb(207, 236, 177)
+      fill-antialias: true
+  - id: natural_bare_rock
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, bare_rock]
+    ]
+    paint:
+      fill-color: rgb(217, 212, 206)
+      fill-antialias: true
+  - id: natural_scree
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, scree]
+    ]
+    paint:
+      fill-color: rgb(232, 223, 216)
+      fill-antialias: true
+  - id: natural_shingle
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, shingle]
+    ]
+    paint:
+      fill-color: rgb(232, 223, 216)
+      fill-antialias: true
+  - id: natural_sand
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, sand]
+    ]
+    paint:
+      fill-color: rgb(240, 229, 196)
+      fill-antialias: true

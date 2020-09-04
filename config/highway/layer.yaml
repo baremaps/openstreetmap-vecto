@@ -2,82 +2,38 @@ id: highway
 type: linestring
 queries:
   - minZoom: 0
-    maxZoom: 1
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z0
-  - minZoom: 1
-    maxZoom: 2
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z1
-      WHERE tags ? 'highway'
-  - minZoom: 2
-    maxZoom: 3
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z2
-      WHERE tags ? 'highway'
-  - minZoom: 3
-    maxZoom: 4
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z3
-      WHERE tags ? 'highway'
-  - minZoom: 4
-    maxZoom: 5
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z4
-      WHERE tags ? 'highway'
-  - minZoom: 5
-    maxZoom: 6
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z5
-      WHERE tags ? 'highway'
-  - minZoom: 6
-    maxZoom: 7
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z6
-      WHERE tags ? 'highway'
-  - minZoom: 7
     maxZoom: 8
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z7
-      WHERE tags ? 'highway'
+      FROM osm_simplified_ways_z${zoom}
+      WHERE tags -> 'highway' IN (
+       'motorway', 'motorway_link', 
+       'trunk', 'trunk_link', 
+       'primary', 'primary_link')
   - minZoom: 8
-    maxZoom: 9
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z8
-      WHERE tags ? 'highway'
-  - minZoom: 9
-    maxZoom: 10
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z9
-      WHERE tags ? 'highway'
-  - minZoom: 10
     maxZoom: 11
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z10
-      WHERE tags ? 'highway'
+      FROM osm_simplified_ways_z${zoom}
+      WHERE tags -> 'highway' IN (
+       'motorway', 'motorway_link', 
+       'trunk', 'trunk_link', 
+       'primary', 'primary_link', 
+       'secondary', 'secondary_link',
+       'tertiary', 'tertiary_link')
   - minZoom: 11
-    maxZoom: 12
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z11
-      WHERE tags ? 'highway'
-  - minZoom: 12
     maxZoom: 13
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z12
-      WHERE tags ? 'highway'
+      FROM osm_simplified_ways_z${zoom}
+      WHERE tags -> 'highway' IN (
+       'motorway', 'motorway_link', 
+       'trunk', 'trunk_link', 
+       'primary', 'primary_link', 
+       'secondary', 'secondary_link', 
+       'tertiary', 'tertiary_link',
+       'unclassified', 
+       'residential')
   - minZoom: 13
     maxZoom: 18
     sql: |

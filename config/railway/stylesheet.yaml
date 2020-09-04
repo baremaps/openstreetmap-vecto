@@ -15,7 +15,12 @@ styles:
       [==, railway, turntable],
     ]
     paint:
-      line-width: 1
+      line-width:  
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
       line-color: rgb(102, 102, 102)
   - id: railway_rail
     layer: railway
@@ -34,7 +39,12 @@ styles:
       [==, railway, subway],
     ]
     paint:
-      line-width: 2
+      line-width:  
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 8]
+        ]
       line-color: rgb(102, 102, 102)
   - id: railway_bridge
     layer: railway
@@ -48,5 +58,10 @@ styles:
       [==, bridge, "yes"],
     ]
     paint:
-      line-width: 4
+      line-width:   
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 24]
+        ]
       line-color: rgb(197, 197, 196)

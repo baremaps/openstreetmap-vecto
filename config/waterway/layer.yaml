@@ -1,14 +1,21 @@
 id: waterway
 type: polygon
 queries:
-  - minZoom: 11
-    maxZoom: 12
+  - minZoom: 0
+    maxZoom: 10
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways 
+      FROM osm_simplified_ways_z${zoom}
+      WHERE geometrytype(geom) LIKE '%LINESTRING%'
+        AND tags -> 'waterway' IN ('river')
+  - minZoom: 10
+    maxZoom: 14
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_simplified_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%LINESTRING%'
         AND tags ? 'waterway'
-  - minZoom: 12
+  - minZoom: 14
     maxZoom: 18
     sql: |
       SELECT id, tags, geom 
