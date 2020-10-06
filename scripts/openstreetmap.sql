@@ -44,6 +44,6 @@ $$ LANGUAGE plpgsql;
 
 SELECT osm_simplify_geometry(name, zoom, tolerance) FROM (
     SELECT unnest AS name, generate_series AS zoom, 78271.516953125 / POWER(2, generate_series) AS tolerance
-    FROM generate_series(0, 13), unnest(ARRAY['osm_simplified_ways', 'osm_simplified_relations'])
+    FROM generate_series(0, 14), unnest(ARRAY['osm_simplified_ways', 'osm_simplified_relations'])
 ) AS parameters;
 

@@ -14,13 +14,13 @@ queries:
       FROM osm_simplified_relations_z${zoom} 
       WHERE tags ? 'boundary'
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
       WHERE tags ? 'boundary'
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_relations 

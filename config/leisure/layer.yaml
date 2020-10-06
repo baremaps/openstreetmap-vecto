@@ -2,7 +2,7 @@ id: leisure
 type: polygon
 queries:
   - minZoom: 13
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways

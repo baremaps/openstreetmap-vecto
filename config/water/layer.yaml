@@ -21,14 +21,14 @@ queries:
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_relations 

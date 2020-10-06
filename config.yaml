@@ -7,11 +7,11 @@ center:
   lat: 46.5189
   zoom: 14
 bounds:
-  minLon: -180
-  minLat: -85.05113
-  maxLon: 180
-  maxLat: 85.05113
-  minZoom: 0
+  minLon: 5.8358
+  minLat: 45.6591
+  maxLon: 10.9794
+  maxLat: 47.8700
+  minZoom: 6
   maxZoom: 18
 layers:
   - config/aerialway/layer.yaml

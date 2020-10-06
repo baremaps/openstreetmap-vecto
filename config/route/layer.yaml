@@ -8,7 +8,7 @@ queries:
       FROM osm_simplified_ways_z${zoom}
       WHERE tags -> 'route' IN ('ferry')
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom
       FROM osm_ways

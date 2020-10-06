@@ -16,7 +16,7 @@ queries:
       WHERE geometrytype(geom) LIKE '%LINESTRING%'
         AND tags ? 'waterway'
   - minZoom: 14
-    maxZoom: 18
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways 
