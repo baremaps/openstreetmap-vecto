@@ -15,4 +15,7 @@ RUN unzip baremaps.zip
 RUN rm baremaps.zip
 ENV PATH="/baremaps/bin/:${PATH}"
 
+# Add osmvecto
+ADD . /osmvecto
+
 WORKDIR /home
