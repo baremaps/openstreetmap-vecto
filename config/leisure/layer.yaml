@@ -5,6 +5,6 @@ queries:
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways
+      FROM osm_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags ? 'leisure'

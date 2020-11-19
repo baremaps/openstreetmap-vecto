@@ -5,20 +5,13 @@ queries:
     maxZoom: 10
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
+      FROM osm_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%LINESTRING%'
         AND tags -> 'waterway' IN ('river')
   - minZoom: 10
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
-      WHERE geometrytype(geom) LIKE '%LINESTRING%'
-        AND tags ? 'waterway'
-  - minZoom: 14
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways 
+      FROM osm_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%LINESTRING%'
         AND tags ? 'waterway'

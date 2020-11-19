@@ -5,18 +5,12 @@ queries:
     maxZoom: 12
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
+      FROM osm_ways_z${zoom}
       WHERE tags -> 'railway' IN ('rail', 'subway', 'tram', 'narrow_gauge', 'monorail', 'light_rail')
         AND NOT tags ? 'service'
   - minZoom: 12
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
-      WHERE tags ? 'railway'
-  - minZoom: 14
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways 
+      FROM osm_ways_z${zoom}
       WHERE tags ? 'railway'

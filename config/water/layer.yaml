@@ -5,32 +5,18 @@ queries:
     maxZoom: 14
     sql: |
       SELECT fid, hstore(''), geometry
-      FROM osm_simplified_water_polygons
+      FROM osm_water_polygons
   - minZoom: 0
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom} 
-      WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 0
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_relations_z${zoom} 
-      WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 14
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways 
+      FROM osm_ways_z${zoom} 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))
-  - minZoom: 14
+  - minZoom: 0
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_relations 
+      FROM osm_relations_z${zoom} 
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))

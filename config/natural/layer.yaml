@@ -2,30 +2,16 @@ id: natural
 type: polygon
 queries:
   - minZoom: 0
-    maxZoom: 14
+    maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
+      FROM osm_ways_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags ? 'natural'
   - minZoom: 0
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_relations_z${zoom}
-      WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'natural'
-  - minZoom: 14
     maxZoom: 20
     sql: |
       SELECT id, tags, geom 
-      FROM osm_ways
-      WHERE geometrytype(geom) LIKE '%POLYGON%'
-        AND tags ? 'natural'
-  - minZoom: 14
-    maxZoom: 20
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_relations 
+      FROM osm_relations_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
         AND tags ? 'natural'

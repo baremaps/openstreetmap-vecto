@@ -2,14 +2,8 @@ id: route
 type: linestring
 queries:
   - minZoom: 0
-    maxZoom: 14
-    sql: |
-      SELECT id, tags, geom 
-      FROM osm_simplified_ways_z${zoom}
-      WHERE tags -> 'route' IN ('ferry')
-  - minZoom: 14
     maxZoom: 20
     sql: |
-      SELECT id, tags, geom
-      FROM osm_ways
+      SELECT id, tags, geom 
+      FROM osm_ways_z${zoom}
       WHERE tags -> 'route' IN ('ferry')
