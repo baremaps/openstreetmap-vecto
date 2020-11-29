@@ -1,5 +1,8 @@
 #!/bin/bash
 
+osm_url=$1
+osm_file=$(basename "${osm_url}")
+
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
     wget -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
@@ -66,7 +69,7 @@ function import_osm_simplified_water_polygons() {
 
 function import_openstreetmap() {
     echo "Import openstreetmap"
-    wget -N -O openstreetmap.pbf https://download.geofabrik.de/europe/switzerland-latest.osm.pbf
+    wget -N "${osm_url}"
     baremaps execute \
         --database 'jdbc:postgresql://localhost:5432/osmvecto?&user=osmvecto&password=osmvecto' \
         --file '../queries/osm_create_extensions.sql' \
@@ -75,7 +78,7 @@ function import_openstreetmap() {
         --file '../queries/osm_create_tables.sql'
     baremaps import \
         --database "jdbc:postgresql://localhost:5432/osmvecto?allowMultiQueries=true&user=osmvecto&password=osmvecto" \
-        --file 'openstreetmap.pbf'
+        --file "${osm_file}"
     baremaps execute \
         --database 'jdbc:postgresql://localhost:5432/osmvecto?&user=osmvecto&password=osmvecto' \
         --file '../queries/osm_create_gin_indexes.sql' \
@@ -86,10 +89,11 @@ function import_openstreetmap() {
 function main {
     mkdir -p /home/data
     cd /home/data
-    #import_naturalearth
-    #import_osm_water_polygons
-    #import_osm_simplified_water_polygons
+    import_naturalearth
+    import_osm_water_polygons
+    import_osm_simplified_water_polygons
     import_openstreetmap
 }
 
 main
+
