@@ -15,6 +15,7 @@ bounds:
   maxZoom: 18
 layers:
   - config/aerialway/layer.yaml
+  - config/power/layer.yaml
   - config/amenity/layer.yaml
   - config/boundary/layer.yaml
   - config/building/layer.yaml
@@ -28,6 +29,7 @@ layers:
   - config/waterway/layer.yaml
   - config/water/layer.yaml
 stylesheets:
+  - config/power/stylesheet.yaml
   - config/points/stylesheet.yaml
   - config/boundary/stylesheet.yaml
   - config/aerialway/stylesheet.yaml

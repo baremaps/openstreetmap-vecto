@@ -1,0 +1,36 @@
+id: power
+styles:
+  - id: power_cable_line
+    layer: power
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      any,
+      [==, power, cable],
+      [==, power, line],
+    ]
+    paint:
+      line-width:  
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 4]
+        ]
+      line-color: rgb(171, 171, 171)
+  - id: power_station
+    layer: power
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      any,
+      [==, power, plant],
+      [==, power, substation],
+    ]
+    paint:
+      fill-color: rgb(226, 203, 222)
+      fill-antialias: true
+      fill-outline-color: rgb(171, 171, 171)

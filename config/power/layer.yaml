@@ -1,0 +1,9 @@
+id: power
+type: geometry
+queries:
+  - minZoom: 0
+    maxZoom: 20
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z${zoom}
+      WHERE tags -> 'power' IN ('cable', 'line', 'minor_line', 'plant', 'substation')

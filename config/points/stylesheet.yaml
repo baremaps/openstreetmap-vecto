@@ -40,4 +40,28 @@ styles:
           [17, 6],
           [18, 12],
         ]
+  - id: power_tower
+    layer: points
+    type: circle
+    layout:
+      visibility: visible
+    filter: [
+      any,
+      [==, power, tower], 
+      [==, power, pole], 
+      [==, power, portal], 
+      [==, power, catenary_mast],
+    ]
+    paint:
+      circle-color: rgb(171, 171, 171)
+      circle-opacity: 1
+      circle-radius:
+        stops: [
+          [13, 1],
+          [14, 2],
+          [15, 3],
+          [16, 4],
+          [17, 5],
+          [18, 6],
+        ]
   
