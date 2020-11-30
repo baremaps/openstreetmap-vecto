@@ -37,18 +37,6 @@ styles:
     paint:
       fill-color: rgb(199, 199, 180)
       fill-antialias: true
-  - id: landuse_industrial
-    layer: landuse
-    type: fill
-    layout:
-      visibility: visible
-    filter: [
-      all,
-      [==, landuse, industrial]
-    ]
-    paint:
-      fill-color: rgb(236, 218, 233)
-      fill-antialias: true
   - id: landuse_residential
     layer: landuse
     type: fill
@@ -108,18 +96,6 @@ styles:
     ]
     paint:
       fill-color: rgb(238, 213, 179)
-      fill-antialias: true
-  - id: landuse_forest
-    layer: landuse
-    type: fill
-    layout:
-      visibility: visible
-    filter: [
-      all,
-      [==, landuse, forest]
-    ]
-    paint:
-      fill-color: rgb(171, 210, 156)
       fill-antialias: true
   - id: landuse_meadow
     layer: landuse
@@ -188,7 +164,7 @@ styles:
       visibility: visible
     filter: [
       all,
-      [==, landuse, cemetery]
+      [==, landuse, cemetery],
     ]
     paint:
       fill-color: rgb(170, 203, 175)

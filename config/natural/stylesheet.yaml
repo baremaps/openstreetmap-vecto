@@ -102,7 +102,7 @@ styles:
     layout:
       visibility: visible
     filter: [
-      all,
+      any,
       [==, natural, sand]
     ]
     paint:

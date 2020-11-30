@@ -6,5 +6,4 @@ queries:
     sql: |
       SELECT id, tags, geom
       FROM osm_ways_z${zoom}
-      WHERE geometrytype(geom) LIKE 'LINESTRING'
-        AND tags ? 'aerialway'
+      WHERE tags ? 'aerialway'

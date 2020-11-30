@@ -1,5 +1,17 @@
 id: leisure
 styles:
+  - id: leisure_park
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, park]
+    ]
+    paint:
+      fill-color: rgb(200, 250, 204)
+      fill-antialias: true
   - id: leisure_dog_park
     layer: leisure
     type: fill
@@ -11,6 +23,19 @@ styles:
     ]
     paint:
       fill-color: rgb(224, 252, 227)
+      fill-antialias: true
+  - id: leisure_playground
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, playground]
+    ]
+    paint:
+      fill-color: rgb(223, 252, 226)
+      fill-outline-color: rgb(164, 221, 169)
       fill-antialias: true
   - id: leisure_garden
     layer: leisure
@@ -92,20 +117,22 @@ styles:
     layout:
       visibility: visible
     filter: [
-      all,
-      [==, leisure, pitch]
+      any,
+      [==, leisure, pitch],
+      [==, leisure, track]
     ]
     paint:
       fill-color: rgb(170, 224, 203)
+      fill-outline-color: rgb(147, 210, 185)
       fill-antialias: true
-  - id: leisure_sport_center
+  - id: leisure_sports_centre
     layer: leisure
     type: fill
     layout:
       visibility: visible
     filter: [
       all,
-      [==, leisure, sport_center]
+      [==, leisure, sports_centre]
     ]
     paint:
       fill-color: rgb(223, 252, 226)

@@ -398,7 +398,8 @@ styles:
       line-cap: round
       line-join: round
     filter: [
-      any,
+      all,
+      ['!has', area],
       [==, highway, pedestrian],
     ]
     paint:
@@ -408,7 +409,7 @@ styles:
           [4, 0],
           [20, 4]
         ]
-      line-color: rgb(221, 221, 233)
+      line-color: rgb(221, 221, 231)
   - id: highway_pedestrian_casing
     layer: highway
     type: line
@@ -417,7 +418,8 @@ styles:
       line-cap: round
       line-join: round
     filter: [
-      any,
+      all,
+      ['!has', area],
       [==, highway, pedestrian],
     ]
     paint:
@@ -428,6 +430,21 @@ styles:
           [20, 8]
         ]
       line-color: rgb(184, 183, 182)
+  - id: highway_pedestrian_area
+    layer: highway
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      ['has', area],
+      [==, highway, pedestrian],
+    ]
+    paint:
+      fill-color: rgb(221, 221, 231)
+      fill-outline-color: rgb(183, 183, 186)
+      fill-antialias: true
+
   - id: highway_track
     layer: highway
     type: line
@@ -480,17 +497,42 @@ styles:
       line-cap: round
       line-join: round
     filter: [
-      any,
-      [==, highway, footway],
-      [==, highway, path],
-      [==, highway, sidewalk],
-      [==, highway, crossing],
-      [==, highway, steps],
-    ]
+      'all',
+      ['!has', area],
+      [
+        any,
+        [==, highway, footway],
+        [==, highway, path],
+        [==, highway, sidewalk],
+        [==, highway, crossing],
+        [==, highway, steps],
+      ],
+      ]
     paint:
       line-width: 1
       line-color: rgb(250, 132, 117)
       line-dasharray: [2, 2]
+  - id: highway_path_area
+    layer: highway
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      ['has', area],
+      [
+        any,
+        [==, highway, footway],
+        [==, highway, path],
+        [==, highway, sidewalk],
+        [==, highway, crossing],
+        [==, highway, steps],
+      ],
+    ]
+    paint:
+      fill-color: rgb(221, 221, 231)
+      fill-outline-color: rgb(168, 181, 171)
+      fill-antialias: true
   - id: highway_bridleway
     layer: highway
     type: line

@@ -1,0 +1,29 @@
+id: amenity_overlay
+styles:
+  - id: amenity_parking
+    layer: amenity
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      any,
+      [==, amenity, parking],
+      [==, amenity, motorcycle_parking],
+    ]
+    paint:
+      fill-color: rgb(238, 238, 238)
+      fill-antialias: true
+      fill-outline-color: rgb(222, 214, 214)
+  - id: amenity_grave_yard
+    layer: amenity
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      any,
+      [==, amenity, grave_yard],
+    ]
+    paint:
+      fill-color: rgb(170, 203, 175)
+      fill-antialias: true
+

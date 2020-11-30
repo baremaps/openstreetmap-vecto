@@ -1,0 +1,26 @@
+id: landuse_overlay
+styles:
+  - id: landuse_forest
+    layer: landuse
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, landuse, forest]
+    ]
+    paint:
+      fill-color: rgb(171, 210, 156)
+      fill-antialias: true
+  - id: landuse_industrial
+    layer: landuse
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, landuse, industrial]
+    ]
+    paint:
+      fill-color: rgb(236, 218, 233)
+      fill-antialias: true

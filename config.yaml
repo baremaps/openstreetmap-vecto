@@ -1,7 +1,7 @@
 id: OpenStreetMapVecto
 server:
   host: localhost
-  port: 9000
+  port: 9001
 center:
   lon: 6.5743
   lat: 46.5189
@@ -12,7 +12,7 @@ bounds:
   maxLon: 10.9794
   maxLat: 47.8700
   minZoom: 6
-  maxZoom: 18
+  maxZoom: 18 
 layers:
   - config/aerialway/layer.yaml
   - config/power/layer.yaml
@@ -32,13 +32,16 @@ stylesheets:
   - config/power/stylesheet.yaml
   - config/points/stylesheet.yaml
   - config/boundary/stylesheet.yaml
-  - config/aerialway/stylesheet.yaml
   - config/route/stylesheet.yaml
   - config/railway/stylesheet.yaml
   - config/highway/stylesheet.yaml
   - config/building/stylesheet.yaml
   - config/waterway/stylesheet.yaml
   - config/water/stylesheet.yaml
+  - config/landuse/stylesheet-overlay.yaml
+  - config/amenity/stylesheet-overlay.yaml
+  - config/natural/stylesheet-overlay.yaml
+  - config/aerialway/stylesheet.yaml
   - config/leisure/stylesheet.yaml
   - config/natural/stylesheet.yaml
   - config/landuse/stylesheet.yaml

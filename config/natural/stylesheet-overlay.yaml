@@ -1,0 +1,14 @@
+id: natural_overlay
+styles:
+  - id: natural_beach
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      any,
+      [==, natural, beach]
+    ]
+    paint:
+      fill-color: rgb(255, 241, 186)
+      fill-antialias: true
