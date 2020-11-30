@@ -33,6 +33,27 @@ styles:
       any,
       [==, railway, rail],
       [==, railway, funicular],
+    ]
+    paint:
+      line-width:  
+        base: 1.2
+        stops: [
+          [4, 0],
+          [20, 6]
+        ]
+      line-color: rgb(255, 255, 255)
+      line-dasharray: [2, 4]
+  - id: railway_rail_offset
+    layer: railway
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      any,
+      [==, railway, rail],
+      [==, railway, funicular],
       [==, railway, light_rail],
       [==, railway, monorail],
       [==, railway, tram],
@@ -45,7 +66,7 @@ styles:
           [4, 0],
           [20, 8]
         ]
-      line-color: rgb(102, 102, 102)
+      line-color: rgb(112, 112, 112)
   - id: railway_bridge
     layer: railway
     type: line

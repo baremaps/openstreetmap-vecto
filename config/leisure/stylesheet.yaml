@@ -1,5 +1,18 @@
 id: leisure
 styles:
+  - id: leisure_playground
+    layer: leisure
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, leisure, playground]
+    ]
+    paint:
+      fill-color: rgb(223, 252, 226)
+      fill-outline-color: rgb(164, 221, 169)
+      fill-antialias: true
   - id: leisure_park
     layer: leisure
     type: fill
@@ -23,19 +36,6 @@ styles:
     ]
     paint:
       fill-color: rgb(224, 252, 227)
-      fill-antialias: true
-  - id: leisure_playground
-    layer: leisure
-    type: fill
-    layout:
-      visibility: visible
-    filter: [
-      all,
-      [==, leisure, playground]
-    ]
-    paint:
-      fill-color: rgb(223, 252, 226)
-      fill-outline-color: rgb(164, 221, 169)
       fill-antialias: true
   - id: leisure_garden
     layer: leisure

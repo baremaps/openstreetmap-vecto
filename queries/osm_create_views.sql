@@ -5,7 +5,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 0)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -14,7 +14,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 1)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -23,7 +23,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 2)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -32,7 +32,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 3)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -41,7 +41,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 4)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -50,7 +50,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 5)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -59,7 +59,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 6)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -68,7 +68,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 7)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -77,7 +77,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 8)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -86,7 +86,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 9)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -95,7 +95,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 10)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -104,7 +104,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 11)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -113,7 +113,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 12)) as geom
 FROM osm_ways
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -141,7 +141,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 0)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -150,7 +150,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 1)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -159,7 +159,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 2)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -168,7 +168,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 3)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -177,7 +177,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 4)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -186,7 +186,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 5)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -195,7 +195,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 6)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -204,7 +204,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 7)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -213,7 +213,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 8)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -222,7 +222,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 9)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -231,7 +231,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 10)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -240,7 +240,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 11)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
@@ -249,7 +249,7 @@ SELECT id, tags, st_simplify(geom, 78271.516953125 / POWER(2, 12)) as geom
 FROM osm_relations
 WHERE geom IS NOT NULL 
 AND tags ?| ARRAY[
-    'aeroway', 'amenity', 'boundary', 'amenity', 'highway',
+    'aeroway', 'amenity', 'boundary', 'amenity', 'highway', 'man_made',
     'landuse', 'natural','power', 'railway', 'route', 'waterway'
 ];
 
