@@ -11,6 +11,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - POSTGRES_DB
+      - POSTGRES_PORT
       - POSTGRES_USER
       - POSTGRES_PASSWORD
     restart: unless-stopped
