@@ -2,7 +2,11 @@
 
 osm_url=$1
 osm_file=$(basename "${osm_url}")
+HOST=localhost
+PORT=${POSTGRES_PORT}
 echo "OSMVECTO_PATH IS: ${OSMVECTO_PATH}"
+echo "HOST IS: ${HOST}"
+echo "PORT IS: ${PORT}"
 
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
@@ -14,7 +18,7 @@ function import_naturalearth() {
         -s_srs EPSG:4326 \
         -t_srs EPSG:3857 \
         -clipsrc -180 -85.0511 180.1 85.0511 \
-        PG:"host=localhost port=5432 dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -lco GEOMETRY_NAME=geometry \
         -lco OVERWRITE=YES \
         -lco DIM=2 \
@@ -22,7 +26,7 @@ function import_naturalearth() {
         -overwrite \
         "natural_earth_vector/packages/natural_earth_vector.sqlite"
     baremaps execute \
-        --database 'jdbc:postgresql://localhost:5432/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/ne_create_indexes.sql'
 }
 
@@ -41,9 +45,9 @@ function import_osm_water_polygons() {
         -nln osm_water_polygons \
         -nlt geometry \
         --config PG_USE_COPY YES \
-        PG:"host=localhost port=5432 dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         "water-polygons-split-3857/water_polygons.shp"
-    psql -d "host=localhost port=5432 dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+    psql -d "host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -c "CREATE INDEX CONCURRENTLY osm_water_polygons_gix ON osm_water_polygons USING SPGIST(geometry);"
 }
 
@@ -62,9 +66,9 @@ function import_osm_simplified_water_polygons() {
         -nln osm_simplified_water_polygons \
         -nlt geometry \
         --config PG_USE_COPY YES \
-        PG:"host=localhost port=5432 dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         "simplified-water-polygons-split-3857/simplified_water_polygons.shp"
-    psql -d "host=localhost port=5432 dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+    psql -d "host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -c "CREATE INDEX CONCURRENTLY osm_simplified_water_polygons_gix ON osm_simplified_water_polygons USING SPGIST(geometry);"
 }
 
@@ -72,16 +76,16 @@ function import_openstreetmap() {
     echo "Import openstreetmap"
     wget -N "${osm_url}"
     baremaps execute \
-        --database 'jdbc:postgresql://localhost:5432/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/osm_create_extensions.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_drop_views.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_drop_tables.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_tables.sql'
     baremaps import \
-        --database "jdbc:postgresql://localhost:5432/${POSTGRES_DB}?allowMultiQueries=true&user=${POSTGRES_PASSWORD}&password=osmvecto" \
+        --database "jdbc:postgresql://'${HOST}':'${PORT}'/${POSTGRES_DB}?allowMultiQueries=true&user=${POSTGRES_PASSWORD}&password=${POSTGRES_PASSWORD}" \
         --file "${osm_file}"
     baremaps execute \
-        --database 'jdbc:postgresql://localhost:5432/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/osm_create_gin_indexes.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_views.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_gist_indexes.sql'
