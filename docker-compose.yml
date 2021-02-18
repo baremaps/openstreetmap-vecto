@@ -1,0 +1,25 @@
+version: '3.8'
+
+networks:
+  lan_access:
+    driver: bridge
+
+services:
+  baremaps:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    restart: unless-stopped
+    networks:
+      - lan_access
+    ports:
+      - "${DB_HOST_PORT}:5432"
+      - "${DB_APP_PORT}:9000"
+    working_dir: ${OSMVECTO_PATH}
+    volumes:
+      - ./:${OSMVECTO_PATH} # !!! dev only
+    entrypoint: "${OSMVECTO_PATH}/entrypoint.sh"
