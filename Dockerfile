@@ -1,9 +1,10 @@
 FROM baremaps/postgis:latest
 
 # Configure the database
-ENV POSTGRES_DB osmvecto
-ENV POSTGRES_USER osmvecto
-ENV POSTGRES_PASSWORD osmvecto
+ENV POSTGRES_DB=osmvecto
+ENV POSTGRES_USER=osmvecto
+ENV POSTGRES_PASSWORD=osmvecto
+ENV OSMVECTO_PATH=/osmvecto
 
 # Install utilities
 RUN apt-get update \
@@ -17,6 +18,6 @@ RUN wget https://github.com/baremaps/baremaps/releases/latest/download/baremaps.
 ENV PATH="/baremaps/bin/:${PATH}"
 
 # Add osmvecto
-ADD . /osmvecto
+ADD . ${OSMVECTO_PATH}
 
-WORKDIR /home
+WORKDIR ${OSMVECTO_PATH}
