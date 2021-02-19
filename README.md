@@ -68,3 +68,13 @@ docker push baremaps/osmvecto
 ## Contributing
 
 As a lot remains to be done, contributions and feedbacks are welcome. 
+
+## Troubleshooting windows
+
+On windows, be careful with line endings (LF), especially when the files are mounted in a docker container.
+
+```
+docker system prune -a
+docker run -d --name osmvecto --publish 5432:5432 --publish 9000:9000 --volume C:\openstreetmap-vecto:/home baremaps/osmvecto:latest
+docker exec -ti osmvecto bash -c ./import.sh https://download.geofabrik.de/europe/switzerland-latest.osm.pbf
+```
