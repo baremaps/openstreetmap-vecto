@@ -54,7 +54,7 @@ function import_osm_water_polygons() {
 function import_osm_simplified_water_polygons() {
     echo "Import simplified OpenStreetMap water polygons"
     wget -N https://osmdata.openstreetmap.de/download/simplified-water-polygons-split-3857.zip
-    unzip simplified-water-polygons-split-3857.zip
+    unzip -o simplified-water-polygons-split-3857.zip
     ogr2ogr \
         -progress \
         -f Postgresql \
