@@ -27,23 +27,23 @@ Then, edit `.env` according to your local environment.
 
 A docker container containing a PostGIS database and all the tools required to run [Baremaps](https://github.com/baremaps/baremaps) can be started with [docker-compose](https://docs.docker.com/compose/).
 
-
+The docker-compose.yml contains two services `db` and `app`. The former holding a PostgreSQL 13.1 / PostGIS 3.1 database and the latter serving the applicative content, namely baremaps. It's from the `app` containers that you want to run all baremaps commands to populate the database from data, or to start the web application using some of the commands defined hereunder.
 
 ### Useful commands
 
-Command                                  | Description
-:--------------------------------------- | :----------------------------------------------------------------------------------------------------------------
-`docker-compose up --build baremaps`                       | Run the application in the foreground.
-`docker-compose up --build --detach baremaps`              | Run the application in the background.
-`docker-compose stop`                                      | Stop all containers.
-`docker-compose down`                                      | Stop and remove all containers (but keep the data).
-`docker-compose down --volumes`                            | Stop and permanently delete all containers and data.
-`docker-compose down --volumes --remove-orphans`           | Same as previous and remove all dangling containers not defined in the Compose file.
-`docker-compose exec baremaps <command>`                   | Execute a command inside the running `baremaps` container.
-`docker-compose exec baremaps bash -c ./populate-db.sh`    | Execute the populate-db.sh script to populate the database (inside the container).
-`docker-compose exec baremaps bash -c ./start.sh`          | Start the web application (the db must be populated before running that command).
-`docker-compose ps`                                        | List running containers.
-`docker-compose logs --tail 20 -f`                         | Print all containers logs to stdout (usefull when they were launched in the background).
+Command                                             | Description
+:---------------------------------------            | :--------------------------------------------------
+`docker-compose up --build`                         | Run the application in the foreground.
+`docker-compose up --build --detach`                | Run the application in the background.
+`docker-compose stop`                               | Stop all containers.
+`docker-compose down`                               | Stop and remove all containers (but keep the data).
+`docker-compose down --volumes`                     | Stop and permanently delete all containers and data.
+`docker-compose down --volumes --remove-orphans`    | Same as previous and remove all dangling containers not defined in the Compose file.
+`docker-compose exec app <command>`                 | Execute a command inside the running `app` container.
+`docker-compose exec app bash -c ./populate-db.sh`  | Execute the populate-db.sh script to populate the database (inside the container).
+`docker-compose exec app bash -c ./start.sh`        | Start the web application (the db must be populated before running that command).
+`docker-compose ps`                                 | List running containers.
+`docker-compose logs --tail 20 -f`                  | Print all containers logs to stdout (usefull when they were launched in the background).
 
 
 Your browser ([http://localhost:9000/](http://localhost:9000/)) should now preview OpenStreetMap Vecto.     
