@@ -9,7 +9,7 @@ networks:
 
 services:
   db:
-    image: postgis/postgis:11-2.5
+    image: postgis/postgis:13-3.1
     environment:
       - POSTGRES_DB
       - POSTGRES_PORT
