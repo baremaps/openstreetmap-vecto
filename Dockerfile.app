@@ -16,7 +16,7 @@ RUN set -eux \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y --no-install-recommends tzdata wait-for-it \
-      proj-bin proj-data gdal-bin \
+      proj-bin proj-data gdal-bin sqlite3 \
     && apt-get -y autoremove --purge && apt-get -y autoclean \
     && ln -fs /usr/share/zoneinfo/Europe/Zurich /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
