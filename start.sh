@@ -1,4 +1,5 @@
 #!/bin/bash
+
 HOST=${POSTGRES_HOST}
 PORT=${POSTGRES_PORT}
 
