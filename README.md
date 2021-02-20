@@ -41,9 +41,9 @@ Command                                  | Description
 `docker-compose down --volumes --remove-orphans`           | Same as previous and remove all dangling containers not defined in the Compose file.
 `docker-compose exec baremaps <command>`                   | Execute a command inside the running `baremaps` container.
 `docker-compose exec baremaps bash -c ./populate-db.sh`    | Execute the populate-db.sh script to populate the database (inside the container).
-`docker-compose exec baremaps  bash -c ./start.sh`         | Start the web application (the db must be populated before running that command).
+`docker-compose exec baremaps bash -c ./start.sh`          | Start the web application (the db must be populated before running that command).
 `docker-compose ps`                                        | List running containers.
-`docker-compose logs --tail 20 -tf`                        | Print all containers logs to stdout (usefull when they were launched in the background).
+`docker-compose logs --tail 20 -f`                         | Print all containers logs to stdout (usefull when they were launched in the background).
 
 
 Your browser ([http://localhost:9000/](http://localhost:9000/)) should now preview OpenStreetMap Vecto.     
