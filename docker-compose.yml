@@ -6,14 +6,17 @@ networks:
 
 services:
   baremaps:
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
     environment:
+      - POSTGRES_HOST
       - POSTGRES_DB
       - POSTGRES_PORT
       - POSTGRES_USER
       - POSTGRES_PASSWORD
+      - OSMVECTO_PATH
     restart: unless-stopped
     networks:
       - lan_access
@@ -26,5 +29,5 @@ services:
     # Run only once at startup to populate the database (it takes some time)
     # comment this line after and uncomment the following to actually start
     # the app.
-    entrypoint: "./populate-db.sh"
-    #entrypoint: "${OSMVECTO_PATH}/entrypoint.sh"
+    #entrypoint: "./populate-db.sh"
+    #entrypoint: "./entrypoint.sh"
