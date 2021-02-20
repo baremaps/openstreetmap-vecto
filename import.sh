@@ -2,6 +2,8 @@
 
 osm_url=$1
 osm_file=$(basename "${osm_url}")
+HOST=${POSTGRES_HOST}
+PORT=${POSTGRES_PORT}
 
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
