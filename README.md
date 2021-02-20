@@ -47,7 +47,7 @@ Command                                  | Description
 
 
 Your browser ([http://localhost:9000/](http://localhost:9000/)) should now preview OpenStreetMap Vecto.     
-Here, the port is 9000, but you will have to use the one you defined in your `.env` if you changed it.    
+Here, the port is 9000, but you will have to use the one you defined in your `.env` if you changed it. You will also have to change the port and host in `config.yaml` if you don't use the standard ones.      
 Notice that a change in the configuration files (`config.yaml`) will automatically be reloaded by the browser.    
 
 ## Improving the configuration
