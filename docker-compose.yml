@@ -19,8 +19,12 @@ services:
       - lan_access
     ports:
       - "${DB_HOST_PORT}:5432"
-      - "${DB_APP_PORT}:9000"
+      - "${DB_APP_PORT}:${DB_APP_PORT}"
     working_dir: ${OSMVECTO_PATH}
     volumes:
       - ./:${OSMVECTO_PATH} # !!! dev only
-    entrypoint: "${OSMVECTO_PATH}/entrypoint.sh"
+    # Run only once at startup to populate the database (it takes some time)
+    # comment this line after and uncomment the following to actually start
+    # the app.
+    entrypoint: "./populate-db.sh"
+    #entrypoint: "${OSMVECTO_PATH}/entrypoint.sh"
