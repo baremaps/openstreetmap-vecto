@@ -8,7 +8,7 @@ ENV OSMVECTO_PATH=/osmvecto
 
 # Install utilities
 RUN apt-get update \
-    && apt-get install -y wget unzip openjdk-8-jdk
+    && apt-get install -y wget unzip openjdk-11-jdk
 
 # Install GDAL from debian unstable
 RUN set -eux \
