@@ -2,11 +2,6 @@
 
 osm_url=$1
 osm_file=$(basename "${osm_url}")
-HOST=localhost
-PORT=${POSTGRES_PORT}
-echo "OSMVECTO_PATH IS: ${OSMVECTO_PATH}"
-echo "HOST IS: ${HOST}"
-echo "PORT IS: ${PORT}"
 
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
@@ -82,7 +77,7 @@ function import_openstreetmap() {
         --file ${OSMVECTO_PATH}'/queries/osm_drop_tables.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_tables.sql'
     baremaps import \
-        --database "jdbc:postgresql://'${HOST}':'${PORT}'/${POSTGRES_DB}?allowMultiQueries=true&user=${POSTGRES_PASSWORD}&password=${POSTGRES_PASSWORD}" \
+        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?allowMultiQueries=true&user='${POSTGRES_PASSWORD}'&password='${POSTGRES_PASSWORD} \
         --file "${osm_file}"
     baremaps execute \
         --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
