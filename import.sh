@@ -5,7 +5,7 @@ osm_file=$(basename "${osm_url}")
 
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
-    wget -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
+    wget -q -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
     unzip -o -d natural_earth_vector natural_earth_vector.sqlite.zip
     ogr2ogr \
         -progress \
@@ -27,7 +27,7 @@ function import_naturalearth() {
 
 function import_osm_water_polygons() {
     echo "Import OpenStreetMap water polygons"
-    wget -N https://osmdata.openstreetmap.de/download/water-polygons-split-3857.zip
+    wget -q -N https://osmdata.openstreetmap.de/download/water-polygons-split-3857.zip
     unzip -o water-polygons-split-3857.zip
     ogr2ogr \
         -progress \
@@ -48,7 +48,7 @@ function import_osm_water_polygons() {
 
 function import_osm_simplified_water_polygons() {
     echo "Import simplified OpenStreetMap water polygons"
-    wget -N https://osmdata.openstreetmap.de/download/simplified-water-polygons-split-3857.zip
+    wget -q -N https://osmdata.openstreetmap.de/download/simplified-water-polygons-split-3857.zip
     unzip -o simplified-water-polygons-split-3857.zip
     ogr2ogr \
         -progress \
@@ -69,7 +69,7 @@ function import_osm_simplified_water_polygons() {
 
 function import_openstreetmap() {
     echo "Import openstreetmap"
-    wget -N "${osm_url}"
+    wget -q -N "${osm_url}"
     baremaps execute \
         --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/osm_create_extensions.sql' \
