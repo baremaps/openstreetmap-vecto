@@ -1,5 +1,7 @@
 #!/bin/bash
+HOST=${POSTGRES_HOST}
+PORT=${POSTGRES_PORT}
 
 baremaps preview \
-  --database 'jdbc:postgresql://localhost:5432/osmvecto?allowMultiQueries=true&user=osmvecto&password=osmvecto' \
+  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?allowMultiQueries=true&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
   --config 'config.yaml'
