@@ -12,10 +12,10 @@ function import_naturalearth() {
     ogr2ogr \
         -progress \
         -f Postgresql \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -s_srs EPSG:4326 \
         -t_srs EPSG:3857 \
-        -clipsrc -180 -85.0511 180.1 85.0511 \
-        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
+        -clipsrc -180 -85.0511 180 85.0511 \
         -lco GEOMETRY_NAME=geometry \
         -lco OVERWRITE=YES \
         -lco DIM=2 \
@@ -34,6 +34,7 @@ function import_osm_water_polygons() {
     ogr2ogr \
         -progress \
         -f Postgresql \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -s_srs EPSG:3857 \
         -t_srs EPSG:3857 \
         -lco OVERWRITE=YES \
@@ -42,7 +43,6 @@ function import_osm_water_polygons() {
         -nln osm_water_polygons \
         -nlt geometry \
         --config PG_USE_COPY YES \
-        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         "water-polygons-split-3857/water_polygons.shp"
     psql -d "host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -c "CREATE INDEX CONCURRENTLY osm_water_polygons_gix ON osm_water_polygons USING SPGIST(geometry);"
@@ -55,6 +55,7 @@ function import_osm_simplified_water_polygons() {
     ogr2ogr \
         -progress \
         -f Postgresql \
+        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -s_srs EPSG:3857 \
         -t_srs EPSG:3857 \
         -lco OVERWRITE=YES \
@@ -63,7 +64,6 @@ function import_osm_simplified_water_polygons() {
         -nln osm_simplified_water_polygons \
         -nlt geometry \
         --config PG_USE_COPY YES \
-        PG:"host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         "simplified-water-polygons-split-3857/simplified_water_polygons.shp"
     psql -d "host=${HOST} port=${PORT} dbname=${POSTGRES_DB} user=${POSTGRES_USER} password=${POSTGRES_PASSWORD}" \
         -c "CREATE INDEX CONCURRENTLY osm_simplified_water_polygons_gix ON osm_simplified_water_polygons USING SPGIST(geometry);"
@@ -85,13 +85,14 @@ function import_openstreetmap() {
         --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/osm_create_gin_indexes.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_views.sql' \
+        --file ${OSMVECTO_PATH}'/queries/osm_prepare_indexes_comp.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_gist_indexes.sql'
 }
 
 function main {
     mkdir -p ${OSMVECTO_PATH}/data
     cd ${OSMVECTO_PATH}/data
-    import_naturalearth
+    #import_naturalearth
     import_osm_water_polygons
     import_osm_simplified_water_polygons
     import_openstreetmap
