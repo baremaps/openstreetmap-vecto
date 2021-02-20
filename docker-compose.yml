@@ -1,5 +1,8 @@
 version: '3.8'
 
+volumes:
+  pgdata: {}
+
 networks:
   lan_access:
     driver: bridge
@@ -25,7 +28,10 @@ services:
       - "${DB_APP_PORT}:${DB_APP_PORT}"
     working_dir: ${OSMVECTO_PATH}
     volumes:
+      - pgdata:/var/lib/postgresql/data
       - ./:${OSMVECTO_PATH} # !!! dev only
+      - ./postgresql.conf:/etc/postgresql.conf
+    command: postgres -c config_file=/etc/postgresql.conf
     # Run only once at startup to populate the database (it takes some time)
     # comment this line after and uncomment the following to actually start
     # the app.
