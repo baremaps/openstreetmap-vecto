@@ -10,8 +10,8 @@ ENV OSMVECTO_PATH=/osmvecto
 RUN set -eux \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y --no-install-recommends wget unzip openjdk-11-jdk tzdata \
-       wait-for-it proj-bin proj-data gdal-bin sqlite3 libgeos-dev librttopo-dev \
+    && apt-get install -y --no-install-recommends wget unzip openjdk-11-jdk postgresql-client \
+       tzdata wait-for-it proj-bin proj-data gdal-bin sqlite3 libgeos-dev librttopo-dev \
        zlib1g libpq5 libc-bin libc6 libtiff-dev libsqlite3-dev libcurl4-openssl-dev \
     && wget -q http://archive.ubuntu.com/ubuntu/pool/universe/p/proj/proj-data_7.1.0-1_all.deb \
     && wget -q http://archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj19_7.1.0-1_amd64.deb \
