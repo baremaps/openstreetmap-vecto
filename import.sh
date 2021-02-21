@@ -10,7 +10,6 @@ function import_naturalearth() {
     wget -q -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
     unzip -o -d natural_earth_vector natural_earth_vector.sqlite.zip
     CMD="SELECT f_table_name FROM geometry_columns;"
-    #sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "SELECT load_extension('mod_spatialite');"
     readarray -t arr < <( sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "${CMD}" )
     for t in "${arr[@]}";
     do
