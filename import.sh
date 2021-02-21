@@ -7,15 +7,16 @@ PORT=${POSTGRES_PORT}
 
 function import_naturalearth() {
     echo "Import Natural Earth vector data"
-    wget -q -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.gpkg.zip
-    unzip -o -d natural_earth_vector natural_earth_vector.gpkg.zip
-    CMD="SELECT table_name FROM gpkg_geometry_columns;"
-    readarray -t arr < <( sqlite3 natural_earth_vector/packages/natural_earth_vector.gpkg "${CMD}" )
+    wget -q -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
+    unzip -o -d natural_earth_vector natural_earth_vector.sqlite.zip
+    CMD="SELECT f_table_name FROM geometry_columns;"
+    #sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "SELECT load_extension('mod_spatialite');"
+    readarray -t arr < <( sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "${CMD}" )
     for t in "${arr[@]}";
     do
       echo "Processing ${t}";
-      ogrinfo natural_earth_vector/packages/natural_earth_vector.gpkg \
-        -sql "UPDATE ${t} SET geom = ST_MakeValid(geom)";
+      ogrinfo natural_earth_vector/packages/natural_earth_vector.sqlite \
+        -sql "UPDATE ${t} SET geometry = ST_MakeValid(geometry)";
     done
     ogr2ogr \
         -progress \
@@ -29,7 +30,7 @@ function import_naturalearth() {
         -lco DIM=2 \
         -nlt GEOMETRY \
         -overwrite \
-        "natural_earth_vector/packages/natural_earth_vector.gpkg"
+        "natural_earth_vector/packages/natural_earth_vector.sqlite"
     baremaps execute \
         --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
         --file ${OSMVECTO_PATH}'/queries/ne_create_indexes.sql'
