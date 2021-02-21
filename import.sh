@@ -9,6 +9,15 @@ function import_naturalearth() {
     echo "Import Natural Earth vector data"
     wget -q -N http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip
     unzip -o -d natural_earth_vector natural_earth_vector.sqlite.zip
+    CMD="SELECT f_table_name FROM geometry_columns;"
+    #sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "SELECT load_extension('mod_spatialite');"
+    readarray -t arr < <( sqlite3 natural_earth_vector/packages/natural_earth_vector.sqlite "${CMD}" )
+    for t in "${arr[@]}";
+    do
+      echo "Processing ${t}";
+      ogrinfo natural_earth_vector/packages/natural_earth_vector.sqlite \
+        -sql "UPDATE ${t} SET geometry = ST_MakeValid(geometry)";
+    done
     ogr2ogr \
         -progress \
         -f Postgresql \
@@ -92,7 +101,7 @@ function import_openstreetmap() {
 function main {
     mkdir -p ${OSMVECTO_PATH}/data
     cd ${OSMVECTO_PATH}/data
-    #import_naturalearth
+    import_naturalearth
     import_osm_water_polygons
     import_osm_simplified_water_polygons
     import_openstreetmap
