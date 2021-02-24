@@ -12,6 +12,7 @@ styles:
     paint:
       circle-color: rgb(129, 94, 39)
       circle-opacity: 1
+      circle-pitch-alignment: map
       circle-radius:
         stops: [
           [14, 0.25],
@@ -32,6 +33,7 @@ styles:
     paint:
       circle-color: rgb(113, 205, 111)
       circle-opacity: 1
+      circle-pitch-alignment: map
       circle-radius:
         stops: [
           [14, 0.75],
