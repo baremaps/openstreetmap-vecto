@@ -10,6 +10,6 @@ else
 fi
 
 baremaps preview \
-  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?allowMultiQueries=true&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
   --config "${config_file}" \
   --log-level=DEBUG

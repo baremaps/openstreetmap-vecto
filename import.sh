@@ -92,7 +92,7 @@ function import_openstreetmap() {
         --file ${OSMVECTO_PATH}'/queries/osm_drop_tables.sql' \
         --file ${OSMVECTO_PATH}'/queries/osm_create_tables.sql'
     baremaps import \
-        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?allowMultiQueries=true&user='${POSTGRES_PASSWORD}'&password='${POSTGRES_PASSWORD} \
+        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_PASSWORD}'&password='${POSTGRES_PASSWORD} \
         --file "${osm_file}"
     baremaps execute \
         --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
