@@ -38,6 +38,8 @@ services:
       - POSTGRES_PORT
       - POSTGRES_USER
       - POSTGRES_PASSWORD
+      - BAREMAPS_SITES_DOMAIN
+      - DB_APP_PORT
       - OSMVECTO_PATH
     restart: unless-stopped
     networks:
