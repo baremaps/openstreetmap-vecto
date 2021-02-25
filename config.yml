@@ -1,7 +1,7 @@
 id: OpenStreetMapVecto
 server:
-  host: localhost
-  port: 9000
+  host: ${BAREMAPS_SITES_DOMAIN}
+  port: ${DB_APP_PORT}
 center:
   lon: 6.5743
   lat: 46.5189
