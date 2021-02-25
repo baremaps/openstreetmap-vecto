@@ -1,6 +1,11 @@
 #!/bin/bash
 
-osm_url=$1
+if [ -z $1 ]; then
+    osm_url="https://download.geofabrik.de/europe/switzerland-latest.osm.pbf"
+else
+    osm_url=$1
+fi
+
 osm_file=$(basename "${osm_url}")
 HOST=${POSTGRES_HOST}
 PORT=${POSTGRES_PORT}
@@ -107,3 +112,5 @@ function main {
 }
 
 main
+
+echo "[Info ] $(date +%F' '%T.%3N) Imports finished successfully."
