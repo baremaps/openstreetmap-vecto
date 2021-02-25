@@ -36,6 +36,13 @@ RUN wget -q https://github.com/baremaps/baremaps/releases/latest/download/barema
 
 ENV PATH="/baremaps/bin/:${PATH}"
 
+COPY ./*.sh ${OSMVECTO_PATH}/
+RUN chmod +x ${OSMVECTO_PATH}/*.sh \
+  && for fullname in ${OSMVECTO_PATH}/*.sh; \
+     do f=$(basename -- "${fullname}") \
+     && mv "${fullname}" /usr/local/bin/"${f%.*}"; \
+     done
+
 # Add osmvecto, uncomment for production
-#ADD . ${OSMVECTO_PATH}
+#COPY . ${OSMVECTO_PATH}
 #WORKDIR ${OSMVECTO_PATH}
