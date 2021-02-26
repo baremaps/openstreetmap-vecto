@@ -54,8 +54,9 @@ Notice that a change in the configuration files (`config.yaml`) will automatical
 Please, notice than in production, you preferably want to run the global scripts using:    
 
 ```
-docker-compose exec -d app bash -c populate-db    
-docker-compose exec -d app bash -c start.sh ['your-config.yml']
+docker-compose up --build --detach   
+docker-compose exec --detach app bash -c populate-db    
+docker-compose exec --detach app bash -c start.sh ['your-config.yml']
 ```
 
 ## Improving the configuration
