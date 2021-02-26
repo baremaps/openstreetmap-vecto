@@ -1,5 +1,28 @@
 id: highway
 styles:
+  - id: highway_label
+    layer: highway
+    type: symbol
+    layout:
+      symbol-placement: line
+      text-anchor: center
+      text-field: "{name}"
+      text-font: ["Noto Sans Regular"]
+      text-offset: [0, 0.15]
+      text-size: 10
+      visibility: visible
+  - id: highway_number
+    layer: highway
+    type: symbol
+    layout:
+      symbol-placement: line
+      symbol-spacing: 240
+      text-field: "{ref}"
+      text-font: ["Noto Sans Regular"]
+      text-offset: [0, 0.15]
+      text-rotation-alignment: viewport
+      text-size: 10
+      visibility: visible
   - id: highway_motorway
     layer: highway
     type: line
