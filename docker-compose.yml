@@ -19,7 +19,7 @@ services:
     networks:
       - lan_access
     ports:
-      - "${DB_HOST_PORT}:5432"
+      - "${HOST_PG_PORT}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./postgresql.conf:/etc/postgresql.conf
@@ -39,13 +39,13 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - BAREMAPS_SITES_DOMAIN
-      - DB_APP_PORT
+      - APP_PORT
       - OSMVECTO_PATH
     restart: unless-stopped
     networks:
       - lan_access
     ports:
-      - "${DB_APP_PORT}:${DB_APP_PORT}"
+      - "${APP_PORT}:${APP_PORT}"
     working_dir: ${OSMVECTO_PATH}
     volumes:
       - ./:${OSMVECTO_PATH} # !!! dev only
