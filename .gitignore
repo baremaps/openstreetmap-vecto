@@ -1,4 +1,4 @@
 data/
-tiles/
+static/
 .DS_Store/
 .env
