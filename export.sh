@@ -1,6 +1,9 @@
 #!/bin/bash
 
+HOST=${POSTGRES_HOST}
+PORT=${POSTGRES_PORT}
+
 baremaps export \
-  --database 'jdbc:postgresql://localhost:5432/osmvecto?allowMultiQueries=true&user=osmvecto&password=osmvecto' \
-  --config 'config.yaml' \
-  --repository 'tiles/'
+  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+  --config 'config.yml' \
+  --repository 'static/tiles/osm/'

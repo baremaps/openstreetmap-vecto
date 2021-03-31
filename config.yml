@@ -1,0 +1,49 @@
+id: OpenStreetMapVecto
+server:
+  host: ${BAREMAPS_SITES_DOMAIN}
+  port: ${APP_PORT}
+center:
+  lon: 6.5743
+  lat: 46.5189
+  zoom: 14
+bounds:
+  minLon: 5.8358
+  minLat: 45.6591
+  maxLon: 10.9794
+  maxLat: 47.8700
+  minZoom: 6
+  maxZoom: 14 
+layers:
+  - config/aerialway/layer.yml
+  - config/power/layer.yml
+  - config/amenity/layer.yml
+  - config/boundary/layer.yml
+  - config/building/layer.yml
+  - config/highway/layer.yml
+  - config/natural/layer.yml
+  - config/leisure/layer.yml
+  - config/landuse/layer.yml
+  - config/points/layer.yml
+  - config/railway/layer.yml
+  - config/route/layer.yml
+  - config/waterway/layer.yml
+  - config/water/layer.yml
+stylesheets:
+  - config/power/stylesheet.yml
+  - config/points/stylesheet.yml
+  - config/boundary/stylesheet.yml
+  - config/route/stylesheet.yml
+  - config/railway/stylesheet.yml
+  - config/highway/stylesheet.yml
+  - config/building/stylesheet.yml
+  - config/waterway/stylesheet.yml
+  - config/water/stylesheet.yml
+  - config/landuse/stylesheet-overlay.yml
+  - config/amenity/stylesheet-overlay.yml
+  - config/natural/stylesheet-overlay.yml
+  - config/aerialway/stylesheet.yml
+  - config/leisure/stylesheet.yml
+  - config/natural/stylesheet.yml
+  - config/landuse/stylesheet.yml
+  - config/amenity/stylesheet.yml
+  - config/background/stylesheet.yml

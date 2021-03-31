@@ -1,5 +1,15 @@
 #!/bin/bash
 
+HOST=${POSTGRES_HOST}
+PORT=${POSTGRES_PORT}
+
+if [ -z $1 ]; then
+    config_file='config.yml'
+else
+    config_file=$1
+fi
+
 baremaps preview \
-  --database 'jdbc:postgresql://localhost:5432/osmvecto?allowMultiQueries=true&user=osmvecto&password=osmvecto' \
-  --config 'config.yaml'
+  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
+  --config "${config_file}" \
+  --log-level=DEBUG

@@ -1,0 +1,61 @@
+version: '3.8'
+
+volumes:
+  pgdata: {}
+
+networks:
+  lan_access:
+    driver: bridge
+
+services:
+  db:
+    image: postgis/postgis:13-3.1
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_PORT
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    restart: unless-stopped
+    networks:
+      - lan_access
+    ports:
+      - "${HOST_PG_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql.conf
+    command: postgres -c config_file=/etc/postgresql.conf
+
+  app:
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOST:
+      POSTGRES_DB:
+      POSTGRES_PORT:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      BAREMAPS_SITES_DOMAIN:
+      APP_PORT: ${APP_PORT:-9000}
+      OSMVECTO_PATH:
+    restart: unless-stopped
+    networks:
+      - lan_access
+    ports:
+      - "${APP_PORT:-9000}:${APP_PORT:-9000}"
+    working_dir: ${OSMVECTO_PATH}
+    volumes:
+      - ./:${OSMVECTO_PATH} # !!! dev only
+    # Run 1. only once at startup to populate the database (it takes some time)
+    # comment nack line 1. when done and uncomment line 2. to actually start
+    # the app. In production mode you may want to use 1 & 2. in one shot for
+    # convenience. You can also let them all commented and use docker-compose exec.
+    # 1. populate the db
+    #entrypoint: "./populate-db.sh"
+    # 2. preview the app
+    #entrypoint: "./start.sh"
+    # 1 & 2. single shot; populate the db and preview the app.
+    #entrypoint: "./entrypoint.sh
