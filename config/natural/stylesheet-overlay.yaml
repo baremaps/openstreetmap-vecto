@@ -12,3 +12,33 @@ styles:
     paint:
       fill-color: rgb(255, 241, 186)
       fill-antialias: true
+  - id: natural_golf_sand
+    layer: natural
+    type: fill
+    layout:
+      visibility: visible
+    filter: [
+      all,
+      [==, natural, sand]
+    ]
+    paint:
+      fill-color: rgb(247, 239, 195)
+      fill-antialias: true
+  - id: natural_tree_row
+    layer: natural
+    type: line
+    layout:
+      visibility: visible
+      line-cap: round
+      line-join: round
+    filter: [
+      all,
+      [==, natural, tree_row]
+    ]
+    paint:
+      line-width:
+        stops: [
+          [14, 3],
+          [20, 6]
+        ]
+      line-color: rgb(127, 197, 127)

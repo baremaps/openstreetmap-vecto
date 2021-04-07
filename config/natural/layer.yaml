@@ -6,7 +6,7 @@ queries:
     sql: |
       SELECT id, tags, geom 
       FROM osm_ways_z${zoom}
-      WHERE geometrytype(geom) LIKE '%POLYGON%'
+      WHERE geometrytype(geom) LIKE '%POLYGON%' 
         AND tags ? 'natural'
   - minZoom: 0
     maxZoom: 20
@@ -14,4 +14,11 @@ queries:
       SELECT id, tags, geom 
       FROM osm_relations_z${zoom}
       WHERE geometrytype(geom) LIKE '%POLYGON%'
+        AND tags ? 'natural'
+  - minZoom: 14
+    maxZoom: 20
+    sql: |
+      SELECT id, tags, geom 
+      FROM osm_ways_z${zoom}
+      WHERE geometrytype(geom) LIKE '%LINE%'
         AND tags ? 'natural'
