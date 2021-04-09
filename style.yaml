@@ -1,0 +1,1881 @@
+version: 8
+name: "OpenStreetMapVecto"
+glyphs: "https://tiles.baremaps.com/fonts/{fontstack}/{range}.pbf"
+metadata:
+  maputnik:renderer: "mbgljs"
+sprite: ""
+sources:
+  baremaps:
+    type: "vector"
+    url: "http://localhost:9001/tiles.json"
+layers:
+- id: "background"
+  type: "background"
+  source: "baremaps"
+  minzoom: 0
+  maxzoom: 24
+  layout:
+    visibility: "visible"
+  paint:
+    background-color: "rgba(232, 231, 227, 1)"
+- id: "amenity_education"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "amenity"
+  filter:
+  - "any"
+  - - "=="
+    - "amenity"
+    - "kindergarten"
+  - - "=="
+    - "amenity"
+    - "school"
+  - - "=="
+    - "amenity"
+    - "college"
+  - - "=="
+    - "amenity"
+    - "university"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(255, 255, 228)"
+    fill-antialias: true
+- id: "landuse_village_green"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "village_green"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(205, 235, 176)"
+    fill-antialias: true
+- id: "landuse_salt_pond"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "salt_pond"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 211, 223)"
+    fill-antialias: true
+- id: "landuse_religious"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "religious"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(205, 204, 201)"
+    fill-antialias: true
+- id: "landuse_recreation_ground"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "recreation_ground"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(223, 252, 226)"
+    fill-antialias: true
+- id: "landuse_railway"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "railway"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(236, 218, 233)"
+    fill-antialias: true
+- id: "landuse_quarry"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "quarry"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(195, 194, 194)"
+    fill-antialias: true
+- id: "landuse_plant_nursery"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "plant_nursery"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(174, 223, 162)"
+    fill-antialias: true
+- id: "landuse_military"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "military"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(242, 228, 221)"
+    fill-antialias: true
+- id: "landuse_landfill"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "landfill"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(182, 182, 144)"
+    fill-antialias: true
+- id: "landuse_greenhouse_horticulture"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "greenhouse_horticulture"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(237, 240, 214)"
+    fill-antialias: true
+- id: "landuse_greenfield"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "greenfield"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(242, 238, 232)"
+    fill-antialias: true
+- id: "landuse_grass"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "grass"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(207, 237, 165)"
+    fill-antialias: true
+- id: "landuse_garages"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "garages"
+  layout:
+    visibility: "none"
+  paint:
+    fill-color: "rgb(222, 221, 204)"
+    fill-antialias: true
+- id: "landuse_cemetery"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "cemetery"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 203, 175)"
+    fill-antialias: true
+- id: "landuse_brownfield"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "brownfield"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(182, 182, 144)"
+    fill-antialias: true
+- id: "landuse_basin"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "basin"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 211, 223)"
+    fill-antialias: true
+- id: "landuse_vineyard"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "vineyard"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(172, 225, 161)"
+    fill-antialias: true
+- id: "landuse_orchard"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "orchard"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(172, 225, 161)"
+    fill-antialias: true
+- id: "landuse_meadow"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "meadow"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(205, 235, 176)"
+    fill-antialias: true
+- id: "landuse_farmyard"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "farmyard"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(238, 213, 179)"
+    fill-antialias: true
+- id: "landuse_farmland"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "farmland"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(237, 240, 214)"
+    fill-antialias: true
+- id: "landuse_allotments"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "allotments"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(202, 224, 191)"
+    fill-antialias: true
+- id: "landuse_retail"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "retail"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(254, 213, 208)"
+    fill-antialias: true
+- id: "landuse_residential"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "residential"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(225, 225, 225)"
+    fill-antialias: true
+- id: "landuse_construction"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "construction"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(199, 199, 180)"
+    fill-antialias: true
+- id: "landuse_commercial"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "commercial"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(242, 216, 217)"
+    fill-antialias: true
+- id: "landuse_pedestrian"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "highway"
+    - "pedestrian"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(221, 221, 233)"
+    fill-outline-color: "rgb(184, 183, 182)"
+    fill-antialias: true
+- id: "natural_sand"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "any"
+  - - "=="
+    - "natural"
+    - "sand"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(240, 229, 196)"
+    fill-antialias: true
+- id: "natural_shingle"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "shingle"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(232, 223, 216)"
+    fill-antialias: true
+- id: "natural_scree"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "scree"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(232, 223, 216)"
+    fill-antialias: true
+- id: "natural_bare_rock"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "bare_rock"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(217, 212, 206)"
+    fill-antialias: true
+- id: "natural_grassland"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "grassland"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(207, 236, 177)"
+    fill-antialias: true
+- id: "natural_heath"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "heath"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(214, 217, 159)"
+    fill-antialias: true
+- id: "natural_scrub"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "scrub"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(201, 216, 173)"
+    fill-antialias: true
+- id: "natural_wood"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "wood"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(157, 202, 138)"
+    fill-antialias: true
+- id: "natural_glacier"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "glacier"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(221, 236, 236)"
+    fill-antialias: true
+- id: "leisure_track"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "track"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(196, 224, 203)"
+    fill-antialias: true
+- id: "leisure_swimming_pool"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "swimming_pool"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 211, 223)"
+    fill-antialias: true
+    fill-outline-color: "rgb(120, 183, 202)"
+- id: "leisure_stadium"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "stadium"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(223, 252, 226)"
+    fill-antialias: true
+- id: "leisure_sports_centre"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "sports_centre"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(223, 252, 226)"
+    fill-antialias: true
+- id: "leisure_pitch"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "any"
+  - - "=="
+    - "leisure"
+    - "pitch"
+  - - "=="
+    - "leisure"
+    - "track"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 224, 203)"
+    fill-outline-color: "rgb(147, 210, 185)"
+    fill-antialias: true
+- id: "leisure_nature_reserve"
+  type: "line"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "nature_reserve"
+  layout:
+    visibility: "visible"
+  paint:
+    line-width: 5
+    line-color: "rgba(230, 233, 222, 0.5)"
+- id: "leisure_miniature_golf"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "miniature_golf"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(181, 226, 181)"
+    fill-antialias: true
+- id: "leisure_marina"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "marina"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(181, 208, 208)"
+    fill-antialias: true
+    fill-outline-color: "rgb(164, 187, 212)"
+- id: "leisure_ice_rink"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "ice_rink"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(221, 236, 236)"
+    fill-antialias: true
+    fill-outline-color: "rgb(140, 220, 189)"
+- id: "leisure_golf_course"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "golf_course"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(181, 226, 181)"
+    fill-antialias: true
+- id: "leisure_garden"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "garden"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(205, 235, 176)"
+    fill-antialias: true
+- id: "leisure_dog_park"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "dog_park"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(224, 252, 227)"
+    fill-antialias: true
+- id: "leisure_park"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "park"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(200, 250, 204)"
+    fill-antialias: true
+- id: "leisure_playground"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "leisure"
+  filter:
+  - "all"
+  - - "=="
+    - "leisure"
+    - "playground"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(223, 252, 226)"
+    fill-outline-color: "rgb(164, 221, 169)"
+    fill-antialias: true
+- id: "aerialway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "aerialway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(177, 177, 175)"
+- id: "natural_beach"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "natural"
+  filter:
+  - "any"
+  - - "=="
+    - "natural"
+    - "beach"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(255, 241, 186)"
+    fill-antialias: true
+- id: "amenity_grave_yard"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "amenity"
+  filter:
+  - "any"
+  - - "=="
+    - "amenity"
+    - "grave_yard"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(170, 203, 175)"
+    fill-antialias: true
+- id: "amenity_parking"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "amenity"
+  filter:
+  - "any"
+  - - "=="
+    - "amenity"
+    - "parking"
+  - - "=="
+    - "amenity"
+    - "motorcycle_parking"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(238, 238, 238)"
+    fill-antialias: true
+    fill-outline-color: "rgb(222, 214, 214)"
+- id: "landuse_industrial"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "industrial"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(236, 218, 233)"
+    fill-antialias: true
+- id: "landuse_forest"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "landuse"
+  filter:
+  - "all"
+  - - "=="
+    - "landuse"
+    - "forest"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(171, 210, 156)"
+    fill-antialias: true
+- id: "water"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "water"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgba(13, 155, 212, 1)"
+    fill-antialias: true
+    fill-outline-color: "rgb(170, 211, 223)"
+- id: "waterway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "waterway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(170, 211, 223)"
+- id: "building_number"
+  type: "symbol"
+  source: "baremaps"
+  source-layer: "building"
+  layout:
+    text-allow-overlap: false
+    text-anchor: "center"
+    text-field: "{addr:housenumber}"
+    text-font:
+    - "Noto Sans Regular"
+    text-offset:
+    - 0
+    - 0
+    text-size:
+      stops:
+      - - 15
+        - 0
+      - - 16
+        - 11
+      - - 20
+        - 11
+    visibility: "visible"
+  paint:
+    text-color: "rgb(96,96,96)"
+    text-halo-color: "rgba(255,255,255,0.8)"
+    text-halo-width: 1.2
+- id: "building"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "building"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(216, 208, 201)"
+    fill-antialias: true
+    fill-outline-color: "rgb(199, 185, 174)"
+- id: "highway_bridleway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "bridleway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(68, 159, 66)"
+    line-dasharray:
+    - 2
+    - 2
+- id: "highway_path_area"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "all"
+  - - "has"
+    - "area"
+  - - "any"
+    - - "=="
+      - "highway"
+      - "footway"
+    - - "=="
+      - "highway"
+      - "path"
+    - - "=="
+      - "highway"
+      - "sidewalk"
+    - - "=="
+      - "highway"
+      - "crossing"
+    - - "=="
+      - "highway"
+      - "steps"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(221, 221, 231)"
+    fill-outline-color: "rgb(168, 181, 171)"
+    fill-antialias: true
+- id: "highway_path"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "all"
+  - - "!has"
+    - "area"
+  - - "any"
+    - - "=="
+      - "highway"
+      - "footway"
+    - - "=="
+      - "highway"
+      - "path"
+    - - "=="
+      - "highway"
+      - "sidewalk"
+    - - "=="
+      - "highway"
+      - "crossing"
+    - - "=="
+      - "highway"
+      - "steps"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(250, 132, 117)"
+    line-dasharray:
+    - 2
+    - 2
+- id: "highway_raceway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "raceway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 4
+    line-color: "rgb(254, 192, 202)"
+- id: "highway_bus_guideway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "bus_guideway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 4
+    line-color: "rgb(102, 102, 255)"
+    line-dasharray:
+    - 4
+    - 2
+- id: "highway_track"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "track"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(173, 132, 39)"
+    line-dasharray:
+    - 4
+    - 2
+    - 2
+    - 2
+- id: "highway_pedestrian_area"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "all"
+  - - "has"
+    - "area"
+  - - "=="
+    - "highway"
+    - "pedestrian"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(221, 221, 231)"
+    fill-outline-color: "rgb(183, 183, 186)"
+    fill-antialias: true
+- id: "highway_pedestrian_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "all"
+  - - "!has"
+    - "area"
+  - - "=="
+    - "highway"
+    - "pedestrian"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(184, 183, 182)"
+- id: "highway_pedestrian"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "all"
+  - - "!has"
+    - "area"
+  - - "=="
+    - "highway"
+    - "pedestrian"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(221, 221, 231)"
+- id: "highway_road_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "road"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(201, 201, 200)"
+- id: "highway_road"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "road"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(221, 221, 221)"
+- id: "highway_service_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "service"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(213, 211, 211)"
+- id: "highway_service"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "service"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(254, 254, 254)"
+- id: "highway_living_street_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "living_street"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(207, 207, 207)"
+- id: "highway_living_street"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "living_street"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(237, 237, 237)"
+- id: "highway_residential_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "residential"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(211, 207, 206)"
+- id: "highway_residential"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "residential"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(254, 254, 254)"
+- id: "highway_unclassified_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "unclassified"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(211, 207, 206)"
+- id: "highway_unclassified"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "unclassified"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(254, 254, 254)"
+- id: "highway_tertiary_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "tertiary"
+  - - "=="
+    - "highway"
+    - "tertiary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(190, 189, 188)"
+- id: "highway_tertiary"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "tertiary"
+  - - "=="
+    - "highway"
+    - "tertiary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(254, 254, 254)"
+- id: "highway_secondary_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "secondary"
+  - - "=="
+    - "highway"
+    - "secondary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(154, 166, 67)"
+- id: "highway_secondary"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "secondary"
+  - - "=="
+    - "highway"
+    - "secondary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(248, 250, 202)"
+- id: "highway_primary_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "primary"
+  - - "=="
+    - "highway"
+    - "primary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 16
+    line-color: "rgb(192, 147, 62)"
+- id: "highway_primary"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "primary"
+  - - "=="
+    - "highway"
+    - "primary_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(253, 221, 179)"
+- id: "highway_trunk_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "trunk"
+  - - "=="
+    - "highway"
+    - "trunk_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 16
+    line-color: "rgb(217, 111, 78)"
+- id: "highway_trunk"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "trunk"
+  - - "=="
+    - "highway"
+    - "trunk_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgb(250, 193, 172)"
+- id: "highway_motorway_casing"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "motorway"
+  - - "=="
+    - "highway"
+    - "motorway_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 16
+    line-color: "rgb(227, 82, 126)"
+- id: "highway_motorway"
+  type: "line"
+  source: "baremaps"
+  source-layer: "highway"
+  filter:
+  - "any"
+  - - "=="
+    - "highway"
+    - "motorway"
+  - - "=="
+    - "highway"
+    - "motorway_link"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 12
+    line-color: "rgba(92, 5, 22, 1)"
+- id: "railway_bridge"
+  type: "line"
+  source: "baremaps"
+  source-layer: "railway"
+  filter:
+  - "any"
+  - - "=="
+    - "bridge"
+    - "yes"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 24
+    line-color: "rgb(197, 197, 196)"
+- id: "railway_rail_offset"
+  type: "line"
+  source: "baremaps"
+  source-layer: "railway"
+  filter:
+  - "any"
+  - - "=="
+    - "railway"
+    - "rail"
+  - - "=="
+    - "railway"
+    - "funicular"
+  - - "=="
+    - "railway"
+    - "light_rail"
+  - - "=="
+    - "railway"
+    - "monorail"
+  - - "=="
+    - "railway"
+    - "tram"
+  - - "=="
+    - "railway"
+    - "subway"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 8
+    line-color: "rgb(112, 112, 112)"
+- id: "railway_rail"
+  type: "line"
+  source: "baremaps"
+  source-layer: "railway"
+  filter:
+  - "any"
+  - - "=="
+    - "railway"
+    - "rail"
+  - - "=="
+    - "railway"
+    - "funicular"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 6
+    line-color: "rgb(255, 255, 255)"
+    line-dasharray:
+    - 2
+    - 4
+- id: "railway_light_rail"
+  type: "line"
+  source: "baremaps"
+  source-layer: "railway"
+  filter:
+  - "any"
+  - - "=="
+    - "railway"
+    - "miniature"
+  - - "=="
+    - "railway"
+    - "narrow_gauge"
+  - - "=="
+    - "railway"
+    - "preserved"
+  - - "=="
+    - "railway"
+    - "turntable"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(102, 102, 102)"
+- id: "route_ferry"
+  type: "line"
+  source: "baremaps"
+  source-layer: "route"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(102, 102, 255)"
+    line-dasharray:
+    - 4
+    - 4
+- id: "boundary"
+  type: "line"
+  source: "baremaps"
+  source-layer: "boundary"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width: 1
+    line-color: "rgb(207, 155, 203)"
+    line-dasharray:
+    - 8
+    - 2
+    - 2
+    - 2
+- id: "power_tower"
+  type: "circle"
+  source: "baremaps"
+  source-layer: "points"
+  filter:
+  - "any"
+  - - "=="
+    - "power"
+    - "tower"
+  - - "=="
+    - "power"
+    - "pole"
+  - - "=="
+    - "power"
+    - "portal"
+  - - "=="
+    - "power"
+    - "catenary_mast"
+  layout:
+    visibility: "visible"
+  paint:
+    circle-color: "rgb(171, 171, 171)"
+    circle-opacity: 1
+    circle-radius:
+      stops:
+      - - 13
+        - 1
+      - - 14
+        - 2
+      - - 15
+        - 3
+      - - 16
+        - 4
+      - - 17
+        - 5
+      - - 18
+        - 6
+- id: "natural_tree"
+  type: "circle"
+  source: "baremaps"
+  source-layer: "points"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "tree"
+  layout:
+    visibility: "visible"
+  paint:
+    circle-color: "rgb(113, 205, 111)"
+    circle-opacity: 1
+    circle-radius:
+      stops:
+      - - 14
+        - 0.75
+      - - 15
+        - 1.5
+      - - 16
+        - 3
+      - - 17
+        - 6
+      - - 18
+        - 12
+- id: "natural_trunk"
+  type: "circle"
+  source: "baremaps"
+  source-layer: "points"
+  filter:
+  - "all"
+  - - "=="
+    - "natural"
+    - "tree"
+  layout:
+    visibility: "visible"
+  paint:
+    circle-color: "rgb(129, 94, 39)"
+    circle-opacity: 1
+    circle-radius:
+      stops:
+      - - 14
+        - 0.25
+      - - 15
+        - 0.5
+      - - 16
+        - 1
+      - - 17
+        - 2
+      - - 18
+        - 4
+- id: "building_number_node"
+  type: "symbol"
+  source: "baremaps"
+  source-layer: "points"
+  layout:
+    text-allow-overlap: false
+    text-anchor: "center"
+    text-field: "{addr:housenumber}"
+    text-font:
+    - "Noto Sans Regular"
+    text-offset:
+    - 0
+    - 0
+    text-size:
+      stops:
+      - - 15
+        - 0
+      - - 16
+        - 11
+      - - 20
+        - 11
+    visibility: "visible"
+  paint:
+    text-color: "rgb(96,96,96)"
+    text-halo-color: "rgba(255,255,255,0.8)"
+    text-halo-width: 1.2
+- id: "power_station"
+  type: "fill"
+  source: "baremaps"
+  source-layer: "power"
+  filter:
+  - "any"
+  - - "=="
+    - "power"
+    - "plant"
+  - - "=="
+    - "power"
+    - "substation"
+  layout:
+    visibility: "visible"
+  paint:
+    fill-color: "rgb(226, 203, 222)"
+    fill-antialias: true
+    fill-outline-color: "rgb(171, 171, 171)"
+- id: "power_cable_line"
+  type: "line"
+  source: "baremaps"
+  source-layer: "power"
+  filter:
+  - "any"
+  - - "=="
+    - "power"
+    - "cable"
+  - - "=="
+    - "power"
+    - "line"
+  layout:
+    visibility: "visible"
+    line-cap: "round"
+    line-join: "round"
+  paint:
+    line-width:
+      base: 1.2
+      stops:
+      - - 4
+        - 0
+      - - 20
+        - 4
+    line-color: "rgb(171, 171, 171)"
+reload: false
