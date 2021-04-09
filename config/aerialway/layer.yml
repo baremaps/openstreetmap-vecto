@@ -1,9 +1,0 @@
-id: aerialway
-type: linestring
-queries:
-  - minZoom: 14
-    maxZoom: 20
-    sql: |
-      SELECT id, tags, geom
-      FROM osm_ways_z${zoom}
-      WHERE tags ? 'aerialway'
