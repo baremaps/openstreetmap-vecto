@@ -1,0 +1,236 @@
+{
+  "tilejson": "2.2.0",
+  "center": [
+    6.5743,
+    46.5189,
+    14.0
+  ],
+  "bounds": [
+    5.8358,
+    45.6591,
+    10.9794,
+    47.87
+  ],
+  "minZoom": 6.0,
+  "maxZoom": 14.0,
+  "tiles": [
+    "http://localhost:9001/tiles/{z}/{x}/{y}.mvt"
+  ],
+  "vector_layers": [
+    {
+      "id": "aerialway",
+      "queries": [
+        {
+          "minZoom": 14,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom\nFROM osm_ways_z${zoom}\nWHERE tags ? 'aerialway'\n"
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'power' IN ('cable', 'line', 'minor_line', 'plant', 'substation')\n"
+        }
+      ]
+    },
+    {
+      "id": "amenity",
+      "queries": [
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'amenity'\n"
+        }
+      ]
+    },
+    {
+      "id": "boundary",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom} \nWHERE tags ? 'boundary'\n"
+        },
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom} \nWHERE tags ? 'boundary'\n"
+        }
+      ]
+    },
+    {
+      "id": "building",
+      "queries": [
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags ? 'building'\n"
+        },
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom} \nWHERE tags ? 'building'\n"
+        }
+      ]
+    },
+    {
+      "id": "highway",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 8,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'highway' IN (\n'motorway', 'motorway_link', \n'trunk', 'trunk_link', \n'primary', 'primary_link')\n"
+        },
+        {
+          "minZoom": 8,
+          "maxZoom": 11,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'highway' IN (\n'motorway', 'motorway_link', \n'trunk', 'trunk_link', \n'primary', 'primary_link', \n'secondary', 'secondary_link',\n'tertiary', 'tertiary_link')\n"
+        },
+        {
+          "minZoom": 11,
+          "maxZoom": 13,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'highway' IN (\n'motorway', 'motorway_link', \n'trunk', 'trunk_link', \n'primary', 'primary_link', \n'secondary', 'secondary_link', \n'tertiary', 'tertiary_link',\n'unclassified', \n'residential')\n"
+        },
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags ? 'highway'\n"
+        },
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom}\nWHERE tags ? 'highway'\n"
+        }
+      ]
+    },
+    {
+      "id": "natural",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'natural'\n"
+        },
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'natural'\n"
+        }
+      ]
+    },
+    {
+      "id": "leisure",
+      "queries": [
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'leisure'\n"
+        },
+        {
+          "minZoom": 13,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'leisure'\n"
+        }
+      ]
+    },
+    {
+      "id": "landuse",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 14,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'landuse'\n"
+        },
+        {
+          "minZoom": 0,
+          "maxZoom": 14,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'landuse'\n"
+        },
+        {
+          "minZoom": 14,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'landuse'\n"
+        },
+        {
+          "minZoom": 14,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom}\nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND tags ? 'landuse'\n"
+        }
+      ]
+    },
+    {
+      "id": "points",
+      "queries": [
+        {
+          "minZoom": 14,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_nodes\nWHERE geometrytype(geom) LIKE '%POINT%'\n"
+        }
+      ]
+    },
+    {
+      "id": "railway",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 12,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'railway' IN ('rail', 'subway', 'tram', 'narrow_gauge', 'monorail', 'light_rail')\n  AND NOT tags ? 'service'\n"
+        },
+        {
+          "minZoom": 12,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags ? 'railway'\n"
+        }
+      ]
+    },
+    {
+      "id": "route",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE tags -> 'route' IN ('ferry')\n"
+        }
+      ]
+    },
+    {
+      "id": "waterway",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 10,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%LINESTRING%'\n  AND tags -> 'waterway' IN ('river')\n"
+        },
+        {
+          "minZoom": 10,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom}\nWHERE geometrytype(geom) LIKE '%LINESTRING%'\n  AND tags ? 'waterway'\n"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "queries": [
+        {
+          "minZoom": 0,
+          "maxZoom": 14,
+          "sql": "SELECT ogc_fid, hstore(''), geometry\nFROM osm_water_polygons\n"
+        },
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_ways_z${zoom} \nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))\n"
+        },
+        {
+          "minZoom": 0,
+          "maxZoom": 20,
+          "sql": "SELECT id, tags, geom \nFROM osm_relations_z${zoom} \nWHERE geometrytype(geom) LIKE '%POLYGON%'\n  AND (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))\n"
+        }
+      ]
+    }
+  ]
+}

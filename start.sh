@@ -4,12 +4,19 @@ HOST=${POSTGRES_HOST}
 PORT=${POSTGRES_PORT}
 
 if [ -z $1 ]; then
-    config_file='config.yml'
+    tileset_file="tileset.json"
 else
-    config_file=$1
+    tileset_file=$1
 fi
 
-baremaps preview \
-  --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
-  --config "${config_file}" \
-  --log-level=DEBUG
+if [ -z $2 ]; then
+    style_file="style.json"
+else
+    style_file=$2
+fi
+
+baremaps edit \
+  --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
+  --tileset $tileset_file \
+  --style $style_file \
+  --port $APP_PORT
