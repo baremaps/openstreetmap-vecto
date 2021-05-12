@@ -20,7 +20,7 @@ function import_naturalearth() {
     do
       echo "Processing ${t}";
       ogrinfo natural_earth_vector/packages/natural_earth_vector.sqlite \
-        -sql "UPDATE ${t} SET geometry = ST_MakeValid(geometry)";
+        -sql "ALTER TABLE ${t} ADD COLUMN fixed_geometry geometry(4326); UPDATE ${t} SET fixed_geometry = ST_MakeValid(geometry)";
     done
     ogr2ogr \
         -progress \
