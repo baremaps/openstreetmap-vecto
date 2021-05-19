@@ -36,8 +36,8 @@ function import_naturalearth() {
         -overwrite \
         "natural_earth_vector/packages/natural_earth_vector.sqlite"
     baremaps execute \
-        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
-        --file ${OSMVECTO_PATH}'/queries/ne_create_indexes.sql'
+        --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
+        --file "${OSMVECTO_PATH}/queries/ne_create_indexes.sql"
 }
 
 function import_osm_water_polygons() {
@@ -86,20 +86,20 @@ function import_openstreetmap() {
     echo "Import openstreetmap"
     wget -q -N "${osm_url}"
     baremaps execute \
-        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
-        --file ${OSMVECTO_PATH}'/queries/osm_create_extensions.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_drop_views.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_drop_tables.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_create_tables.sql'
+        --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
+        --file "${OSMVECTO_PATH}/queries/osm_create_extensions.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_drop_views.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_drop_tables.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_create_tables.sql"
     baremaps import \
-        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?user='${POSTGRES_PASSWORD}'&password='${POSTGRES_PASSWORD} \
+        --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_PASSWORD}&password=${POSTGRES_PASSWORD}" \
         --file "${osm_file}"
     baremaps execute \
-        --database 'jdbc:postgresql://'${HOST}':'${PORT}'/'${POSTGRES_DB}'?&user='${POSTGRES_USER}'&password='${POSTGRES_PASSWORD} \
-        --file ${OSMVECTO_PATH}'/queries/osm_create_gin_indexes.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_create_views.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_prepare_indexes_comp.sql' \
-        --file ${OSMVECTO_PATH}'/queries/osm_create_gist_indexes.sql'
+        --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
+        --file "${OSMVECTO_PATH}/queries/osm_create_gin_indexes.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_create_views.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_prepare_indexes_comp.sql" \
+        --file "${OSMVECTO_PATH}/queries/osm_create_gist_indexes.sql"
 }
 
 function main {

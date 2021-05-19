@@ -31,19 +31,19 @@ The docker-compose.yml contains two services `db` and `app`. The former holding 
 
 ### Useful commands
 
-Command                                             | Description
-:---------------------------------------            | :--------------------------------------------------
-`docker-compose up --build`                         | Run the application in the foreground.
-`docker-compose up --build --detach`                | Run the application in the background.
-`docker-compose stop`                               | Stop all containers.
-`docker-compose down`                               | Stop and remove all containers (but keep the data).
-`docker-compose down --volumes`                     | Stop and permanently delete all containers and data.
-`docker-compose down --volumes --remove-orphans`    | Same as previous and remove all dangling containers not defined in the Compose file.
-`docker-compose exec app <command>`                 | Execute a command inside the running `app` container.
-`docker-compose exec app bash -c ./populate-db.sh`  | Execute the populate-db.sh script to populate the database (inside the container).
-`docker-compose exec app bash -c ./start.sh`        | Start the web application (the db must be populated before running that command).
-`docker-compose ps`                                 | List running containers.
-`docker-compose logs --tail 20 -f`                  | Print all containers logs to stdout (usefull when they were launched in the background).
+Command                                                     | Description
+:---------------------------------------                    | :--------------------------------------------------
+`docker-compose up --build`                                 | Run the application in the foreground.
+`docker-compose up --build --detach`                        | Run the application in the background.
+`docker-compose stop`                                       | Stop all containers.
+`docker-compose down`                                       | Stop and remove all containers (but keep the data).
+`docker-compose down --volumes`                             | Stop and permanently delete all containers and data.
+`docker-compose down --volumes --remove-orphans`            | Same as previous and remove all dangling containers not defined in the Compose file.
+`docker-compose exec app <command>`                         | Execute a command inside the running `app` container.
+`docker-compose exec app bash -c ./import.sh`               | Execute the import.sh script to populate the database (inside the container).
+`docker-compose exec app bash -c ./start.sh`                | Start the web application (the db must be populated before running that command).
+`docker-compose ps`                                         | List running containers.
+`docker-compose logs --tail 20 -f`                          | Print all containers logs to stdout (usefull when they were launched in the background).
 
 
 Your browser ([http://localhost:9000/](http://localhost:9000/)) should now preview OpenStreetMap Vecto.     
@@ -55,7 +55,7 @@ Please, notice than in production, you preferably want to run the global scripts
 
 ```
 docker-compose up --build --detach   
-docker-compose exec --detach app bash -c populate-db    
+docker-compose exec --detach app bash -c import.sh    
 docker-compose exec --detach app bash -c start.sh ['your-config.yml']
 ```
 
