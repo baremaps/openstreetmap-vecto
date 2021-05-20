@@ -2,8 +2,8 @@
   "version" : 8,
   "name" : "OpenStreetMapVecto",
   "center" : [
-    6.5743,
-    46.5189
+    9.5554,
+    47.166
   ],
   "glyphs" : "https://tiles.baremaps.com/fonts/{fontstack}/{range}.pbf",
   "metadata" : {
@@ -13,7 +13,7 @@
   "zoom" : 14.0,
   "sources" : {
     "baremaps" : {
-      "url" : "http://localhost:9001/tiles.json",
+      "url" : "http://localhost:9090/tiles.json",
       "type" : "vector"
     }
   },
@@ -825,7 +825,7 @@
       }
     },
     {
-      "id" : "leisure_track",
+      "id" : "leisure_stadium",
       "type" : "fill",
       "source" : "baremaps",
       "source-layer" : "leisure",
@@ -834,14 +834,14 @@
         [
           "==",
           "leisure",
-          "track"
+          "stadium"
         ]
       ],
       "layout" : {
         "visibility" : "visible"
       },
       "paint" : {
-        "fill-color" : "rgb(196, 224, 203)",
+        "fill-color" : "rgb(223, 252, 226)",
         "fill-antialias" : true
       }
     },
@@ -868,7 +868,7 @@
       }
     },
     {
-      "id" : "leisure_stadium",
+      "id" : "leisure_track",
       "type" : "fill",
       "source" : "baremaps",
       "source-layer" : "leisure",
@@ -877,14 +877,14 @@
         [
           "==",
           "leisure",
-          "stadium"
+          "track"
         ]
       ],
       "layout" : {
         "visibility" : "visible"
       },
       "paint" : {
-        "fill-color" : "rgb(223, 252, 226)",
+        "fill-color" : "rgb(196, 224, 203)",
         "fill-antialias" : true
       }
     },
@@ -2878,6 +2878,11 @@
           "==",
           "power",
           "line"
+        ],
+        [
+          "==",
+          "power",
+          "minor_line"
         ]
       ],
       "layout" : {
@@ -2902,6 +2907,5 @@
         "line-color" : "rgb(171, 171, 171)"
       }
     }
-  ],
-  "reload" : false
+  ]
 }

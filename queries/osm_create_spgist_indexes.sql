@@ -1,3 +1,0 @@
-CREATE INDEX CONCURRENTLY IF NOT EXISTS osm_nodes_gist ON osm_nodes USING SPGIST (geom);
-CREATE INDEX CONCURRENTLY IF NOT EXISTS osm_ways_gist ON osm_ways USING SPGIST (geom);
-CREATE INDEX CONCURRENTLY IF NOT EXISTS osm_relations_gist ON osm_relations USING SPGIST (geom);

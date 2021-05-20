@@ -16,7 +16,7 @@ else
 fi
 
 baremaps serve \
-  --database "jdbc:postgresql://${HOST}:${PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
+  --database "jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \
   --tileset $tileset_file \
   --style $style_file \
   --port $APP_PORT
