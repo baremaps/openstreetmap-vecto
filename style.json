@@ -13,8 +13,8 @@
   "zoom" : 14.0,
   "sources" : {
     "baremaps" : {
-      "url" : "http://localhost:9090/tiles.json",
-      "type" : "vector"
+      "type" : "vector",
+      "url" : "http://localhost:9090/tiles.json"
     }
   },
   "layers" : [

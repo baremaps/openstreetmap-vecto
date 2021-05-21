@@ -78,7 +78,7 @@ Simply put, it adds in the ability to describe the `vector_tiles` and their cont
         {
           "minZoom": 14,
           "maxZoom": 20,
-          "sql": "SELECT id, tags, geom\nFROM osm_ways_z${zoom}\nWHERE tags ? 'aerialway'\n"
+          "sql": "SELECT id, tags, geom FROM osm_ways_z${zoom} WHERE tags ? 'aerialway'"
         }
       ]
     }
