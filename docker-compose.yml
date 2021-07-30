@@ -3,10 +3,6 @@ version: '3.8'
 volumes:
   pgdata: {}
 
-networks:
-  lan_access:
-    driver: bridge
-
 services:
   db:
     image: postgis/postgis:13-3.1
@@ -16,23 +12,19 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
     restart: unless-stopped
-    networks:
-      - lan_access
     ports:
       - "${HOST_PG_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./postgresql.conf:/etc/postgresql.conf
     command: postgres -c config_file=/etc/postgresql.conf
-    shm_size: 1g
+    shm_size: ${PG_SHM_SIZE:-1g}
 
   app:
     tty: true
     build:
       context: .
       dockerfile: Dockerfile.app
-    depends_on:
-      - db
     environment:
       POSTGRES_HOST:
       POSTGRES_DB:
@@ -43,8 +35,6 @@ services:
       APP_PORT: ${APP_PORT:-9000}
       OSMVECTO_PATH:
     restart: unless-stopped
-    networks:
-      - lan_access
     ports:
       - "${APP_PORT:-9000}:${APP_PORT:-9000}"
     working_dir: ${OSMVECTO_PATH}
@@ -55,8 +45,8 @@ services:
     # the app. In production mode you may want to use 1 & 2. in one shot for
     # convenience. You can also let them all commented and use docker-compose exec.
     # 1. populate the db
-    #entrypoint: "./populate-db.sh"
+    #entrypoint: "scripts/import.sh"
     # 2. preview the app
-    #entrypoint: "./start.sh"
+    #entrypoint: "scripts/serve.sh"
     # 1 & 2. single shot; populate the db and preview the app.
-    #entrypoint: "./entrypoint.sh
+    #entrypoint: "./entrypoint.sh"
