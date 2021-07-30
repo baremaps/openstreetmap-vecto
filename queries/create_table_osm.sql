@@ -1,11 +1,12 @@
 CREATE TABLE IF NOT EXISTS osm_headers
 (
+    replication_sequence_number bigint PRIMARY KEY,
     replication_timestamp       timestamp without time zone,
-    replication_sequence_number bigint,
     replication_url             text,
     source                      text,
     writing_program             text
 );
+
 CREATE TABLE osm_nodes
 (
     id        bigint PRIMARY KEY,
@@ -18,6 +19,7 @@ CREATE TABLE osm_nodes
     lat       float,
     geom      geometry(point)
 );
+
 CREATE TABLE osm_ways
 (
     id        bigint PRIMARY KEY,
@@ -29,6 +31,7 @@ CREATE TABLE osm_ways
     nodes     bigint[],
     geom      geometry
 );
+
 CREATE TABLE osm_relations
 (
     id           bigint PRIMARY KEY,

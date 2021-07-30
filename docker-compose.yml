@@ -24,6 +24,7 @@ services:
       - pgdata:/var/lib/postgresql/data
       - ./postgresql.conf:/etc/postgresql.conf
     command: postgres -c config_file=/etc/postgresql.conf
+    shm_size: 1g
 
   app:
     tty: true
