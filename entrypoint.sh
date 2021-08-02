@@ -2,4 +2,4 @@
 
 scripts/import.sh
 
-scripts/start.sh
+scripts/serve.sh

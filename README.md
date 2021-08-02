@@ -14,21 +14,30 @@ It is used to generate vector tiles and to produce a Mapbox style inspired by [O
 
 ## Getting started
 
-In order to experiment with OpenStreetMap Vecto, you first need to clone the current repository and to edit the `.env` file according to your local environment.
+In order to experiment with OpenStreetMap Vecto, you first need to clone the current repository
 
 ```
 git clone git@github.com:baremaps/openstreetmap-vecto.git
 cd openstreetmap-vecto/
-cp env.sample .env
 ```
 
 Then, you can start the docker images, import the data, and edit the map with the following commands.
 
 ```
-docker-compose up --build --detach   
-docker-compose exec app bash -c scripts/import.sh    
-docker-compose exec app bash -c scripts/edit.sh
+docker-compose up --build -d
 ```
+
+This default environment will:
+
+* Import OSM data of the Liechtenstein
+* Import natural earth data (https://www.naturalearthdata.com/downloads/)
+* import osm water polygon
+* import osm simplified water polygons.
+
+You can override this data loaded by modifying the `scripts/import.sh` file.
+
+To override settings. Copy the `env.sample` file to `.env` and modify env var.
+
 
 ## Docker compose setup
 
