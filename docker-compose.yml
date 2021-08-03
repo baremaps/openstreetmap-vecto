@@ -20,7 +20,10 @@ services:
     shm_size: ${PG_SHM_SIZE:-1g}
 
   app:
-    build: .
+    build: 
+      context: .
+      args:
+        - BAREMAPS_VERSION=${BAREMAPS_VERSION:-latest}
     environment:
       - POSTGRES_DB=${POSTGRES_DB:-osmvecto}
       - POSTGRES_PORT=${POSTGRES_PORT:-5432}
