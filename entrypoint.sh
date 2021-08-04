@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./import.sh "https://download.geofabrik.de/europe/switzerland-latest.osm.pbf"
+scripts/import.sh
 
-./start.sh
+scripts/serve.sh

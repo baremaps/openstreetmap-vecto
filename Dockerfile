@@ -1,23 +1,23 @@
-FROM baremaps/postgis:latest
+FROM osgeo/gdal:ubuntu-small-3.3.1
 
-# Configure the database
-ENV POSTGRES_DB=osmvecto
-ENV POSTGRES_USER=osmvecto
-ENV POSTGRES_PASSWORD=osmvecto
-ENV OSMVECTO_PATH=/osmvecto
+ARG BAREMAPS_VERSION=latest
 
 # Install utilities
 RUN apt-get update \
-    && apt-get install -y wget unzip openjdk-8-jdk gdal-bin 
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y --no-install-recommends wget unzip openjdk-11-jdk postgresql-client \
+       wait-for-it sqlite3 \
+    && apt-get -y autoremove --purge && apt-get -y autoclean && ldconfig
 
 # Install baremaps
-RUN wget https://github.com/baremaps/baremaps/releases/latest/download/baremaps.zip \
-    && unzip baremaps.zip \
+RUN wget -q https://github.com/baremaps/baremaps/releases/${BAREMAPS_VERSION}/download/baremaps.zip \
+    && unzip -q baremaps.zip \
     && rm baremaps.zip
 
 ENV PATH="/baremaps/bin/:${PATH}"
 
-# Add osmvecto
-ADD . ${OSMVECTO_PATH}
+COPY ./*.sh ${OSMVECTO_PATH}/
 
-WORKDIR ${OSMVECTO_PATH}
+# Add osmvecto, uncomment for production
+#COPY . ${OSMVECTO_PATH}
+#WORKDIR ${OSMVECTO_PATH}

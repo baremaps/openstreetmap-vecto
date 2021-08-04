@@ -3,60 +3,48 @@ version: '3.8'
 volumes:
   pgdata: {}
 
-networks:
-  lan_access:
-    driver: bridge
-
 services:
   db:
     image: postgis/postgis:13-3.1
     environment:
-      - POSTGRES_DB
-      - POSTGRES_PORT
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
+      - POSTGRES_DB=${POSTGRES_DB:-osmvecto}
+      - POSTGRES_PORT=${POSTGRES_PORT:-5432}
+      - POSTGRES_USER=${POSTGRES_USER:-osmvecto}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-osmvecto}
     restart: unless-stopped
-    networks:
-      - lan_access
     ports:
       - "${HOST_PG_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./postgresql.conf:/etc/postgresql.conf
-    command: postgres -c config_file=/etc/postgresql.conf
-    shm_size: 1g
+    command: -c fsync=off
+    shm_size: ${PG_SHM_SIZE:-1g}
 
   app:
-    tty: true
-    build:
+    build: 
       context: .
-      dockerfile: Dockerfile.app
-    depends_on:
-      - db
+      args:
+        - BAREMAPS_VERSION=${BAREMAPS_VERSION:-latest}
     environment:
-      POSTGRES_HOST:
-      POSTGRES_DB:
-      POSTGRES_PORT:
-      POSTGRES_USER:
-      POSTGRES_PASSWORD:
-      BAREMAPS_SITES_DOMAIN:
-      APP_PORT: ${APP_PORT:-9000}
-      OSMVECTO_PATH:
-    restart: unless-stopped
-    networks:
-      - lan_access
+      - POSTGRES_DB=${POSTGRES_DB:-osmvecto}
+      - POSTGRES_PORT=${POSTGRES_PORT:-5432}
+      - POSTGRES_USER=${POSTGRES_USER:-osmvecto}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-osmvecto}
+      - POSTGRES_HOST=${POSTGRES_HOST:-db}
+      - BAREMAPS_SITES_DOMAIN=${BAREMAPS_SITES_DOMAIN:-localhost}
+      - APP_PORT=${APP_PORT:-9090}
+      - OSMVECTO_PATH=${OSMVECTO_PATH:-/osmvecto}
     ports:
-      - "${APP_PORT:-9000}:${APP_PORT:-9000}"
-    working_dir: ${OSMVECTO_PATH}
+      - "${APP_PORT:-9090}:${APP_PORT:-9090}"
+    working_dir: ${OSMVECTO_PATH:-/osmvecto}
     volumes:
-      - ./:${OSMVECTO_PATH} # !!! dev only
+      - ./:${OSMVECTO_PATH:-/osmvecto}
     # Run 1. only once at startup to populate the database (it takes some time)
     # comment nack line 1. when done and uncomment line 2. to actually start
     # the app. In production mode you may want to use 1 & 2. in one shot for
     # convenience. You can also let them all commented and use docker-compose exec.
     # 1. populate the db
-    #entrypoint: "./populate-db.sh"
+    #entrypoint: "scripts/import.sh"
     # 2. preview the app
-    #entrypoint: "./start.sh"
+    #entrypoint: "scripts/serve.sh"
     # 1 & 2. single shot; populate the db and preview the app.
-    #entrypoint: "./entrypoint.sh
+    entrypoint: "./entrypoint.sh"
