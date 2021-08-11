@@ -5,8 +5,8 @@
     46.5189,
     14.0
   ],
-  "minZoom": 1.0,
-  "maxZoom": 14.0,
+  "minzoom": 1.0,
+  "maxzoom": 14.0,
   "tiles": [
     "http://localhost:9090/tiles/{z}/{x}/{y}.mvt"
   ],
@@ -15,18 +15,18 @@
       "id": "points",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 11,
+          "minzoom": 8,
+          "maxzoom": 11,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != hstore('geometry', 'point') AND tags -> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town')"
         },
         {
-          "minZoom": 11,
-          "maxZoom": 14,
+          "minzoom": 11,
+          "maxzoom": 14,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != hstore('geometry', 'point') AND tags ? 'place'"
         },
         {
-          "minZoom": 14,
-          "maxZoom": 20,
+          "minzoom": 14,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != hstore('geometry', 'point')"
         }
       ]
@@ -35,13 +35,13 @@
       "id": "aerialway",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 12,
+          "minzoom": 8,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['aerialway']), geom FROM osm_ways_z$zoom WHERE tags ? 'aerialway'"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'aerialway'"
         }
       ]
@@ -50,18 +50,18 @@
       "id": "power",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, slice(tags, ARRAY['power']), geom FROM osm_ways_z$zoom WHERE tags -> 'power' IN ('cable', 'line')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['power']), geom FROM osm_ways_z$zoom WHERE tags -> 'power' IN ('cable', 'line', 'minor_line')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'power' IN ('cable', 'line', 'minor_line', 'plant', 'substation')"
         }
       ]
@@ -70,8 +70,8 @@
       "id": "amenity",
       "queries": [
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'amenity'"
         }
       ]
@@ -80,18 +80,18 @@
       "id": "boundary",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, slice(tags, ARRAY['boundary']), geom FROM osm_ways_z$zoom WHERE tags -> 'boundary' IN ('administrative') AND tags -> 'admin_level' IN ('1', '2')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['boundary']), geom FROM osm_ways_z$zoom WHERE tags -> 'boundary' IN ('administrative') AND tags -> 'admin_level' IN ('1', '2', '3', '4', '5', '6')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'boundary'"
         }
       ]
@@ -100,13 +100,13 @@
       "id": "building",
       "queries": [
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'building'"
         },
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'building'"
         }
       ]
@@ -115,28 +115,28 @@
       "id": "highway",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, slice(tags, ARRAY['highway']), geom FROM osm_ways_z$zoom WHERE tags -> 'highway' IN ( 'motorway', 'motorway_link',  'trunk',  'primary', 'secondary')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['highway']), geom FROM osm_ways_z$zoom WHERE tags -> 'highway' IN ( 'motorway', 'motorway_link', 'trunk', 'trunk_link',  'primary', 'secondary', 'tertiary')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 13,
+          "minzoom": 12,
+          "maxzoom": 13,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link',  'tertiary', 'tertiary_link', 'unclassified', 'residential')"
         },
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'highway'"
         },
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'highway'"
         }
       ]
@@ -145,23 +145,23 @@
       "id": "natural",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 12,
+          "minzoom": 8,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['natural']), geom FROM osm_ways_z$zoom WHERE tags -> 'natural' IN ('wood', 'scrub', 'heath', 'grassland', 'bare_rock', 'scree', 'shingle', 'sand', 'mud', 'water', 'wetland', 'glacier', 'beach')"
         },
         {
-          "minZoom": 8,
-          "maxZoom": 12,
+          "minzoom": 8,
+          "maxzoom": 12,
           "sql": "SELECT id, slice(tags, ARRAY['natural']), geom FROM osm_relations_z$zoom WHERE tags -> 'natural' IN ('wood', 'scrub', 'heath', 'grassland', 'bare_rock', 'scree', 'shingle', 'sand', 'mud', 'water', 'wetland', 'glacier', 'beach')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'natural'"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'natural'"
         }
       ]
@@ -170,13 +170,13 @@
       "id": "leisure",
       "queries": [
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'leisure'"
         },
         {
-          "minZoom": 13,
-          "maxZoom": 20,
+          "minzoom": 13,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'leisure'"
         }
       ]
@@ -185,33 +185,33 @@
       "id": "landuse",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'landuse' IN ('farmland', 'forest')"
         },
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags -> 'landuse' IN ('farmland', 'forest')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags -> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'landuse'"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'landuse'"
         }
       ]
@@ -220,18 +220,18 @@
       "id": "railway",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'railway' IN ('rail') AND NOT tags ? 'service'"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'railway' AND NOT tags ? 'service'"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'railway'"
         }
       ]
@@ -240,13 +240,13 @@
       "id": "route",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 12,
+          "minzoom": 8,
+          "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'route'"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'route'"
         }
       ]
@@ -255,18 +255,18 @@
       "id": "waterway",
       "queries": [
         {
-          "minZoom": 8,
-          "maxZoom": 10,
+          "minzoom": 8,
+          "maxzoom": 10,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'waterway' IN ('river')"
         },
         {
-          "minZoom": 10,
-          "maxZoom": 12,
+          "minzoom": 10,
+          "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags -> 'waterway' IN ('river', 'stream')"
         },
         {
-          "minZoom": 12,
-          "maxZoom": 20,
+          "minzoom": 12,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'waterway'"
         }
       ]
@@ -275,23 +275,23 @@
       "id": "water",
       "queries": [
         {
-          "minZoom": 0,
-          "maxZoom": 8,
+          "minzoom": 0,
+          "maxzoom": 8,
           "sql": "SELECT ogc_fid, hstore(''), geometry FROM osm_simplified_water_polygons"
         },
         {
-          "minZoom": 0,
-          "maxZoom": 8,
+          "minzoom": 0,
+          "maxzoom": 8,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags -> 'water' = 'lake'"
         },
         {
-          "minZoom": 8,
-          "maxZoom": 20,
+          "minzoom": 8,
+          "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE (tags -> 'natural' = 'water' OR tags -> 'waterway' IN ('riverbank', 'dock'))"
         },
         {
-          "minZoom": 8,
-          "maxZoom": 20,
+          "minzoom": 8,
+          "maxzoom": 20,
           "sql": "SELECT ogc_fid, hstore(''), geometry FROM osm_water_polygons"
         }
       ]
