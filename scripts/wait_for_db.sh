@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 function wait_for_db() {
     until wait-for-it $POSTGRES_HOST:${POSTGRES_PORT} > /dev/null 2>&1; do

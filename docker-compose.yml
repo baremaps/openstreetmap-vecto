@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 volumes:
   pgdata: {}
@@ -7,13 +7,13 @@ services:
   db:
     image: postgis/postgis:13-3.1
     environment:
-      - POSTGRES_DB=${POSTGRES_DB:-osmvecto}
+      - POSTGRES_DB=${POSTGRES_DB:-baremaps}
       - POSTGRES_PORT=${POSTGRES_PORT:-5432}
-      - POSTGRES_USER=${POSTGRES_USER:-osmvecto}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-osmvecto}
+      - POSTGRES_USER=${POSTGRES_USER:-baremaps}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-baremaps}
     restart: unless-stopped
-    ports:
-      - "${HOST_PG_PORT:-5432}:5432"
+    # ports:
+    #   - "${HOST_PG_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     command: -c fsync=off
@@ -26,16 +26,16 @@ services:
         - BRANCH_TO_CHECKOUT=tilesets
         - BAREMAPS_VERSION=${BAREMAPS_VERSION:-latest}
     environment:
-      - POSTGRES_DB=${POSTGRES_DB:-osmvecto}
+      - POSTGRES_DB=${POSTGRES_DB:-baremaps}
       - POSTGRES_PORT=${POSTGRES_PORT:-5432}
-      - POSTGRES_USER=${POSTGRES_USER:-osmvecto}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-osmvecto}
+      - POSTGRES_USER=${POSTGRES_USER:-baremaps}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-baremaps}
       - POSTGRES_HOST=${POSTGRES_HOST:-db}
       - BAREMAPS_SITES_DOMAIN=${BAREMAPS_SITES_DOMAIN:-localhost}
-      - APP_PORT=${APP_PORT:-9090}
+      - APP_PORT=${APP_PORT:-8080}
       - OSMVECTO_PATH=${OSMVECTO_PATH:-/osmvecto}
     ports:
-      - "${APP_PORT:-9090}:${APP_PORT:-9090}"
+      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
     working_dir: ${OSMVECTO_PATH:-/osmvecto}
     volumes:
       - ./:${OSMVECTO_PATH:-/osmvecto}
