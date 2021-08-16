@@ -1,11 +1,11 @@
 CREATE TABLE IF NOT EXISTS styles
 (
     id       uuid PRIMARY KEY,
-    style    jsonb,
+    style    jsonb
 );
 
 CREATE TABLE IF NOT EXISTS tilesets
 (
     id         uuid PRIMARY KEY,
-    tileset    jsonb,
+    tileset    jsonb
 );
