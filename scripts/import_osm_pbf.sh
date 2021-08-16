@@ -1,7 +1,7 @@
 #!/bin/bash
 
 is_data_already_present() {
-    res=$(PGPASSWORD=$POSTGRES_PASSWORD psql -t -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTGRES_DB -c "SELECT count(*)<>1 FROM osm_ways")
+    res=$(PGPASSWORD=$POSTGRES_PASSWORD psql -t -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTGRES_DB -c "SELECT count(*)<>1 FROM osm_ways" 2>/dev/null)
     if [[ res -eq "t" ]]; then
         return 1
     else
