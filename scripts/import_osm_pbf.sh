@@ -1,14 +1,5 @@
 #!/bin/bash
-
-is_data_already_present() {
-    res=$(PGPASSWORD=$POSTGRES_PASSWORD psql -t -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTGRES_DB -c "SELECT count(*)<>1 FROM osm_ways" 2>/dev/null)
-    if [[ res -eq "t" ]]; then
-        return 1
-    else
-        return 0
-    fi
-}
-
+source $(dirname $0)/check_data_already_exists.sh
 
 import_osm_pbf() {
     echo "Import OpenStreetMap PBF"
@@ -19,7 +10,7 @@ import_osm_pbf() {
     fi
     osm_file=$(basename "${osm_url}")
     mkdir -p ${OSMVECTO_PATH}/data
-    if [[ ! is_data_already_present ]]; then
+    if (( !$(is_data_already_present "osm_ways") )); then
         wget -N -P "${OSMVECTO_PATH}/data/" "${osm_url}"
         baremaps execute \
             --database "jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?user=${POSTGRES_USER}&password=${POSTGRES_PASSWORD}" \

@@ -1,18 +1,10 @@
 #!/bin/bash
-
-is_data_already_present() {
-    res=$(PGPASSWORD=$POSTGRES_PASSWORD psql -t -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTGRES_DB -c "SELECT count(*)<>0 FROM osm_simplified_water_polygons"2>/dev/null)
-    if [[ res -eq "t" ]]; then
-        return 1
-    else
-        return 0
-    fi
-}
+source $(dirname $0)/check_data_already_exists.sh
 
 import_osm_water_simplified() {
     echo "Import OpenStreetMap Water Simplified"
     mkdir -p "${OSMVECTO_PATH}/data"
-    if [[ ! is_data_already_present ]]; then
+    if (( !$(is_data_already_present "osm_simplified_water_polygons") )); then
         wget -q -N -P "${OSMVECTO_PATH}/data" "https://osmdata.openstreetmap.de/download/simplified-water-polygons-split-3857.zip"
         unzip -o -d "${OSMVECTO_PATH}/data" "${OSMVECTO_PATH}/data/simplified-water-polygons-split-3857.zip"
         ogr2ogr \

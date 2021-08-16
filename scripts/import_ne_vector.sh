@@ -1,17 +1,11 @@
 #!/bin/bash
 
-is_data_already_present() {
-    res=$(PGPASSWORD=$POSTGRES_PASSWORD psql -t -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER $POSTGRES_DB -c "SELECT count(*)<>1 FROM ne_10m_admin_0_antarctic_claim_limit_lines" 2>/dev/null)
-    if [[ res -eq "t" ]]; then
-        return 1
-    else
-        return 0
-    fi
-}
-function import_ne_vector() {
+source $(dirname $0)/check_data_already_exists.sh
+
+import_ne_vector() {
     echo "Import NaturalEarth Vector"
     mkdir -p "${OSMVECTO_PATH}/data"
-    if [[ ! is_data_already_present ]]; then
+    if (( !$(is_data_already_present "ne_10m_admin_0_antarctic_claim_limit_lines") )); then
         wget -N -P "${OSMVECTO_PATH}/data" "http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip"
         unzip -o -d "${OSMVECTO_PATH}/data/natural_earth_vector" "${OSMVECTO_PATH}/data/natural_earth_vector.sqlite.zip"
         CMD="SELECT f_table_name FROM geometry_columns;"

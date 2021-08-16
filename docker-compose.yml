@@ -47,4 +47,4 @@ services:
     # 2. preview the app
     #entrypoint: "scripts/serve.sh"
     # 1 & 2. single shot; populate the db and preview the app.
-    entrypoint: "./entrypoint.sh"
+    #entrypoint: "./entrypoint.sh"
