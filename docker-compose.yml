@@ -23,7 +23,7 @@ services:
     build: 
       context: .
       args:
-        - BRANCH_TO_CHECKOUT=tilesets
+        - BRANCH_TO_CHECKOUT=main
         - BAREMAPS_VERSION=${BAREMAPS_VERSION:-latest}
     environment:
       - POSTGRES_DB=${POSTGRES_DB:-baremaps}
