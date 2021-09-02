@@ -2,4 +2,4 @@
 
 scripts/import.sh
 
-scripts/serve_openapi.sh
+scripts/serve_studio.sh
