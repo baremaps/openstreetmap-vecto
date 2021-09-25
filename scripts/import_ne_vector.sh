@@ -6,7 +6,7 @@ import_ne_vector() {
     echo "Import NaturalEarth Vector"
     mkdir -p "${OSMVECTO_PATH}/data"
     if (( !$(is_data_already_present "ne_10m_admin_0_antarctic_claim_limit_lines") )); then
-        wget -N -P "${OSMVECTO_PATH}/data" "http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip"
+        wget -N -P "${OSMVECTO_PATH}/data" "https://naturalearth.s3.amazonaws.com/packages/natural_earth_vector.sqlite.zip"
         unzip -o -d "${OSMVECTO_PATH}/data/natural_earth_vector" "${OSMVECTO_PATH}/data/natural_earth_vector.sqlite.zip"
         CMD="SELECT f_table_name FROM geometry_columns;"
         readarray -t arr < <( sqlite3 ${OSMVECTO_PATH}/data/natural_earth_vector/packages/natural_earth_vector.sqlite "${CMD}" )
