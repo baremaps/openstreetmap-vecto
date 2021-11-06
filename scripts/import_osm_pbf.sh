@@ -4,7 +4,7 @@ source $(dirname $0)/check_data_already_exists.sh
 import_osm_pbf() {
     echo "Import OpenStreetMap PBF"
     if [ -z $1 ]; then
-        osm_url="https://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf"
+        osm_url="https://download.geofabrik.de/europe/switzerland-latest.osm.pbf"
     else
         osm_url=$1
     fi

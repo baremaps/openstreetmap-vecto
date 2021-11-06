@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS osm_headers
     source                      text,
     writing_program             text
 );
-
 CREATE TABLE osm_nodes
 (
     id        bigint PRIMARY KEY,
@@ -14,12 +13,11 @@ CREATE TABLE osm_nodes
     uid       int,
     timestamp timestamp without time zone,
     changeset bigint,
-    tags      hstore,
+    tags      jsonb,
     lon       float,
     lat       float,
     geom      geometry(point)
 );
-
 CREATE TABLE osm_ways
 (
     id        bigint PRIMARY KEY,
@@ -27,11 +25,10 @@ CREATE TABLE osm_ways
     uid       int,
     timestamp timestamp without time zone,
     changeset bigint,
-    tags      hstore,
+    tags      jsonb,
     nodes     bigint[],
     geom      geometry
 );
-
 CREATE TABLE osm_relations
 (
     id           bigint PRIMARY KEY,
@@ -39,7 +36,7 @@ CREATE TABLE osm_relations
     uid          int,
     timestamp    timestamp without time zone,
     changeset    bigint,
-    tags         hstore,
+    tags         jsonb,
     member_refs  bigint[],
     member_types int[],
     member_roles text[],
