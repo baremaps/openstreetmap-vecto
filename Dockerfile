@@ -26,7 +26,7 @@ RUN apt-get update \
     && apt-get -y autoremove --purge && apt-get -y autoclean && ldconfig
 
 # Install baremaps
-RUN wget -q https://github.com/baremaps/baremaps/releases/${BAREMAPS_VERSION}/download/baremaps.zip \
+RUN wget -q https://github.com/baremaps/baremaps/releases/download/${BAREMAPS_VERSION}/baremaps.zip \
    && unzip -q baremaps.zip \
    && rm baremaps.zip
 
