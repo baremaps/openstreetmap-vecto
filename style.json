@@ -639,6 +639,21 @@
       "fill-outline-color" : "rgb(222, 214, 214)"
     }
   }, {
+    "id" : "amenity_fountain",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "amenity", "fountain" ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "minzoom" : 13,
+    "paint" : {
+      "fill-color" : "rgb(170, 211, 223)",
+      "fill-antialias" : true,
+      "fill-outline-color" : "rgb(170, 211, 223)"
+    }
+  }, {
     "id" : "landuse_industrial",
     "type" : "fill",
     "filter" : [ "all", [ "==", "landuse", "industrial" ] ],
