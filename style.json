@@ -1450,6 +1450,23 @@
       },
       "line-color" : "rgb(171, 171, 171)"
     }
+  }, {
+    "id" : "man_made_pier",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "man_made", "pier" ] ],
+    "source" : "baremaps",
+    "source-layer" : "man_made",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "minzoom" : 12,
+    "paint" : {
+      "line-opacity" : 1,
+      "line-color" : "rgba(242, 239, 233, 1)",
+      "line-width" : {
+        "stops" : [ [ 12, 0.5 ], [ 18, 2 ] ]
+      }
+    }
   } ],
   "center" : [ 6.6323, 46.5197 ],
   "metadata" : {
