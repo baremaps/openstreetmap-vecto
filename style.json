@@ -776,7 +776,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "all", [ "!has", "area" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "filter" : [ "all", [ "!has", "area" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ], [ "!=", "access", "private" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -787,6 +787,22 @@
     "paint" : {
       "line-width" : 1,
       "line-color" : "rgb(250, 132, 117)",
+      "line-dasharray" : [ 2, 2 ]
+    }
+  }, {
+    "id" : "highway_path_port_ouchy",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "access", "private" ], [ "==", "highway", "footway" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible",
+      "line-cap" : "round",
+      "line-join" : "round"
+    },
+    "paint" : {
+      "line-color" : "rgb(192, 192, 192)",
+      "line-width" : 1,
       "line-dasharray" : [ 2, 2 ]
     }
   }, {
