@@ -765,9 +765,6 @@
     "filter" : [ "all", [ "has", "area" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
-    "layout" : {
-      "visibility" : "visible"
-    },
     "paint" : {
       "fill-color" : "rgb(221, 221, 231)",
       "fill-outline-color" : "rgb(168, 181, 171)",
@@ -779,27 +776,17 @@
     "filter" : [ "all", [ "!has", "area" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ], [ "!=", "access", "private" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
-    "layout" : {
-      "visibility" : "visible",
-      "line-cap" : "round",
-      "line-join" : "round"
-    },
     "paint" : {
       "line-width" : 1,
       "line-color" : "rgb(250, 132, 117)",
       "line-dasharray" : [ 2, 2 ]
     }
   }, {
-    "id" : "highway_path_port_ouchy",
+    "id" : "highway_path_private",
     "type" : "line",
     "filter" : [ "all", [ "==", "access", "private" ], [ "==", "highway", "footway" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
-    "layout" : {
-      "visibility" : "visible",
-      "line-cap" : "round",
-      "line-join" : "round"
-    },
     "paint" : {
       "line-color" : "rgb(192, 192, 192)",
       "line-width" : 1,
@@ -1472,13 +1459,9 @@
     "filter" : [ "all", [ "==", "man_made", "pier" ] ],
     "source" : "baremaps",
     "source-layer" : "man_made",
-    "layout" : {
-      "visibility" : "visible"
-    },
     "minzoom" : 12,
     "paint" : {
-      "line-opacity" : 1,
-      "line-color" : "rgba(242, 239, 233, 1)",
+      "line-color" : "rgb(242, 239, 233)",
       "line-width" : {
         "stops" : [ [ 12, 0.5 ], [ 18, 2 ] ]
       }
