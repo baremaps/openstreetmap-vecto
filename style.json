@@ -390,7 +390,7 @@
       "line-color" : "rgba(230, 233, 222, 0.5)"
     }
   }, {
-    "id" : "natural_wood",
+    "id" : "natural_overlay",
     "type" : "fill",
     "filter" : [ "all", [ "==", "natural", "wood" ] ],
     "source" : "baremaps",
