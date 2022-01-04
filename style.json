@@ -12,9 +12,6 @@
     "id" : "background",
     "type" : "background",
     "source" : "baremaps",
-    "layout" : {
-      "visibility" : "visible"
-    },
     "minzoom" : 0,
     "maxzoom" : 24,
     "paint" : {
@@ -26,7 +23,7 @@
     "source" : "baremaps",
     "source-layer" : "natural",
     "paint" : {
-      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
+      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
       "fill-antialias" : true
     }
   }, {
@@ -393,6 +390,16 @@
       "line-color" : "rgba(230, 233, 222, 0.5)"
     }
   }, {
+    "id" : "natural_overlay",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "natural", "wood" ] ],
+    "source" : "baremaps",
+    "source-layer" : "natural",
+    "paint" : {
+      "fill-color" : "rgb(157, 202, 138)",
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "water",
     "type" : "fill",
     "source" : "baremaps",
@@ -487,7 +494,6 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
-      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -505,7 +511,6 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
-      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -523,7 +528,6 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
-      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -542,7 +546,6 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
-      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
