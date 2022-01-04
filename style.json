@@ -362,44 +362,13 @@
       "fill-outline-color" : "rgb(222, 214, 214)"
     }
   }, {
-    "id" : "leisure_stadium",
+    "id" : "leisure",
     "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "stadium" ] ],
     "source" : "baremaps",
     "source-layer" : "leisure",
     "paint" : {
-      "fill-color" : "rgb(223, 252, 226)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_swimming_pool",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "swimming_pool" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(170, 211, 223)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(120, 183, 202)"
-    }
-  }, {
-    "id" : "leisure_track",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "track" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(196, 224, 203)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_sports_centre",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "sports_centre" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(223, 252, 226)",
+      "fill-color" : [ "match", [ "get", "leisure" ], "stadium", "rgb(223, 252, 226)", "swimming_pool", "rgb(170, 211, 223)", "track", "rgb(196, 224, 203)", "sports_centre", "rgb(223, 252, 226)", "miniature_golf", "rgb(181, 226, 181)", "marina", "rgb(181, 208, 208)", "ice_rink", "rgb(221, 236, 236)", "golf_course", "rgb(181, 226, 181)", "garden", "rgb(205, 235, 176)", "dog_park", "rgb(224, 252, 227)", "park", "rgb(200, 250, 204)", "playground", "rgb(223, 252, 226)", "rgb(242, 239, 233)" ],
+      "fill-outline-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(120, 183, 202)", "marina", "rgb(164, 187, 212)", "ice_rink", "rgb(140, 220, 189)", "playground", "rgb(164, 221, 169)", "rgb(242, 239, 233)" ],
       "fill-antialias" : true
     }
   }, {
@@ -422,89 +391,6 @@
     "paint" : {
       "line-width" : 5,
       "line-color" : "rgba(230, 233, 222, 0.5)"
-    }
-  }, {
-    "id" : "leisure_miniature_golf",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "miniature_golf" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(181, 226, 181)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_marina",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "marina" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(181, 208, 208)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(164, 187, 212)"
-    }
-  }, {
-    "id" : "leisure_ice_rink",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "ice_rink" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(221, 236, 236)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(140, 220, 189)"
-    }
-  }, {
-    "id" : "leisure_golf_course",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "golf_course" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(181, 226, 181)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_garden",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "garden" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(205, 235, 176)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_dog_park",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "dog_park" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(224, 252, 227)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_park",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "park" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(200, 250, 204)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "leisure_playground",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "playground" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "paint" : {
-      "fill-color" : "rgb(223, 252, 226)",
-      "fill-outline-color" : "rgb(164, 221, 169)",
-      "fill-antialias" : true
     }
   }, {
     "id" : "water",
