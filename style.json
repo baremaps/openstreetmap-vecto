@@ -546,7 +546,8 @@
         "base" : 1.2,
         "stops" : [ [ 4, 0 ], [ 20, 8 ] ]
       },
-      "line-color" : "rgb(112, 112, 112)"
+      "line-color" : "rgb(112, 112, 112)",
+      "line-opacity" : [ "match", [ "get", "service" ], "spur", 0.4, 1 ]
     }
   }, {
     "id" : "railway_rail",
@@ -565,7 +566,8 @@
         "stops" : [ [ 4, 0 ], [ 20, 6 ] ]
       },
       "line-color" : "rgb(255, 255, 255)",
-      "line-dasharray" : [ 2, 4 ]
+      "line-dasharray" : [ 2, 4 ],
+      "line-opacity" : [ "match", [ "get", "service" ], "spur", 0.7, 1 ]
     }
   }, {
     "id" : "railway_light_rail",
