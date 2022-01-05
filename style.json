@@ -1030,6 +1030,27 @@
       "line-color" : "rgb(233, 144, 161)"
     }
   }, {
+    "id" : "highway_label",
+    "type" : "symbol",
+    "filter" : [ "all" ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "symbol-placement" : "line",
+      "text-anchor" : "center",
+      "text-field" : "{name}",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-size" : {
+        "base" : 1,
+        "stops" : [ [ 13, 10 ], [ 14, 12 ] ]
+      }
+    },
+    "paint" : {
+      "text-color" : "rgb(96,96,96)",
+      "text-halo-color" : "rgba(255,255,255,0.8)",
+      "text-halo-width" : 1.2
+    }
+  }, {
     "id" : "route_ferry",
     "type" : "line",
     "source" : "baremaps",
