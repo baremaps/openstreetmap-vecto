@@ -7,6 +7,7 @@
       "url" : "http://localhost:9090/tiles.json"
     }
   },
+  "sprite" : "https://tiles.baremaps.com/sprites/maki/maki.json",
   "glyphs" : "https://tiles.baremaps.com/fonts/{fontstack}/{range}.pbf",
   "layers" : [ {
     "id" : "background",
