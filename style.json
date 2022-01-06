@@ -7,7 +7,7 @@
       "url" : "http://localhost:9090/tiles.json"
     }
   },
-  "sprite" : "https://tiles.baremaps.com/sprites/maki/maki.json",
+  "sprite" : "https://tiles.baremaps.com/sprites/maki/maki",
   "glyphs" : "https://tiles.baremaps.com/fonts/{fontstack}/{range}.pbf",
   "layers" : [ {
     "id" : "background",
@@ -1272,6 +1272,21 @@
       "circle-radius" : {
         "stops" : [ [ 14, 0.25 ], [ 15, 0.5 ], [ 16, 1 ], [ 17, 2 ], [ 18, 4 ] ]
       }
+    }
+  }, {
+    "id" : "poi_amenity",
+    "type" : "symbol",
+    "filter" : [ "all" ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "icon-image" : [ "match", [ "get", "amenity" ], "cafe", "cafe", "restaurant", "restaurant", "" ]
+    },
+    "paint" : {
+      "icon-color" : "rgba(199, 116, 0, 1)",
+      "text-color" : "rgba(0, 0, 0, 1)",
+      "text-halo-color" : "rgba(253, 253, 253, 1)",
+      "text-halo-width" : 1
     }
   } ],
   "center" : [ 6.6323, 46.5197 ],
