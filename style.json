@@ -12,6 +12,9 @@
     "id" : "background",
     "type" : "background",
     "source" : "baremaps",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "minzoom" : 0,
     "maxzoom" : 24,
     "paint" : {
@@ -23,7 +26,7 @@
     "source" : "baremaps",
     "source-layer" : "natural",
     "paint" : {
-      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
+      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
       "fill-antialias" : true
     }
   }, {
@@ -390,16 +393,6 @@
       "line-color" : "rgba(230, 233, 222, 0.5)"
     }
   }, {
-    "id" : "natural_overlay",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "natural", "wood" ] ],
-    "source" : "baremaps",
-    "source-layer" : "natural",
-    "paint" : {
-      "fill-color" : "rgb(157, 202, 138)",
-      "fill-antialias" : true
-    }
-  }, {
     "id" : "water",
     "type" : "fill",
     "source" : "baremaps",
@@ -410,8 +403,40 @@
       "fill-outline-color" : "rgb(170, 211, 223)"
     }
   }, {
+    "id" : "waterway_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "waterway",
+    "paint" : {
+      "line-width" : {
+        "base" : 1.2,
+        "stops" : [ [ 4, 0 ], [ 20, 12 ] ]
+      },
+      "line-color" : "rgb(170, 211, 223)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "waterway_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "waterway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round"
+    },
+    "paint" : {
+      "line-width" : {
+        "base" : 1.2,
+        "stops" : [ [ 4, 0 ], [ 20, 8 ] ]
+      },
+      "line-color" : "rgb(243, 247, 247)"
+    }
+  }, {
     "id" : "waterway",
     "type" : "line",
+    "filter" : [ "all", [ "!=", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -494,6 +519,7 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
+      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -511,6 +537,7 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
+      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -519,7 +546,8 @@
         "base" : 1.2,
         "stops" : [ [ 4, 0 ], [ 20, 8 ] ]
       },
-      "line-color" : "rgb(112, 112, 112)"
+      "line-color" : "rgb(112, 112, 112)",
+      "line-opacity" : [ "match", [ "get", "service" ], "spur", 0.4, 1 ]
     }
   }, {
     "id" : "railway_rail",
@@ -528,6 +556,7 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
+      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -537,7 +566,8 @@
         "stops" : [ [ 4, 0 ], [ 20, 6 ] ]
       },
       "line-color" : "rgb(255, 255, 255)",
-      "line-dasharray" : [ 2, 4 ]
+      "line-dasharray" : [ 2, 4 ],
+      "line-opacity" : [ "match", [ "get", "service" ], "spur", 0.7, 1 ]
     }
   }, {
     "id" : "railway_light_rail",
@@ -546,6 +576,7 @@
     "source" : "baremaps",
     "source-layer" : "railway",
     "layout" : {
+      "visibility" : "visible",
       "line-cap" : "round",
       "line-join" : "round"
     },
@@ -756,6 +787,22 @@
         "stops" : [ [ 4, 0 ], [ 20, 4 ] ]
       },
       "line-color" : "rgb(254, 254, 254)"
+    }
+  }, {
+    "id" : "highway_service_private",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "access", "private" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "linear" ], [ "zoom" ], 4, 0, 20, 1 ],
+      "line-color" : "rgb(131, 128, 128)",
+      "line-dasharray" : [ 5, 6 ],
+      "line-opacity" : 0.4
     }
   }, {
     "id" : "highway_living_street_casing",
