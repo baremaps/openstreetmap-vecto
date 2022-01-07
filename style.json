@@ -776,7 +776,7 @@
   }, {
     "id" : "highway_lines_dasharray",
     "type" : "line",
-    "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "all", [ "!has", "area" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ], [ "!=", "access", "private" ] ] ],
+    "filter" : [ "all", [ "!has", "area" ], [ "!=", "access", "private" ], [ "any", [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "bridleway" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
