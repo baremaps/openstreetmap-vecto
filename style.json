@@ -7,7 +7,7 @@
       "url" : "http://localhost:9090/tiles.json"
     }
   },
-  "sprite" : "https://tiles.baremaps.com/sprites/maki/maki",
+  "sprite" : "https://tiles.baremaps.com/sprites/maki/sprite",
   "glyphs" : "https://tiles.baremaps.com/fonts/{fontstack}/{range}.pbf",
   "layers" : [ {
     "id" : "background",
@@ -1075,7 +1075,7 @@
     "layout" : {
       "symbol-placement" : "line",
       "text-anchor" : "center",
-      "text-field" : "{name}",
+      "text-field" : [ "get", "name" ],
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : {
         "base" : 1,
@@ -1171,7 +1171,7 @@
     "source" : "baremaps",
     "source-layer" : "man_made",
     "layout" : {
-      "text-field" : "{name}",
+      "text-field" : [ "get", "name" ],
       "text-font" : [ "Noto Sans Regular" ],
       "symbol-placement" : "line-center",
       "text-size" : {
@@ -1276,17 +1276,27 @@
   }, {
     "id" : "poi_amenity",
     "type" : "symbol",
-    "filter" : [ "all" ],
+    "filter" : [ "all", [ "has", "amenity" ], [ "has", "name" ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
-      "icon-image" : [ "match", [ "get", "amenity" ], "cafe", "cafe", "restaurant", "restaurant", "" ]
+      "icon-image" : [ "match", [ "get", "amenity" ], "cafe", "cafe-15", "restaurant", "restaurant-15", "pub", "beer-15", "bar", "bar-15", "bank", "bank-15", "atm", "bank-15", "" ],
+      "icon-size" : 1,
+      "icon-allow-overlap" : true,
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-size" : 11,
+      "text-offset" : [ 0, 1.5 ],
+      "text-field" : [ "get", "name" ]
     },
     "paint" : {
       "icon-color" : "rgba(199, 116, 0, 1)",
-      "text-color" : "rgba(0, 0, 0, 1)",
-      "text-halo-color" : "rgba(253, 253, 253, 1)",
-      "text-halo-width" : 1
+      "text-color" : "rgba(199, 116, 0, 1)",
+      "icon-opacity" : 1,
+      "icon-translate-anchor" : "map",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1,
+      "text-halo-width" : 1,
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   } ],
   "center" : [ 6.6323, 46.5197 ],
