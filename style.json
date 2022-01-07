@@ -394,7 +394,7 @@
   }, {
     "id" : "leisure_pitch",
     "type" : "fill",
-    "filter" : [ "any", [ "==", "leisure", "pitch" ], [ "==", "leisure", "track" ] ],
+    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "leisure", "pitch" ], [ "==", "leisure", "track" ] ] ],
     "source" : "baremaps",
     "source-layer" : "leisure",
     "layout" : {
@@ -566,7 +566,7 @@
   }, {
     "id" : "highway_polygon",
     "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -580,7 +580,7 @@
   }, {
     "id" : "highway_casing",
     "type" : "line",
-    "filter" : [ "none", [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ] ],
+    "filter" : [ "none", [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
