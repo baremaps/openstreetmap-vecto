@@ -564,23 +564,8 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
-    "id" : "highway_polygon",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
-    "source" : "baremaps",
-    "source-layer" : "highway",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(221, 221, 232)",
-      "fill-outline-color" : "rgba(199, 198, 198, 1)",
-      "fill-antialias" : true
-    }
-  }, {
     "id" : "highway_casing",
     "type" : "line",
-    "filter" : [ "none", [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -593,7 +578,20 @@
       "line-color" : [ "match", [ "get", "highway" ], "pedestrian", "rgb(184, 183, 182)", "road", "rgb(201, 201, 200)", "service", "rgb(213, 211, 211)", "living_street", "rgb(207, 207, 207)", "residential", "rgb(211, 207, 206)", "unclassified", "rgb(211, 207, 206)", "tertiary", "rgb(190, 189, 188)", "tertiary_link", "rgb(190, 189, 188)", "secondary", "rgb(154, 166, 67)", "secondary_link", "rgb(154, 166, 67)", "primary", "rgb(192, 147, 62)", "primary_link", "rgb(192, 147, 62)", "trunk", "rgb(217, 111, 78)", "trunk_link", "rgb(217, 111, 78)", "motorway", "rgb(227, 82, 126)", "motorway_link", "rgb(227, 82, 126)", "rgba(0, 0, 0, 0)" ]
     }
   }, {
-    "id" : "highway_line",
+    "id" : "highway_polygon",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(221, 221, 232)",
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "highway_path",
     "type" : "line",
     "filter" : [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ],
     "source" : "baremaps",
