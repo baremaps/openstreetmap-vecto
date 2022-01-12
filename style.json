@@ -845,7 +845,7 @@
   }, {
     "id" : "poi",
     "type" : "symbol",
-    "filter" : [ "any", [ "all", [ ">=", [ "zoom" ], 14 ], [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ] ], [ "all", [ ">=", [ "zoom" ], 15 ], [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary", "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ] ], [ ">=", [ "zoom" ], 16 ], [ "all", [ ">=", [ "zoom" ], 17 ], [ "in", [ "get", "highway" ], [ "literal", [ "elevator" ] ] ] ], [ "all", [ ">=", [ "zoom" ], 17 ], [ "in", [ "get", "man_made" ], [ "literal", [ "mast" ] ] ] ] ],
+    "filter" : [ "case", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], [ ">=", [ "zoom" ], 14 ], [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], [ ">=", [ "zoom" ], 15 ], [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "elevator" ] ] ], [ "in", [ "get", "man_made" ], [ "literal", [ "mast" ] ] ] ], [ ">=", [ "zoom" ], 17 ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
