@@ -20,7 +20,7 @@
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town')"
         },
         {
-          "minzoom": 14,
+          "minzoom": 10,
           "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}'"
         }
