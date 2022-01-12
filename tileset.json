@@ -21,6 +21,16 @@
         },
         {
           "minzoom": 10,
+          "maxzoom": 14,
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'natural' IN ('peak', 'volcano')"
+        },
+        {
+          "minzoom": 13,
+          "maxzoom": 14,
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'natural' IN ('spring')"
+        },
+        {
+          "minzoom": 14,
           "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}'"
         }
