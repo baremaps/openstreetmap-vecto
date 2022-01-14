@@ -27,7 +27,7 @@
         {
           "minzoom": 12,
           "maxzoom": 14,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'tourism' IN ('wilderness_hut')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'tourism' IN ('wilderness_hut')) OR (tags ->> 'waterway' IN ('waterfall'))"
         },
         {
           "minzoom": 13,
