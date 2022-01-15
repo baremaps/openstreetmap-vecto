@@ -35,29 +35,6 @@
       "fill-antialias" : true
     }
   }, {
-    "id" : "natural",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
-    "source" : "baremaps",
-    "source-layer" : "natural",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "natural_beach",
-    "type" : "fill",
-    "filter" : [ "any", [ "==", "natural", "beach" ] ],
-    "source" : "baremaps",
-    "source-layer" : "natural",
-    "paint" : {
-      "fill-color" : "rgb(255, 241, 186)",
-      "fill-antialias" : true
-    }
-  }, {
     "id" : "amenity_education",
     "type" : "fill",
     "filter" : [ "any", [ "==", "amenity", "kindergarten" ], [ "==", "amenity", "school" ], [ "==", "amenity", "college" ], [ "==", "amenity", "university" ] ],
@@ -383,6 +360,29 @@
       "fill-antialias" : true
     }
   }, {
+    "id" : "natural",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
+    "source" : "baremaps",
+    "source-layer" : "natural",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "water", "rgb(170, 211, 223)", "rgb(242, 239, 233)" ],
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "natural_beach",
+    "type" : "fill",
+    "filter" : [ "any", [ "==", "natural", "beach" ] ],
+    "source" : "baremaps",
+    "source-layer" : "natural",
+    "paint" : {
+      "fill-color" : "rgb(255, 241, 186)",
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "natural_overlay",
     "type" : "fill",
     "filter" : [ "all", [ "==", "natural", "wood" ] ],
@@ -424,10 +424,12 @@
     "type" : "fill",
     "source" : "baremaps",
     "source-layer" : "water",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(170, 211, 223)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(170, 211, 223)"
+      "fill-antialias" : true
     }
   }, {
     "id" : "waterway_tunnel_casing",
