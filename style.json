@@ -22,6 +22,15 @@
       "background-color" : "rgb(242, 239, 233)"
     }
   }, {
+    "id" : "landuse",
+    "type" : "fill",
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(236, 218, 233)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "amenity_education",
     "type" : "fill",
     "filter" : [ "any", [ "==", "amenity", "kindergarten" ], [ "==", "amenity", "school" ], [ "==", "amenity", "college" ], [ "==", "amenity", "university" ] ],
@@ -56,15 +65,6 @@
       "fill-outline-color" : "rgb(222, 214, 214)"
     }
   }, {
-    "id" : "landuse",
-    "type" : "fill",
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "paint" : {
-      "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(236, 218, 233)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
-      "fill-antialias" : true
-    }
-  }, {
     "id" : "natural",
     "type" : "fill",
     "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
@@ -74,7 +74,7 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : [ "match", [ "get", "natural" ], "beach", "rgb(255, 241, 186)", "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "water", "rgb(170, 211, 223)", "wetland", "rgb(184, 224,189)", "rgb(242, 239, 233)" ],
+      "fill-color" : [ "match", [ "get", "natural" ], "beach", "rgb(255, 241, 186)", "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "water", "rgb(170, 211, 223)", "rgba(0, 0, 0,0)" ],
       "fill-antialias" : true
     }
   }, {
@@ -82,8 +82,24 @@
     "type" : "fill",
     "source" : "baremaps",
     "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : [ "match", [ "get", "landuse" ], "grass", "rgb(205, 235, 176)", "forest", "rgb(171, 210, 156)", "rgba(0, 0, 0, 0)" ],
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "natural_overlay",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
+    "source" : "baremaps",
+    "source-layer" : "natural",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "natural" ], "water", "rgb(170, 211, 223)", "wetland", "rgba(184, 224,189, .5)", "rgba(0, 0, 0,0)" ],
       "fill-antialias" : true
     }
   }, {
@@ -91,6 +107,9 @@
     "type" : "fill",
     "source" : "baremaps",
     "source-layer" : "water",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(170, 211, 223)",
       "fill-antialias" : true,
@@ -106,8 +125,22 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : [ "match", [ "get", "leisure" ], "stadium", "rgb(223, 252, 226)", "swimming_pool", "rgb(170, 211, 223)", "sports_centre", "rgb(223, 252, 226)", "miniature_golf", "rgb(181, 226, 181)", "marina", "rgb(181, 208, 208)", "ice_rink", "rgb(221, 236, 236)", "golf_course", "rgb(181, 226, 181)", "garden", "rgb(205, 235, 176)", "dog_park", "rgb(224, 252, 227)", "park", "rgb(200, 250, 204)", "playground", "rgb(223, 252, 226)", "pitch", "rgb(170, 224, 203)", "track", "rgb(196, 224, 203)", "rgba(0, 0, 0, 0)" ],
+      "fill-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(170, 211, 223)", "sports_centre", "rgb(223, 252, 226)", "miniature_golf", "rgb(181, 226, 181)", "marina", "rgb(181, 208, 208)", "ice_rink", "rgb(221, 236, 236)", "golf_course", "rgb(181, 226, 181)", "garden", "rgb(205, 235, 176)", "dog_park", "rgb(224, 252, 227)", "park", "rgb(200, 250, 204)", "playground", "rgb(223, 252, 226)", "track", "rgb(196, 224, 203)", "stadium", "rgb(223, 252, 226)", "rgba(0, 0, 0, 0)" ],
       "fill-outline-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(120, 183, 202)", "marina", "rgb(164, 187, 212)", "ice_rink", "rgb(140, 220, 189)", "playground", "rgb(164, 221, 169)", "rgba(0, 0, 0, 0)" ],
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "leisure_overlay",
+    "type" : "fill",
+    "filter" : [ "all" ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "leisure" ], "pitch", "rgb(170, 224, 203)", "rgba(0, 0, 0, 0)" ],
+      "fill-outline-color" : [ "match", [ "get", "leisure" ], "pitch", "rgb(151, 212, 186)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
     }
   }, {
@@ -168,6 +201,9 @@
     "filter" : [ "all", [ "==", "amenity", "fountain" ] ],
     "source" : "baremaps",
     "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "minzoom" : 13,
     "paint" : {
       "fill-color" : "rgb(170, 211, 223)",
