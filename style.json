@@ -26,6 +26,9 @@
     "type" : "fill",
     "source" : "baremaps",
     "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(236, 218, 233)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
@@ -36,6 +39,9 @@
     "filter" : [ "any", [ "==", "amenity", "kindergarten" ], [ "==", "amenity", "school" ], [ "==", "amenity", "college" ], [ "==", "amenity", "university" ] ],
     "source" : "baremaps",
     "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(255, 255, 228)",
       "fill-antialias" : true
@@ -46,6 +52,9 @@
     "filter" : [ "any", [ "==", "amenity", "grave_yard" ] ],
     "source" : "baremaps",
     "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(170, 203, 175)",
       "fill-antialias" : true
@@ -162,6 +171,9 @@
     "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
       "line-color" : "rgb(170, 211, 223)",
@@ -175,7 +187,8 @@
     "source-layer" : "waterway",
     "layout" : {
       "line-cap" : "round",
-      "line-join" : "round"
+      "line-join" : "round",
+      "visibility" : "visible"
     },
     "paint" : {
       "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
@@ -189,7 +202,8 @@
     "source-layer" : "waterway",
     "layout" : {
       "line-cap" : "round",
-      "line-join" : "round"
+      "line-join" : "round",
+      "visibility" : "visible"
     },
     "paint" : {
       "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
@@ -355,7 +369,8 @@
       "text-anchor" : "center",
       "text-field" : [ "get", "name" ],
       "text-font" : [ "Noto Sans Regular" ],
-      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 13, 10, 14, 12 ]
+      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 13, 10, 14, 12 ],
+      "visibility" : "visible"
     },
     "paint" : {
       "text-color" : "rgb(96,96,96)",
@@ -381,6 +396,9 @@
     "type" : "fill",
     "source" : "baremaps",
     "source-layer" : "building",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(216, 208, 201)",
       "fill-antialias" : true,
@@ -398,7 +416,8 @@
       "text-field" : "{addr:housenumber}",
       "text-font" : [ "Noto Sans Regular" ],
       "text-offset" : [ 0, 0 ],
-      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 0, 16, 11, 20, 11 ]
+      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 0, 16, 11, 20, 11 ],
+      "visibility" : "visible"
     },
     "paint" : {
       "text-color" : "rgb(96,96,96)",
@@ -416,7 +435,8 @@
       "text-field" : "{addr:housenumber}",
       "text-font" : [ "Noto Sans Regular" ],
       "text-offset" : [ 0, 0 ],
-      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 0, 16, 11, 20, 11 ]
+      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 0, 16, 11, 20, 11 ],
+      "visibility" : "visible"
     },
     "paint" : {
       "text-color" : "rgb(96,96,96)",
@@ -429,6 +449,9 @@
     "filter" : [ "all", [ "==", "man_made", "pier" ] ],
     "source" : "baremaps",
     "source-layer" : "man_made",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "minzoom" : 12,
     "paint" : {
       "line-color" : "rgb(242, 239, 233)",
@@ -444,7 +467,8 @@
       "text-field" : [ "get", "name" ],
       "text-font" : [ "Noto Sans Regular" ],
       "symbol-placement" : "line-center",
-      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 8, 16, 11, 20, 11 ]
+      "text-size" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 15, 8, 16, 11, 20, 11 ],
+      "visibility" : "visible"
     },
     "minzoom" : 15,
     "paint" : {
@@ -458,7 +482,8 @@
     "source-layer" : "boundary",
     "layout" : {
       "line-cap" : "round",
-      "line-join" : "round"
+      "line-join" : "round",
+      "visibility" : "visible"
     },
     "paint" : {
       "line-color" : "rgb(207, 155, 203)",
@@ -470,6 +495,9 @@
     "filter" : [ "any", [ "==", "power", "tower" ], [ "==", "power", "pole" ], [ "==", "power", "portal" ], [ "==", "power", "catenary_mast" ] ],
     "source" : "baremaps",
     "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "circle-color" : "rgb(171, 171, 171)",
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 13, 1, 14, 2, 15, 3, 16, 4, 17, 5, 18, 6 ]
@@ -480,6 +508,9 @@
     "filter" : [ "any", [ "==", "power", "plant" ], [ "==", "power", "substation" ] ],
     "source" : "baremaps",
     "source-layer" : "power",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "fill-color" : "rgb(226, 203, 222)",
       "fill-antialias" : true,
@@ -493,7 +524,8 @@
     "source-layer" : "power",
     "layout" : {
       "line-cap" : "round",
-      "line-join" : "round"
+      "line-join" : "round",
+      "visibility" : "visible"
     },
     "paint" : {
       "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
@@ -507,7 +539,8 @@
     "source-layer" : "aerialway",
     "layout" : {
       "line-cap" : "round",
-      "line-join" : "round"
+      "line-join" : "round",
+      "visibility" : "visible"
     },
     "paint" : {
       "line-color" : "rgb(177, 177, 175)"
@@ -518,6 +551,9 @@
     "filter" : [ "all", [ "==", "natural", "tree" ] ],
     "source" : "baremaps",
     "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "circle-color" : "rgb(113, 205, 111)",
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 14, 0.75, 15, 1.5, 16, 3, 17, 6, 18, 12 ]
@@ -528,6 +564,9 @@
     "filter" : [ "all", [ "==", "natural", "tree" ] ],
     "source" : "baremaps",
     "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible"
+    },
     "paint" : {
       "circle-color" : "rgb(129, 94, 39)",
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 14, 0.25, 15, 0.5, 16, 1, 17, 2, 18, 4 ]
