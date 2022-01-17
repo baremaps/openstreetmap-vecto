@@ -155,6 +155,16 @@
       "id": "natural",
       "queries": [
         {
+          "minzoom": 0,
+          "maxzoom": 8,
+          "sql": "SELECT ogc_fid, '{\"natural\":\"water\"}'::jsonb, geometry FROM osm_simplified_water_polygons"
+        },
+        {
+          "minzoom": 8,
+          "maxzoom": 20,
+          "sql": "SELECT ogc_fid, '{\"natural\":\"water\"}'::jsonb, geometry FROM osm_water_polygons"
+        },
+        {
           "minzoom": 8,
           "maxzoom": 12,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'natural' IN ('wood', 'scrub', 'heath', 'grassland', 'bare_rock', 'scree', 'shingle', 'sand', 'mud', 'water', 'wetland', 'glacier', 'beach')"
@@ -167,12 +177,12 @@
         {
           "minzoom": 12,
           "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'natural'"
+          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'natural' AND tags ->> 'natural' NOT IN ('coastline')"
         },
         {
           "minzoom": 12,
           "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'natural'"
+          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'natural' AND tags ->> 'natural' NOT IN ('coastline')"
         }
       ]
     },
@@ -288,21 +298,6 @@
           "minzoom": 12,
           "maxzoom": 20,
           "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'waterway'"
-        }
-      ]
-    },
-    {
-      "id": "water",
-      "queries": [
-        {
-          "minzoom": 0,
-          "maxzoom": 8,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'water' = 'lake'"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE (tags ->> 'natural' = 'water' OR tags ->> 'waterway' IN ('riverbank', 'dock'))"
         }
       ]
     }
