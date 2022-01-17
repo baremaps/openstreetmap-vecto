@@ -22,42 +22,15 @@
       "background-color" : "rgb(242, 239, 233)"
     }
   }, {
-    "id" : "leisure",
+    "id" : "landuse",
     "type" : "fill",
     "source" : "baremaps",
-    "source-layer" : "leisure",
+    "source-layer" : "landuse",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : [ "match", [ "get", "leisure" ], "stadium", "rgb(223, 252, 226)", "swimming_pool", "rgb(170, 211, 223)", "track", "rgb(196, 224, 203)", "sports_centre", "rgb(223, 252, 226)", "miniature_golf", "rgb(181, 226, 181)", "marina", "rgb(181, 208, 208)", "ice_rink", "rgb(221, 236, 236)", "golf_course", "rgb(181, 226, 181)", "garden", "rgb(205, 235, 176)", "dog_park", "rgb(224, 252, 227)", "park", "rgb(200, 250, 204)", "playground", "rgb(223, 252, 226)", "rgb(242, 239, 233)" ],
-      "fill-outline-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(120, 183, 202)", "marina", "rgb(164, 187, 212)", "ice_rink", "rgb(140, 220, 189)", "playground", "rgb(164, 221, 169)", "rgb(242, 239, 233)" ],
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "natural",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
-    "source" : "baremaps",
-    "source-layer" : "natural",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "rgb(242, 239, 233)" ],
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "natural_beach",
-    "type" : "fill",
-    "filter" : [ "any", [ "==", "natural", "beach" ] ],
-    "source" : "baremaps",
-    "source-layer" : "natural",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(255, 241, 186)",
+      "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(236, 218, 233)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
     }
   }, {
@@ -101,408 +74,69 @@
       "fill-outline-color" : "rgb(222, 214, 214)"
     }
   }, {
-    "id" : "landuse_village_green",
+    "id" : "natural",
     "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "village_green" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(205, 235, 176)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_salt_pond",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "salt_pond" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(170, 211, 223)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_religious",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "religious" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(205, 204, 201)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_recreation_ground",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "recreation_ground" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(223, 252, 226)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_railway",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "railway" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(236, 218, 233)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_quarry",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "quarry" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(195, 194, 194)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_plant_nursery",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "plant_nursery" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(174, 223, 162)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_military",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "military" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(242, 228, 221)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_landfill",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "landfill" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(182, 182, 144)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_greenhouse_horticulture",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "greenhouse_horticulture" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(237, 240, 214)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_greenfield",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "greenfield" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(242, 238, 232)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_grass",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "grass" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(207, 237, 165)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_garages",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "garages" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(222, 221, 204)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_cemetery",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "cemetery" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(170, 203, 175)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_brownfield",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "brownfield" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(182, 182, 144)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_basin",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "basin" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(170, 211, 223)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_vineyard",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "vineyard" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(172, 225, 161)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_orchard",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "orchard" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(172, 225, 161)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_meadow",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "meadow" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(205, 235, 176)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_forest",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "forest" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(171, 210, 156)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_farmyard",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "farmyard" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(238, 213, 179)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_farmland",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "farmland" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(237, 240, 214)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_allotments",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "allotments" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(202, 224, 191)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_retail",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "retail" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(254, 213, 208)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_industrial",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "industrial" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(236, 218, 233)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_residential",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "residential" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(225, 225, 225)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_construction",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "construction" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(199, 199, 180)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_commercial",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "landuse", "commercial" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(242, 216, 217)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "landuse_pedestrian",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "highway", "pedestrian" ] ],
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(221, 221, 233)",
-      "fill-outline-color" : "rgb(184, 183, 182)",
-      "fill-antialias" : true
-    }
-  }, {
-    "id" : "natural_overlay",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "natural", "wood" ] ],
+    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
     "source" : "baremaps",
     "source-layer" : "natural",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : "rgb(157, 202, 138)",
+      "fill-color" : [ "match", [ "get", "natural" ], "glacier", "rgb(221, 236, 236)", "wood", "rgb(157, 202, 138)", "scrub", "rgb(201, 216, 173)", "heath", "rgb(214, 217, 159)", "grassland", "rgb(207, 236, 177)", "bare_rock", "rgb(217, 212, 206)", "scree", "rgb(232, 223, 216)", "shingle", "rgb(232, 223, 216)", "sand", "rgb(240, 229, 196)", "water", "rgb(170, 211, 223)", "rgba(0, 0, 0,0)" ],
       "fill-antialias" : true
     }
   }, {
-    "id" : "leisure_pitch",
+    "id" : "landuse_overlay",
     "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "leisure", "pitch" ], [ "==", "leisure", "track" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "landuse" ], "grass", "rgb(205, 235, 176)", "forest", "rgb(171, 210, 156)", "rgba(0, 0, 0, 0)" ],
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "water",
+    "type" : "fill",
+    "source" : "baremaps",
+    "source-layer" : "water",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(170, 211, 223)",
+      "fill-antialias" : true,
+      "fill-outline-color" : "rgb(170, 211, 223)"
+    }
+  }, {
+    "id" : "leisure",
+    "type" : "fill",
+    "filter" : [ "==", "$type", "Polygon" ],
     "source" : "baremaps",
     "source-layer" : "leisure",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : "rgb(170, 224, 203)",
-      "fill-outline-color" : "rgb(147, 210, 185)",
+      "fill-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(170, 211, 223)", "sports_centre", "rgb(223, 252, 226)", "miniature_golf", "rgb(181, 226, 181)", "marina", "rgb(181, 208, 208)", "ice_rink", "rgb(221, 236, 236)", "golf_course", "rgb(181, 226, 181)", "garden", "rgb(205, 235, 176)", "dog_park", "rgb(224, 252, 227)", "park", "rgb(200, 250, 204)", "playground", "rgb(223, 252, 226)", "track", "rgb(196, 224, 203)", "stadium", "rgb(223, 252, 226)", "rgba(0, 0, 0, 0)" ],
+      "fill-outline-color" : [ "match", [ "get", "leisure" ], "swimming_pool", "rgb(120, 183, 202)", "marina", "rgb(164, 187, 212)", "ice_rink", "rgb(140, 220, 189)", "playground", "rgb(164, 221, 169)", "rgba(0, 0, 0, 0)" ],
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "leisure_overlay",
+    "type" : "fill",
+    "filter" : [ "all" ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "leisure" ], "pitch", "rgb(170, 224, 203)", "rgba(0, 0, 0, 0)" ],
+      "fill-outline-color" : [ "match", [ "get", "leisure" ], "pitch", "rgb(151, 212, 186)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
     }
   }, {
@@ -519,17 +153,17 @@
       "line-color" : "rgba(230, 233, 222, 0.5)"
     }
   }, {
-    "id" : "water",
+    "id" : "natural_overlay",
     "type" : "fill",
+    "filter" : [ "all", [ "==", "$type", "Polygon" ] ],
     "source" : "baremaps",
-    "source-layer" : "water",
+    "source-layer" : "natural",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : "rgb(170, 211, 223)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(170, 211, 223)"
+      "fill-color" : [ "match", [ "get", "natural" ], "beach", "rgb(255, 241, 186)", "water", "rgb(170, 211, 223)", "wetland", "rgba(184, 224,189, .5)", "rgba(0, 0, 0,0)" ],
+      "fill-antialias" : true
     }
   }, {
     "id" : "waterway_tunnel_casing",
@@ -981,7 +615,7 @@
   }, {
     "id" : "poi",
     "type" : "symbol",
-    "filter" : [ "any", [ "all", [ ">=", [ "zoom" ], 14 ], [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ] ], [ "all", [ ">=", [ "zoom" ], 15 ], [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary", "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ] ], [ ">=", [ "zoom" ], 16 ], [ "all", [ ">=", [ "zoom" ], 17 ], [ "in", [ "get", "highway" ], [ "literal", [ "elevator" ] ] ] ] ],
+    "filter" : [ "case", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "volcano" ] ] ], [ ">=", [ "zoom" ], 10 ], [ "any", [ "==", [ "get", "waterway" ], "waterfall" ], [ "==", [ "get", "tourism" ], "wilderness_hut" ] ], [ ">=", [ "zoom" ], 12 ], [ "any", [ "==", [ "get", "railway" ], "level_crossing" ], [ "==", [ "get", "natural" ], "spring" ] ], [ ">=", [ "zoom" ], 13 ], [ "any", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], [ "==", [ "get", "natural" ], "saddle" ], [ "has", "historic" ] ], [ ">=", [ "zoom" ], 14 ], [ "any", [ "in", [ "get", "shop" ], [ "literal", [ "department_store", "supermarket" ] ] ], [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], [ "in", [ "get", "tourism" ], [ "literal", [ "museum", "viewpoint" ] ] ] ], [ ">=", [ "zoom" ], 15 ], [ "any", [ "==", [ "get", "highway" ], "elevator" ], [ "==", [ "get", "man_made" ], "mast" ], [ "in", [ "get", "shop" ], [ "literal", [ "alcohol", "bakery", "beverages", "butcher", "coffee", "confectionery", "convenience", "deli", "dairy", "greengrocer", "tea", "department_store", "supermarket", "bag", "clothes", "fabric", "jewelry", "shoes", "charity", "second_hand", "variety_store", "beauty", "chemist", "hairdresser", "medical_supply", "optician", "perfumery", "florist", "garden_centre", "houseware", "paint", "trade", "bed", "carpet", "furniture", "interior_decoration", "computer", "electronics", "hifi", "mobile_phone", "bicycle", "boat", "car", "car_repair", "motorcycle", "outdoor", "sports", "tyres", "art", "music", "musical_instrument", "photo", "video", "video_games", "gift", "newsagent", "stationery", "ticket", "bookmaker", "copyshop", "laundry", "pet", "tobacco", "toys", "travel_agency", "massage" ] ] ] ], [ ">=", [ "zoom" ], 17 ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
@@ -997,8 +631,8 @@
       "icon-optional" : false
     },
     "paint" : {
-      "text-color" : [ "case", [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], "rgba(199, 116, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "driving_school", "ferry_terminal" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "library", "bicycle_repair_station", "car_wash", "vehicle_inspection", "atm", "bank", "bureau_de_change", "social_facility", "arts_centre", "casino", "cinema", "community_centre", "nightclub", "public_bookcase", "theatre", "courthouse", "firestation", "police", "post_box", "post_office", "prison", "townhall", "bbq", "bench", "drinking_water", "shelter", "shower", "telephone", "toilets", "recycling", "waste_basket", "waste_disposal", "internet_cafe", "public_bath" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "kick-scooter_rental", "bicycle_parking", "bicycle_rental", "boat_rental", "bus_station", "car_rental", "charging_station", "fuel", "motorcycle_parking", "parking", "parking_entrance", "taxi" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], "rgba(191, 0, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "fountain" ] ] ], "rgba(87, 104, 236, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "marketplace" ] ] ], "rgba(172, 57, 172, 1)", [ "has", "historic" ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "highway" ], [ "literal", [ "bus_stop", "elevator" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "amusement_arcade", "beach_resort", "bird_hide", "bowling_alley", "fishing", "miniature_golf", "outdoor_seating", "playground", "sauna" ] ] ], "rgba(14, 133, 24, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "firepit" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "picnic_table" ] ] ], "rgba(102, 102, 102, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "slipway" ] ] ], "rgba(0, 146, 218, 1)", "rgba(199, 116, 0, 1)" ],
-      "icon-color" : [ "case", [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], "rgba(199, 116, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "driving_school", "ferry_terminal" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "library", "bicycle_repair_station", "car_wash", "vehicle_inspection", "atm", "bank", "bureau_de_change", "social_facility", "arts_centre", "casino", "cinema", "community_centre", "nightclub", "public_bookcase", "theatre", "courthouse", "firestation", "police", "post_box", "post_office", "prison", "townhall", "bbq", "bench", "drinking_water", "shelter", "shower", "telephone", "toilets", "recycling", "waste_basket", "waste_disposal", "internet_cafe", "public_bath" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "kick-scooter_rental", "bicycle_parking", "bicycle_rental", "boat_rental", "bus_station", "car_rental", "charging_station", "fuel", "motorcycle_parking", "parking", "parking_entrance", "taxi" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], "rgba(191, 0, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "fountain" ] ] ], "rgba(87, 104, 236, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "marketplace" ] ] ], "rgba(172, 57, 172, 1)", [ "has", "historic" ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "highway" ], [ "literal", [ "bus_stop", "elevator" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "amusement_arcade", "beach_resort", "bird_hide", "bowling_alley", "fishing", "miniature_golf", "outdoor_seating", "playground", "sauna" ] ] ], "rgba(14, 133, 24, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "firepit" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "picnic_table" ] ] ], "rgba(102, 102, 102, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "slipway" ] ] ], "rgba(0, 146, 218, 1)", "rgba(199, 116, 0, 1)" ],
+      "text-color" : [ "case", [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], "rgba(199, 116, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "driving_school", "ferry_terminal", "library", "bicycle_repair_station", "car_wash", "vehicle_inspection", "atm", "bank", "bureau_de_change", "social_facility", "arts_centre", "casino", "cinema", "community_centre", "nightclub", "public_bookcase", "theatre", "courthouse", "firestation", "police", "post_box", "post_office", "prison", "townhall", "bbq", "bench", "drinking_water", "shelter", "shower", "telephone", "toilets", "recycling", "waste_basket", "waste_disposal", "internet_cafe", "public_bath" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "kick-scooter_rental", "bicycle_parking", "bicycle_rental", "boat_rental", "bus_station", "car_rental", "charging_station", "fuel", "motorcycle_parking", "parking", "parking_entrance", "taxi" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], "rgba(191, 0, 0, 1)", [ "==", [ "get", "amenity" ], "fountain" ], "rgba(87, 104, 236, 1)", [ "==", [ "get", "amenity" ], "marketplace" ], "rgba(172, 57, 172, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "archaeological_site", "caslte", "fort", "manor", "memorial", "monument" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "city_gate", "wayside_shrine" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "highway" ], [ "literal", [ "bus_stop", "elevator" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "amusement_arcade", "beach_resort", "bird_hide", "bowling_alley", "fishing", "miniature_golf", "outdoor_seating", "playground", "sauna", "water_park" ] ] ], "rgba(14, 133, 24, 1)", [ "==", [ "get", "leisure" ], "firepit" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "leisure" ], "picnic_table" ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "leisure" ], "slipway" ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "chimney", "communications_tower" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "crane", "lighthouse", "mast", "storage_tank", "water_tower", "windmill" ] ] ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "man_made" ], "obelisk" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "man_made" ], "cross" ], "rgba(0, 0, 0, 1)", [ "==", [ "get", "military" ], "bunker" ], "rgba(85, 85, 85, 1)", [ "==", [ "get", "natural" ], "spring" ], "rgba(122, 188, 236, 1)", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "saddle" ] ] ], "rgba(207, 143, 86, 1)", [ "==", [ "get", "natural" ], "volcano" ], "rgba(211, 0, 0, 1)", [ "==", [ "get", "railway" ], "level_crossing" ], "rgba(77, 77, 77, 1)", [ "in", [ "get", "shop" ], [ "literal", [ "alcohol", "bakery", "beverages", "butcher", "coffee", "confectionery", "convenience", "deli", "dairy", "greengrocer", "tea", "department_store", "supermarket", "bag", "clothes", "fabric", "jewelry", "shoes", "charity", "second_hand", "variety_store", "beauty", "chemist", "hairdresser", "medical_supply", "optician", "perfumery", "florist", "garden_centre", "houseware", "paint", "trade", "bed", "carpet", "furniture", "interior_decoration", "computer", "electronics", "hifi", "mobile_phone", "bicycle", "boat", "car", "car_repair", "motorcycle", "outdoor", "sports", "tyres", "art", "music", "musical_instrument", "photo", "video", "video_games", "gift", "newsagent", "stationery", "ticket", "bookmaker", "copyshop", "laundry", "pet", "tobacco", "toys", "travel_agency" ] ] ], "rgba(172, 57, 172, 1)", [ "==", [ "get", "shop" ], "massage" ], "rgba(14, 133, 24, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "apartment", "chalet", "guest_house", "hostel", "hotel", "motel", "wilderness_hut" ] ] ], "rgba(3, 146, 218, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "artwork", "museum", "viewpoint" ] ] ], "rgba(115, 74, 9, 1)", [ "==", [ "get", "waterway" ], "waterfall" ], "rgba(77, 128, 179, 1)", "rgba(199, 116, 0, 1)" ],
+      "icon-color" : [ "case", [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant" ] ] ], "rgba(199, 116, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "driving_school", "ferry_terminal", "library", "bicycle_repair_station", "car_wash", "vehicle_inspection", "atm", "bank", "bureau_de_change", "social_facility", "arts_centre", "casino", "cinema", "community_centre", "nightclub", "public_bookcase", "theatre", "courthouse", "firestation", "police", "post_box", "post_office", "prison", "townhall", "bbq", "bench", "drinking_water", "shelter", "shower", "telephone", "toilets", "recycling", "waste_basket", "waste_disposal", "internet_cafe", "public_bath" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "kick-scooter_rental", "bicycle_parking", "bicycle_rental", "boat_rental", "bus_station", "car_rental", "charging_station", "fuel", "motorcycle_parking", "parking", "parking_entrance", "taxi" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "pharmacy", "veterinary" ] ] ], "rgba(191, 0, 0, 1)", [ "==", [ "get", "amenity" ], "fountain" ], "rgba(87, 104, 236, 1)", [ "==", [ "get", "amenity" ], "marketplace" ], "rgba(172, 57, 172, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "archaeological_site", "caslte", "fort", "manor", "memorial", "monument" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "city_gate", "wayside_shrine" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "highway" ], [ "literal", [ "bus_stop", "elevator" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "amusement_arcade", "beach_resort", "bird_hide", "bowling_alley", "fishing", "miniature_golf", "outdoor_seating", "playground", "sauna", "water_park" ] ] ], "rgba(14, 133, 24, 1)", [ "==", [ "get", "leisure" ], "firepit" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "leisure" ], "picnic_table" ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "leisure" ], "slipway" ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "chimney", "communications_tower" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "crane", "lighthouse", "mast", "storage_tank", "water_tower", "windmill" ] ] ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "man_made" ], "obelisk" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "man_made" ], "cross" ], "rgba(0, 0, 0, 1)", [ "==", [ "get", "military" ], "bunker" ], "rgba(85, 85, 85, 1)", [ "==", [ "get", "natural" ], "spring" ], "rgba(122, 188, 236, 1)", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "saddle" ] ] ], "rgba(207, 143, 86, 1)", [ "==", [ "get", "natural" ], "volcano" ], "rgba(211, 0, 0, 1)", [ "==", [ "get", "railway" ], "level_crossing" ], "rgba(77, 77, 77, 1)", [ "in", [ "get", "shop" ], [ "literal", [ "alcohol", "bakery", "beverages", "butcher", "coffee", "confectionery", "convenience", "deli", "dairy", "greengrocer", "tea", "department_store", "supermarket", "bag", "clothes", "fabric", "jewelry", "shoes", "charity", "second_hand", "variety_store", "beauty", "chemist", "hairdresser", "medical_supply", "optician", "perfumery", "florist", "garden_centre", "houseware", "paint", "trade", "bed", "carpet", "furniture", "interior_decoration", "computer", "electronics", "hifi", "mobile_phone", "bicycle", "boat", "car", "car_repair", "motorcycle", "outdoor", "sports", "tyres", "art", "music", "musical_instrument", "photo", "video", "video_games", "gift", "newsagent", "stationery", "ticket", "bookmaker", "copyshop", "laundry", "pet", "tobacco", "toys", "travel_agency" ] ] ], "rgba(172, 57, 172, 1)", [ "==", [ "get", "shop" ], "massage" ], "rgba(14, 133, 24, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "apartment", "chalet", "guest_house", "hostel", "hotel", "motel", "wilderness_hut" ] ] ], "rgba(3, 146, 218, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "artwork", "museum", "viewpoint" ] ] ], "rgba(115, 74, 9, 1)", [ "==", [ "get", "waterway" ], "waterfall" ], "rgba(77, 128, 179, 1)", "rgba(199, 116, 0, 1)" ],
       "icon-opacity" : 1,
       "icon-translate-anchor" : "map",
       "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
