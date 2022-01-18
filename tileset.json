@@ -15,6 +15,20 @@
       "id": "points",
       "queries": [
         {
+          "minzoom": 2,
+          "maxzoom": 3,
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country')"
+        },
+        {
+          "minzoom": 3,
+          "maxzoom": 4,
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'city', 'sea')"
+        },
+        {
+          "minzoom": 4,
+          "maxzoom": 8,
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'city', 'sea', 'state', 'county')"
+        },{
           "minzoom": 8,
           "maxzoom": 14,
           "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town')"
