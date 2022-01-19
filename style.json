@@ -561,35 +561,17 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "city_town_label",
+    "id" : "place_label",
     "type" : "symbol",
-    "filter" : [ "any", [ "all", [ "==", "place", "city" ], [ "!=", "capital", "yes" ] ], [ "==", "place", "town" ] ],
+    "filter" : [ "any", [ "all", [ "==", [ "get", "place" ], "city" ], [ "<=", [ "zoom" ], 14 ] ], [ "all", [ "==", [ "get", "place" ], "town" ], [ "<=", [ "zoom" ], 15 ] ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
       "visibility" : "visible",
       "text-font" : [ "Noto Sans Regular" ],
       "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, [ "case", [ "==", "capital", "4" ], 10, 0 ], 5, [ "case", [ "==", "capital", "4" ], 12, [ "any", [ "==", "capital", "6" ], [ "==", "admin_centre:4", "yes" ] ], 10, 0 ], 6, [ "case", [ "==", "capital", "4" ], 12, [ "all", [ "==", "place", "city" ], [ "!=", "capital", "4" ] ], 10, 0 ], 8, [ "case", [ "==", "place", "city" ], 14, [ "==", "place", "town" ], 11, 0 ], 10, [ "case", [ "==", "place", "city" ], 16, [ "==", "place", "town" ], 12, 0 ] ]
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 3, [ "case", [ "==", [ "get", "capital" ], "yes" ], 10, 0 ], 4, [ "case", [ "==", [ "get", "capital" ], "yes" ], 12, [ "==", [ "get", "capital" ], "4" ], 10, 0 ], 5, [ "case", [ "==", [ "get", "capital" ], "yes" ], 14, [ "==", [ "get", "capital" ], "4" ], 12, [ "all", [ "==", [ "get", "place" ], "city" ], [ "!=", [ "get", "capital" ], "yes" ], [ "!=", [ "get", "capital" ], "4" ] ], 10, 0 ], 8, [ "case", [ "==", [ "get", "capital" ], "yes" ], 15, [ "all", [ "==", [ "get", "place" ], "city" ], [ "!=", [ "get", "capital" ], "yes" ] ], 13, [ "==", [ "get", "place" ], "town" ], 11, 0 ], 10, [ "case", [ "==", [ "get", "capital" ], "yes" ], 17, [ "all", [ "==", [ "get", "place" ], "city" ], [ "!=", [ "get", "capital" ], "yes" ] ], 15, [ "==", [ "get", "place" ], "town" ], 11, 0 ], 13, [ "case", [ "==", [ "get", "capital" ], "yes" ], 16, [ "all", [ "==", [ "get", "place" ], "city" ], [ "!=", [ "get", "capital" ], "yes" ] ], 14, [ "==", [ "get", "place" ], "town" ], 14, 0 ] ]
     },
-    "maxzoom" : 15,
-    "paint" : {
-      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "text-halo-width" : 1.2
-    }
-  }, {
-    "id" : "capital_label",
-    "type" : "symbol",
-    "filter" : [ "all", [ "==", "capital", "yes" ] ],
-    "source" : "baremaps",
-    "source-layer" : "points",
-    "layout" : {
-      "visibility" : "visible",
-      "text-font" : [ "Noto Sans Regular" ],
-      "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 3, 10, 4, 12, 5, 14, 8, 17, 10, 18 ]
-    },
-    "maxzoom" : 14,
     "paint" : {
       "text-halo-color" : "rgba(255, 255, 255, 0.8)",
       "text-halo-width" : 1.2
