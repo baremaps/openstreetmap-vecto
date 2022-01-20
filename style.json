@@ -599,6 +599,23 @@
       "text-halo-width" : 1,
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
+  }, {
+    "id" : "neighbourhood_label",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "place" ], "neighbourhood" ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 16, 11, 18, 11 ]
+    },
+    "paint" : {
+      "text-color" : [ "interpolate", [ "exponential", 2.2 ], [ "zoom" ], 14, "rgba(0, 0, 0, 1)", 15.5, "rgba(105, 105, 105, 1)" ],
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 2
+    }
   } ],
   "center" : [ 6.6323, 46.5197 ],
   "metadata" : {
