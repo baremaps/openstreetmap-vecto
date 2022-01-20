@@ -47,7 +47,7 @@
         },{
           "minzoom": 14,
           "maxzoom": 15,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('town', 'village', 'quarter', 'hamlet', 'neighborhood')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('village', 'quarter', 'hamlet', 'neighborhood')"
         },{
           "minzoom": 15,
           "maxzoom": 16,
