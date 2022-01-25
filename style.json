@@ -617,6 +617,7 @@
       "text-halo-width" : 2
     }
   }, {
+
     "id" : "hamlet_label",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "place" ], "hamlet" ] ],
