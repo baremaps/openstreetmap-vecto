@@ -60,7 +60,7 @@
         {
           "minzoom": 10,
           "maxzoom": 14,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'natural' IN ('peak', 'volcano')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'natural' IN ('peak', 'volcano')) OR (tags ->> 'highway' IN ('motorway_junction'))"
         },
         {
           "minzoom": 12,
