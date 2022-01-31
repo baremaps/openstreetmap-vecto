@@ -628,6 +628,34 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
+    "id" : "restaurants",
+    "type" : "symbol",
+    "filter" : [ "all", [ "in", [ "get", "amenity" ], [ "literal", [ "restaurant", "food_court" ] ] ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "icon-size" : 1,
+      "icon-allow-overlap" : true,
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-size" : 11,
+      "text-offset" : [ 0, 1.5 ],
+      "text-field" : [ "get", "name" ],
+      "visibility" : "visible",
+      "text-optional" : false,
+      "icon-optional" : false,
+      "icon-image" : "restaurant"
+    },
+    "paint" : {
+      "text-color" : "rgba(199, 116, 0, 1)",
+      "icon-color" : "rgba(199, 116, 0, 1)",
+      "icon-opacity" : 1,
+      "icon-translate-anchor" : "map",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1,
+      "text-halo-width" : 1,
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)"
+    }
+  }, {
     "id" : "motorway_junction_ref",
     "type" : "symbol",
     "filter" : [ "all", [ "==", "highway", "motorway_junction" ] ],
