@@ -47,15 +47,15 @@
         },{
           "minzoom": 14,
           "maxzoom": 15,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('village', 'quarter', 'hamlet', 'neighborhood')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('village', 'quarter', 'hamlet', 'neighborhood', 'isolated_dwelling')"
         },{
           "minzoom": 15,
           "maxzoom": 16,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('hamlet', 'neighborhood')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('hamlet', 'neighborhood', 'isolated_dwelling')"
         },{
           "minzoom": 16,
           "maxzoom": 18,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('neighborhood')"
+          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('neighborhood', 'isolated_dwelling')"
         },
         {
           "minzoom": 10,
