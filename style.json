@@ -288,9 +288,38 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
+    "id" : "living_street_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "living_street" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(207, 207, 207, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "living_street_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "living_street" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
+      "line-color" : "rgba(245, 245, 245, 1)"
+    }
+  }, {
     "id" : "highway_casing",
     "type" : "line",
-    "filter" : [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street", "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link", "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "road" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -318,7 +347,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ],
+    "filter" : [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
