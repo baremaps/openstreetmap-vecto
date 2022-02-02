@@ -331,6 +331,20 @@
       "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(221, 221, 231)", [ "==", [ "get", "highway" ], "road" ], "rgb(221, 221, 221)", [ "==", [ "get", "highway" ], "service" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(237, 237, 237)", [ "==", [ "get", "highway" ], "residential" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "tertiary", "tertiary_link" ] ] ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(248, 250, 202)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(253, 221, 179)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(250, 193, 172)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(233, 144, 161)", [ "==", [ "get", "highway" ], "track" ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ]
     }
   }, {
+    "id" : "bridleway_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "bridleway" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-color" : "rgba(160, 165, 154, 1)",
+      "line-gap-width" : 3.5
+    }
+  }, {
     "id" : "highway_dash",
     "type" : "line",
     "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "service" ], [ "==", "highway", "track" ] ],
