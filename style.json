@@ -290,7 +290,7 @@
   }, {
     "id" : "highway_casing",
     "type" : "line",
-    "filter" : [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street", "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link", "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "road" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -299,7 +299,7 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "pedestrian" ], [ "in", [ "get", "geometry" ], [ "literal", [ "polygon", "multipolygon" ] ] ] ], 6, [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street" ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], 12, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 16, 0 ] ],
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "pedestrian" ], [ "in", [ "get", "geometry" ], [ "literal", [ "polygon", "multipolygon" ] ] ] ], 6, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "living_street" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ] ], 8, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ], [ "!=", [ "get", "service" ], "driveway" ] ] ], 12, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 16, 0 ] ],
       "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(184, 183, 182)", [ "==", [ "get", "highway" ], "road" ], "rgb(201, 201, 200)", [ "==", [ "get", "highway" ], "service" ], "rgb(213, 211, 211)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(207, 207, 207)", [ "==", [ "get", "highway" ], "residential" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "tertiary" ], "rgb(190, 189, 188)", [ "==", [ "get", "highway" ], "tertiary_link" ], "rgb(190, 189, 188)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(154, 166, 67)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(192, 147, 62)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(217, 111, 78)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(227, 82, 126)", "rgba(0, 0, 0, 0)" ]
     }
   }, {
@@ -318,7 +318,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ],
+    "filter" : [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -327,13 +327,13 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "==", [ "get", "tracktype" ], "grade1" ] ], 2.5, [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street" ] ] ], 4, [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 12, 0 ] ],
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "==", [ "get", "tracktype" ], "grade1" ] ], 2.5, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "living_street" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ] ], 4, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ], [ "!=", [ "get", "service" ], "driveway" ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 12, 0 ] ],
       "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(221, 221, 231)", [ "==", [ "get", "highway" ], "road" ], "rgb(221, 221, 221)", [ "==", [ "get", "highway" ], "service" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(237, 237, 237)", [ "==", [ "get", "highway" ], "residential" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "tertiary", "tertiary_link" ] ] ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(248, 250, 202)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(253, 221, 179)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(250, 193, 172)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(233, 144, 161)", [ "==", [ "get", "highway" ], "track" ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ]
     }
   }, {
     "id" : "highway_dash",
     "type" : "line",
-    "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "service" ], [ "==", "highway", "track" ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "service" ], [ "==", "highway", "track" ] ], [ "!=", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
