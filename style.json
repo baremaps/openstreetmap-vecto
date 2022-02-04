@@ -168,7 +168,7 @@
   }, {
     "id" : "waterway_tunnel_casing",
     "type" : "line",
-    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "any", [ "==", "tunnel", "yes" ], [ "==", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -182,7 +182,7 @@
   }, {
     "id" : "waterway_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "any", [ "==", "tunnel", "yes" ], [ "==", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -197,7 +197,7 @@
   }, {
     "id" : "waterway",
     "type" : "line",
-    "filter" : [ "all", [ "!=", "tunnel", "yes" ] ],
+    "filter" : [ "all", [ "!=", "tunnel", "yes" ], [ "!=", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -288,6 +288,339 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
+    "id" : "pedestrian_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "pedestrian" ], [ "==", "tunnel", "yes" ], [ "!=", "$type", "Polygon" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(184, 183, 182, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "pedestrian_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "pedestrian" ], [ "==", "tunnel", "yes" ], [ "!=", "$type", "Polygon" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
+      "line-color" : "rgba(221, 221, 232, 1)"
+    }
+  }, {
+    "id" : "service_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(213, 211, 211, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "service_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
+      "line-color" : "rgba(242, 242, 242, 1)"
+    }
+  }, {
+    "id" : "living_street_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "living_street" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(207, 207, 207, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "living_street_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "living_street" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
+      "line-color" : "rgba(245, 245, 245, 1)"
+    }
+  }, {
+    "id" : "unclassified_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "unclassified" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(211, 207, 206, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "unclassified_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "unclassified" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(242, 242, 242, 1)"
+    }
+  }, {
+    "id" : "tertiary_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(190, 189, 188, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "tertiary_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(255, 255, 255, 1)"
+    }
+  }, {
+    "id" : "trunk_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 16 ],
+      "line-color" : "rgba(217, 111, 78, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "trunk_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(252, 215, 204, 1)"
+    }
+  }, {
+    "id" : "secondary_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(154, 166, 67, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "secondary_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(249, 253, 215, 1)"
+    }
+  }, {
+    "id" : "residential_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "residential" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(211, 207, 206, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "residential_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "residential" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(242, 242, 242, 1)"
+    }
+  }, {
+    "id" : "primary_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 16 ],
+      "line-color" : "rgba(192, 147, 62, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "primary_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(254, 237, 213, 1)"
+    }
+  }, {
+    "id" : "motorway_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 16 ],
+      "line-color" : "rgba(227, 82, 126, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "motorway_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(241, 188, 198, 1)"
+    }
+  }, {
+    "id" : "highway_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "road" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "pedestrian" ], [ "in", [ "get", "geometry" ], [ "literal", [ "polygon", "multipolygon" ] ] ] ], 6, [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street" ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], 12, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 16, 0 ] ],
+      "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(184, 183, 182)", [ "==", [ "get", "highway" ], "road" ], "rgb(201, 201, 200)", [ "==", [ "get", "highway" ], "service" ], "rgb(213, 211, 211)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(207, 207, 207)", [ "==", [ "get", "highway" ], "residential" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "tertiary" ], "rgb(190, 189, 188)", [ "==", [ "get", "highway" ], "tertiary_link" ], "rgb(190, 189, 188)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(154, 166, 67)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(192, 147, 62)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(217, 111, 78)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(227, 82, 126)", "rgba(0, 0, 0, 0)" ]
+    }
+  }, {
+    "id" : "highway_polygon",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(221, 221, 232)",
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "highway_path",
+    "type" : "line",
+    "filter" : [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "==", [ "get", "tracktype" ], "grade1" ] ], 2.5, [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "service", "living_street" ] ] ], 4, [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 12, 0 ] ],
+      "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(221, 221, 231)", [ "==", [ "get", "highway" ], "road" ], "rgb(221, 221, 221)", [ "==", [ "get", "highway" ], "service" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(237, 237, 237)", [ "==", [ "get", "highway" ], "residential" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "tertiary", "tertiary_link" ] ] ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(248, 250, 202)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(253, 221, 179)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(250, 193, 172)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(233, 144, 161)", [ "==", [ "get", "highway" ], "track" ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ]
+    }
+  }, {
     "id" : "service_driveway_tunnel_casing",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "service", "driveway" ] ],
@@ -317,7 +650,7 @@
       "line-color" : "rgba(242, 242, 242, 1)"
     }
   }, {
-    "id" : "service_private/no_tunnel_casing",
+    "id" : "service_private_no_tunnel_casing",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
     "source" : "baremaps",
@@ -331,7 +664,7 @@
       "line-dasharray" : [ 0.3, 0.15 ]
     }
   }, {
-    "id" : "service_private/no_tunnel",
+    "id" : "service_private_no_tunnel",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
     "source" : "baremaps",
@@ -346,7 +679,7 @@
       "line-color" : "rgba(242, 242, 242, 1)"
     }
   }, {
-    "id" : "service_private/no_tunnel_dash",
+    "id" : "service_private_no_tunnel_dash",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
     "source" : "baremaps",
@@ -359,52 +692,104 @@
       "line-color" : "rgba(192, 192, 192, 1)"
     }
   }, {
-    "id" : "highway_casing",
+    "id" : "steps_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "road" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "filter" : [ "all", [ "==", "highway", "steps" ], [ "==", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
-      "line-cap" : "round",
-      "line-join" : "round",
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "pedestrian" ], [ "in", [ "get", "geometry" ], [ "literal", [ "polygon", "multipolygon" ] ] ] ], 6, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "living_street" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ] ], 8, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ], [ "!=", [ "get", "service" ], "driveway" ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "!", [ "has", "access" ] ], [ "!", [ "has", "service" ] ] ] ], 12, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 16, 0 ] ],
-      "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(184, 183, 182)", [ "==", [ "get", "highway" ], "road" ], "rgb(201, 201, 200)", [ "==", [ "get", "highway" ], "service" ], "rgb(213, 211, 211)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(207, 207, 207)", [ "==", [ "get", "highway" ], "residential" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(211, 207, 206)", [ "==", [ "get", "highway" ], "tertiary" ], "rgb(190, 189, 188)", [ "==", [ "get", "highway" ], "tertiary_link" ], "rgb(190, 189, 188)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(154, 166, 67)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(192, 147, 62)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(217, 111, 78)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(227, 82, 126)", "rgba(0, 0, 0, 0)" ]
+      "line-color" : "rgba(255, 255, 255, 1)",
+      "line-width" : 6
     }
   }, {
-    "id" : "highway_polygon",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "id" : "steps_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "steps" ], [ "==", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : "rgb(221, 221, 232)",
-      "fill-antialias" : true
+      "line-dasharray" : [ 2, 2 ],
+      "line-gap-width" : 5.5,
+      "line-color" : "rgba(61, 61, 61, 1)"
     }
   }, {
-    "id" : "highway_path",
+    "id" : "path_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "filter" : [ "all", [ "==", "highway", "path" ], [ "==", "tunnel", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
-      "line-cap" : "round",
-      "line-join" : "round",
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "==", [ "get", "tracktype" ], "grade1" ] ], 2.5, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "pedestrian", "road", "living_street" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ] ], 4, [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "unclassified", "residential", "tertiary", "tertiary_link", "secondary", "secondary_link" ] ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ], [ "!=", [ "get", "service" ], "driveway" ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "!", [ "has", "access" ] ], [ "!", [ "has", "service" ] ] ] ], 8, [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link", "trunk", "trunk_link", "motorway", "motorway_link" ] ] ], 12, 0 ] ],
-      "line-color" : [ "case", [ "==", [ "get", "highway" ], "pedestrian" ], "rgb(221, 221, 231)", [ "==", [ "get", "highway" ], "road" ], "rgb(221, 221, 221)", [ "==", [ "get", "highway" ], "service" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "living_street" ], "rgb(237, 237, 237)", [ "==", [ "get", "highway" ], "residential" ], "rgb(254, 254, 254)", [ "==", [ "get", "highway" ], "unclassified" ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "tertiary", "tertiary_link" ] ] ], "rgb(254, 254, 254)", [ "in", [ "get", "highway" ], [ "literal", [ "secondary", "secondary_link" ] ] ], "rgb(248, 250, 202)", [ "in", [ "get", "highway" ], [ "literal", [ "primary", "primary_link" ] ] ], "rgb(253, 221, 179)", [ "in", [ "get", "highway" ], [ "literal", [ "trunk", "trunk_link" ] ] ], "rgb(250, 193, 172)", [ "in", [ "get", "highway" ], [ "literal", [ "motorway", "motorway_link" ] ] ], "rgb(233, 144, 161)", [ "==", [ "get", "highway" ], "track" ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ]
+      "line-color" : "rgba(255, 255, 255, 1)",
+      "line-width" : 4
+    }
+  }, {
+    "id" : "path_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "path" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-gap-width" : 3.5,
+      "line-color" : "rgba(125, 125, 124, 1)"
+    }
+  }, {
+    "id" : "footway_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "footway" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-color" : "rgba(255, 255, 255, 1)",
+      "line-width" : 4
+    }
+  }, {
+    "id" : "footway_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "footway" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-gap-width" : 3.5,
+      "line-color" : "rgba(61, 61, 61, 1)"
+    }
+  }, {
+    "id" : "bridleway_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "bridleway" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-color" : "rgba(160, 165, 154, 1)",
+      "line-gap-width" : 3.5
     }
   }, {
     "id" : "highway_dash",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "service" ], [ "==", "highway", "track" ] ], [ "!=", "tunnel", "yes" ] ],
+    "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "service" ], [ "==", "highway", "track" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -413,7 +798,7 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "line-color" : [ "case", [ "==", [ "get", "highway" ], "bridleway" ], "rgb(68, 159, 66)", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "!=", [ "get", "access" ], "private" ] ], "rgb(250, 132, 117)", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "==", [ "get", "access" ], "private" ] ], "rgb(192, 192, 192)", [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ] ], "rgb(192, 192, 192)", [ "==", [ "get", "highway" ], "path" ], "rgb(250, 132, 117)", [ "==", [ "get", "highway" ], "sidewalk" ], "rgb(250, 132, 117)", [ "==", [ "get", "highway" ], "crossing" ], "rgb(250, 132, 117)", [ "==", [ "get", "highway" ], "steps" ], "rgb(250, 132, 117)", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "!", [ "has", "tracktype" ] ] ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ],
+      "line-color" : [ "case", [ "==", [ "get", "highway" ], "bridleway" ], "rgb(68, 159, 66)", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "!=", [ "get", "access" ], "private" ] ], "rgb(250, 132, 117)", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "==", [ "get", "access" ], "private" ] ], "rgb(192, 192, 192)", [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "access" ], "private" ] ], "rgb(192, 192, 192)", [ "==", [ "get", "highway" ], "path" ], "rgba(28, 27, 254, 1)", [ "==", [ "get", "highway" ], "sidewalk" ], "rgb(250, 132, 117)", [ "==", [ "get", "highway" ], "crossing" ], "rgb(250, 132, 117)", [ "==", [ "get", "highway" ], "steps" ], "rgb(250, 132, 117)", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "!", [ "has", "tracktype" ] ] ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ],
       "line-dasharray" : [ 2, 2 ]
     }
   }, {
@@ -671,7 +1056,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "cafes",
+    "id" : "poi_cafes",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "cafe" ], [ ">=", [ "zoom" ], 15 ] ],
     "source" : "baremaps",
@@ -699,7 +1084,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "atm",
+    "id" : "poi_atm",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "atm" ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
@@ -727,7 +1112,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "fuel_charging",
+    "id" : "poi_fuel_charging",
     "type" : "symbol",
     "filter" : [ "all", [ "in", [ "get", "amenity" ], [ "literal", [ "charging_station", "fuel" ] ] ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
@@ -755,7 +1140,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "parkings",
+    "id" : "poi_parkings",
     "type" : "symbol",
     "filter" : [ "all", [ "any", [ "all", [ "==", [ "get", "amenity" ], "parking_entrance" ], [ "==", [ "get", "parking" ], "underground" ] ], [ "in", [ "get", "amenity" ], [ "literal", [ "parking", "motorcycle_parking" ] ] ] ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
@@ -783,7 +1168,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "hotels",
+    "id" : "poi_hotels",
     "type" : "symbol",
     "filter" : [ "all", [ "in", [ "get", "tourism" ], [ "literal", [ "guest_house", "hostel", "hotel", "motel" ] ] ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
@@ -811,7 +1196,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "shops",
+    "id" : "poi_shops",
     "type" : "symbol",
     "filter" : [ "any", [ "all", [ "in", [ "get", "shop" ], [ "literal", [ "department_store", "supermarket" ] ] ], [ ">=", [ "zoom" ], 15 ] ], [ "all", [ "in", [ "get", "shop" ], [ "literal", [ "alcohol", "bakery", "beverages", "butcher", "coffee", "confectionery", "convenience", "deli", "dairy", "greengrocer", "tea", "department_store", "supermarket", "bag", "clothes", "fabric", "jewelry", "shoes", "charity", "second_hand", "variety_store", "beauty", "chemist", "hairdresser", "medical_supply", "optician", "perfumery", "florist", "garden_centre", "houseware", "paint", "trade", "bed", "carpet", "furniture", "interior_decoration", "computer", "electronics", "hifi", "mobile_phone", "bicycle", "boat", "car", "car_repair", "motorcycle", "outdoor", "sports", "tyres", "art", "music", "musical_instrument", "photo", "video", "video_games", "gift", "newsagent", "stationery", "ticket", "bookmaker", "copyshop", "laundry", "pet", "tobacco", "toys", "travel_agency", "massage" ] ] ], [ ">=", [ "zoom" ], 17 ] ] ],
     "source" : "baremaps",
@@ -839,7 +1224,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "restaurants",
+    "id" : "poi_restaurants",
     "type" : "symbol",
     "filter" : [ "all", [ "in", [ "get", "amenity" ], [ "literal", [ "restaurant", "food_court" ] ] ], [ ">=", [ "zoom" ], 15 ] ],
     "source" : "baremaps",
@@ -867,7 +1252,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "fast-food",
+    "id" : "poi_fast-food",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "fast_food" ], [ ">=", [ "zoom" ], 15 ] ],
     "source" : "baremaps",
@@ -895,7 +1280,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "bars/pubs",
+    "id" : "poi_bars/pubs",
     "type" : "symbol",
     "filter" : [ "all", [ "in", [ "get", "amenity" ], [ "literal", [ "bar", "biergarten", "pub" ] ] ], [ ">=", [ "zoom" ], 15 ] ],
     "source" : "baremaps",
@@ -923,7 +1308,7 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
-    "id" : "pharmacies",
+    "id" : "poi_pharmacies",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "pharmacy" ], [ ">=", [ "zoom" ], 14 ] ],
     "source" : "baremaps",
@@ -987,6 +1372,40 @@
       "text-halo-width" : 1.2
     }
   }, {
+    "id" : "isolated_dwelling_label",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "place" ], "isolated_dwelling" ], [ ">=", [ "zoom" ], 14 ], [ "<=", [ "zoom" ], 17 ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 18, 13 ]
+    },
+    "paint" : {
+      "text-color" : [ "interpolate", [ "exponential", 2.2 ], [ "zoom" ], 14, "rgba(0, 0, 0, 1)", 15.5, "rgba(105, 105, 105, 1)" ],
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 2
+    }
+  }, {
+    "id" : "locality_label",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "place" ], "locality" ], [ ">=", [ "zoom" ], 15 ], [ "<=", [ "zoom" ], 17 ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 9.5, 18, 13 ]
+    },
+    "paint" : {
+      "text-color" : [ "interpolate", [ "exponential", 2.2 ], [ "zoom" ], 15, "rgba(0, 0, 0, 1)", 16.5, "rgba(105, 105, 105, 1)" ],
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 2
+    }
+  }, {
     "id" : "neighbourhood_label",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "place" ], "neighbourhood" ] ],
@@ -1047,7 +1466,7 @@
       "visibility" : "visible",
       "text-font" : [ "Noto Sans Regular" ],
       "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 11, 8, 13, 12, 14, 13 ]
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 11, 9, 13, 12, 14, 13 ]
     },
     "paint" : {
       "text-color" : [ "interpolate", [ "exponential", 2.2 ], [ "zoom" ], 11, "rgba(0, 0, 0, 1)", 13, "rgba(105, 105, 105, 1)" ],
