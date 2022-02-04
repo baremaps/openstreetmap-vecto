@@ -288,6 +288,48 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
+    "id" : "service_private_no_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(213, 211, 211, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "service_private_no_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(242, 242, 242, 1)"
+    }
+  }, {
+    "id" : "service_private_no_tunnel_dash",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-color" : "rgba(192, 192, 192, 1)"
+    }
+  }, {
     "id" : "pedestrian_tunnel_casing",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "pedestrian" ], [ "==", "tunnel", "yes" ], [ "!=", "$type", "Polygon" ] ],
@@ -319,21 +361,21 @@
   }, {
     "id" : "service_tunnel_casing",
     "type" : "line",
-    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "!has", "access" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ], 8, [ "all", [ "==", [ "get", "highway" ], "service" ], [ "!=", [ "get", "service" ], "driveway" ] ], 12, 0 ] ],
       "line-color" : "rgba(213, 211, 211, 1)",
       "line-dasharray" : [ 0.3, 0.15 ]
     }
   }, {
     "id" : "service_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "!has", "access" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -342,7 +384,7 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 4 ],
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, [ "case", [ "all", [ "==", [ "get", "highway" ], "service" ], [ "==", [ "get", "service" ], "driveway" ] ], 4, [ "all", [ "==", [ "get", "highway" ], "service" ], [ "!=", [ "get", "service" ], "driveway" ] ], 8, 0 ] ],
       "line-color" : "rgba(242, 242, 242, 1)"
     }
   }, {
@@ -718,7 +760,7 @@
   }, {
     "id" : "highway_dash",
     "type" : "line",
-    "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "all", [ "==", "highway", "service" ], [ "any", [ "!=", "service", "driveway" ], [ "!=", "tunnel", "yes" ] ] ], [ "==", "highway", "track" ] ],
+    "filter" : [ "any", [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "all", [ "==", "highway", "service" ], [ "!=", "tunnel", "yes" ] ], [ "==", "highway", "track" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
