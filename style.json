@@ -288,6 +288,20 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
+    "id" : "track_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "track" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-dasharray" : [ 2, 2 ],
+      "line-color" : "rgba(121, 119, 119, 1)",
+      "line-gap-width" : 3.5
+    }
+  }, {
     "id" : "service_private_no_tunnel_casing",
     "type" : "line",
     "filter" : [ "all", [ "==", "highway", "service" ], [ "==", "tunnel", "yes" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ],
@@ -650,7 +664,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "filter" : [ "any", [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ], [ "all", [ "==", "tracktype", "grade1" ], [ "==", "tunnel", "yes" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
