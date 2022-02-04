@@ -168,7 +168,7 @@
   }, {
     "id" : "waterway_tunnel_casing",
     "type" : "line",
-    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "any", [ "==", "tunnel", "yes" ], [ "==", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -182,7 +182,7 @@
   }, {
     "id" : "waterway_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "==", "tunnel", "yes" ] ],
+    "filter" : [ "any", [ "==", "tunnel", "yes" ], [ "==", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
@@ -197,7 +197,7 @@
   }, {
     "id" : "waterway",
     "type" : "line",
-    "filter" : [ "all", [ "!=", "tunnel", "yes" ] ],
+    "filter" : [ "all", [ "!=", "tunnel", "yes" ], [ "!=", "tunnel", "culvert" ] ],
     "source" : "baremaps",
     "source-layer" : "waterway",
     "layout" : {
