@@ -945,6 +945,23 @@
       "text-halo-width" : 1.2
     }
   }, {
+    "id" : "isolated_dwelling_label",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "place" ], "isolated_dwelling" ], [ ">=", [ "zoom" ], 14 ], [ "<=", [ "zoom" ], 17 ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 18, 13 ]
+    },
+    "paint" : {
+      "text-color" : [ "interpolate", [ "exponential", 2.2 ], [ "zoom" ], 14, "rgba(0, 0, 0, 1)", 15.5, "rgba(105, 105, 105, 1)" ],
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 2
+    }
+  }, {
     "id" : "locality_label",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "place" ], "locality" ], [ ">=", [ "zoom" ], 15 ], [ "<=", [ "zoom" ], 17 ] ],
