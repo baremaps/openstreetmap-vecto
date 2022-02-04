@@ -288,6 +288,35 @@
       "line-color" : "rgb(102, 102, 102)"
     }
   }, {
+    "id" : "residential_tunnel_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "residential" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 12 ],
+      "line-color" : "rgba(211, 207, 206, 1)",
+      "line-dasharray" : [ 0.3, 0.15 ]
+    }
+  }, {
+    "id" : "residential_tunnel",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "residential" ], [ "==", "tunnel", "yes" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "line-cap" : "round",
+      "line-join" : "round",
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-color" : "rgba(242, 242, 242, 1)"
+    }
+  }, {
     "id" : "primary_tunnel_casing",
     "type" : "line",
     "filter" : [ "all", [ "any", [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ] ], [ "==", "tunnel", "yes" ] ],
