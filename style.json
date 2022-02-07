@@ -290,7 +290,7 @@
   }, {
     "id" : "highway_tunnel_casing",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "living_street" ], [ "==", "highway", "service" ], [ "all", [ "==", "highway", "pedestrian" ], [ "!=", "$type", "Polygon" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ] ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "living_street" ], [ "==", "highway", "service" ], [ "all", [ "==", "highway", "pedestrian" ], [ "!=", "$type", "Polygon" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -304,7 +304,7 @@
   }, {
     "id" : "highway_tunnel",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "residential" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "living_street" ], [ "==", "highway", "service" ], [ "all", [ "==", "highway", "pedestrian" ], [ "!=", "$type", "Polygon" ] ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "all", [ "==", "highway", "steps" ], [ "!=", "layer", "-1" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ] ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "residential" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "living_street" ], [ "==", "highway", "service" ], [ "all", [ "==", "highway", "pedestrian" ], [ "!=", "$type", "Polygon" ] ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "all", [ "==", "highway", "steps" ], [ "!=", "layer", "-1" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -319,7 +319,7 @@
   }, {
     "id" : "highway_dash_tunnel_casing",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "track" ], [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "all", [ "==", "highway", "steps" ], [ "!=", "layer", "-1" ] ], [ "all", [ "==", "highway", "service" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ] ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "track" ], [ "==", "highway", "bridleway" ], [ "==", "highway", "footway" ], [ "==", "highway", "path" ], [ "all", [ "==", "highway", "steps" ], [ "!=", "layer", "-1" ] ], [ "all", [ "==", "highway", "service" ], [ "any", [ "==", "access", "private" ], [ "==", "access", "no" ] ], [ "!=", "service", "driveway" ] ] ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -333,7 +333,7 @@
   }, {
     "id" : "highway_casing",
     "type" : "line",
-    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ],
+    "filter" : [ "all", [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "service" ], [ "==", "highway", "living_street" ], [ "==", "highway", "unclassified" ], [ "==", "highway", "residential" ], [ "==", "highway", "tertiary" ], [ "==", "highway", "tertiary_link" ], [ "==", "highway", "secondary" ], [ "==", "highway", "secondary_link" ], [ "==", "highway", "primary" ], [ "==", "highway", "primary_link" ], [ "==", "highway", "trunk" ], [ "==", "highway", "trunk_link" ], [ "==", "highway", "motorway" ], [ "==", "highway", "motorway_link" ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ], [ "!=", "covered", "yes" ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
@@ -361,7 +361,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "any", [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ] ], [ "all", [ "==", "tracktype", "grade1" ], [ "==", "tunnel", "yes" ] ] ],
+    "filter" : [ "any", [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ], [ "!=", "covered", "yes" ] ], [ "all", [ "==", "tracktype", "grade1" ], [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
