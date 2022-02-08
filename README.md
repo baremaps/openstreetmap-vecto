@@ -102,6 +102,10 @@ Simply put, it adds in the ability to describe the `vector_tiles` and their cont
 The configuration format used in the `style.json` follows the [Mapbox style specification](https://github.com/mapbox/mapbox-gl-js).
 Baremaps integrates [Maputnik](https://maputnik.github.io/) and most of the modifications will take place in the browser.
 
+## Tools
+
+* [Overpass turbo](https://overpass-turbo.eu/) from [taginfo](https://taginfo.openstreetmap.org/)
+
 ## Contributing
 
 As a lot remains to be done, contributions and feedbacks are welcome. 
