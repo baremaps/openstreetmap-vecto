@@ -361,7 +361,7 @@
   }, {
     "id" : "highway_path",
     "type" : "line",
-    "filter" : [ "any", [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ], [ "!=", "covered", "yes" ] ], [ "all", [ "==", "tracktype", "grade1" ], [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ],
+    "filter" : [ "any", [ "all", [ "none", [ "all", [ "==", "highway", "pedestrian" ], [ "==", "$type", "Polygon" ] ] ], [ "!=", "tunnel", "yes" ], [ "!=", "layer", "-1" ], [ "!=", "covered", "yes" ] ], [ "all", [ "==", "tracktype", "grade1" ], [ "any", [ "==", "tunnel", "yes" ], [ "==", "layer", "-1" ], [ "==", "covered", "yes" ] ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
