@@ -959,6 +959,22 @@
       "text-halo-width" : 1.2
     }
   }, {
+    "id" : "islet_label",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "place" ], "islet" ], [ ">=", [ "zoom" ], 16 ], [ "<=", [ "zoom" ], 17 ] ],
+    "source" : "baremaps",
+    "source-layer" : "points",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 11, 18, 11 ]
+    },
+    "paint" : {
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 1.2
+    }
+  }, {
     "id" : "isolated_dwelling_label",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "place" ], "isolated_dwelling" ], [ ">=", [ "zoom" ], 14 ], [ "<=", [ "zoom" ], 17 ] ],
