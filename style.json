@@ -402,6 +402,33 @@
       "line-dasharray" : [ 8, 3 ]
     }
   }, {
+    "id" : "highway_construction_casing",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "construction" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-color" : "rgba(255, 255, 255, 1)",
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ]
+    }
+  }, {
+    "id" : "highway_construction_dash",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "construction" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-color" : "rgba(252, 213, 164, 1)",
+      "line-width" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 4, 0, 20, 8 ],
+      "line-dasharray" : [ 2, 2 ]
+    }
+  }, {
     "id" : "highway_label",
     "type" : "symbol",
     "filter" : [ "all" ],
