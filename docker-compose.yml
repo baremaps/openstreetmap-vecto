@@ -4,6 +4,15 @@ volumes:
   pgdata: {}
 
 services:
+  compare:
+    image: node:16.13.2
+    working_dir: /usr/app/
+    command: npm run dev -- --host
+    volumes:
+      - ./tools/compare/:/usr/app/
+    ports:
+      - "3000:3000"
+
   db:
     image: postgis/postgis:13-3.1
     environment:
@@ -17,7 +26,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     command: -c fsync=off
-    shm_size: ${PG_SHM_SIZE:-1g}
 
   app:
     build: 
