@@ -1142,24 +1142,6 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)",
       "text-halo-width" : 0.8
     }
-  }, {
-    "id" : "sports_hall_labels",
-    "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "leisure" ], "sports_hall" ], [ ">=", [ "zoom" ], 16 ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "layout" : {
-      "visibility" : "visible",
-      "text-font" : [ "Noto Sans Regular" ],
-      "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 14 ],
-      "text-max-width" : 4
-    },
-    "paint" : {
-      "text-color" : "rgba(103, 103, 102, 1)",
-      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "text-halo-width" : 0.8
-    }
   } ],
   "center" : [ 6.6323, 46.5197 ],
   "metadata" : {
