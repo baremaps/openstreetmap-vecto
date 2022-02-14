@@ -937,6 +937,32 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
+    "id" : "hospital_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "hospital" ], [ ">=", [ "zoom" ], 14 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "icon-image" : [ "get", "amenity" ],
+      "icon-size" : 1,
+      "icon-anchor" : "bottom",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "step", [ "zoom" ], "", 14, "", 15, [ "get", "name" ] ],
+      "text-size" : 11,
+      "text-max-width" : 4,
+      "text-anchor" : "top",
+      "text-optional" : true
+    },
+    "paint" : {
+      "text-color" : "rgba(191, 3, 1, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8,
+      "icon-color" : "rgba(191, 3, 1, 1)",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1
+    }
+  }, {
     "id" : "motorway_junction_ref",
     "type" : "symbol",
     "filter" : [ "all", [ "==", "highway", "motorway_junction" ] ],
