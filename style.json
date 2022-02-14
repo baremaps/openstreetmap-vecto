@@ -637,10 +637,11 @@
     "layout" : {
       "icon-image" : [ "case", [ "has", "amenity" ], [ "get", "amenity" ], [ "has", "historic" ], [ "get", "historic" ], [ "has", "highway" ], [ "get", "highway" ], [ "has", "leisure" ], [ "get", "leisure" ], [ "has", "man_made" ], [ "get", "man_made" ], [ "has", "military" ], [ "get", "military" ], [ "has", "natural" ], [ "get", "natural" ], [ "has", "railway" ], [ "get", "railway" ], [ "has", "tourism" ], [ "get", "tourism" ], [ "has", "waterway" ], [ "get", "waterway" ], "" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -663,10 +664,11 @@
     "layout" : {
       "icon-image" : "cafe",
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -689,10 +691,11 @@
     "layout" : {
       "icon-image" : "atm",
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -715,10 +718,11 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -741,10 +745,11 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -767,10 +772,11 @@
     "layout" : {
       "icon-image" : [ "get", "tourism" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -793,10 +799,11 @@
     "layout" : {
       "icon-image" : [ "get", "shop" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -819,10 +826,11 @@
     "layout" : {
       "icon-image" : "restaurant",
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -845,10 +853,11 @@
     "layout" : {
       "icon-image" : "fast_food",
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -871,10 +880,11 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
@@ -897,10 +907,11 @@
     "layout" : {
       "icon-image" : "pharmacy",
       "icon-size" : 1,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
       "text-optional" : true
     },
