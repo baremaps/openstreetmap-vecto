@@ -629,6 +629,24 @@
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 14, 0.25, 15, 0.5, 16, 1, 17, 2, 18, 4 ]
     }
   }, {
+    "id" : "college_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "college" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 10, 17, 14 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(101, 101, 41, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "poi",
     "type" : "symbol",
     "filter" : [ "case", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "volcano" ] ] ], [ ">=", [ "zoom" ], 10 ], [ "any", [ "==", [ "get", "waterway" ], "waterfall" ], [ "==", [ "get", "tourism" ], "wilderness_hut" ] ], [ ">=", [ "zoom" ], 12 ], [ "any", [ "==", [ "get", "railway" ], "level_crossing" ], [ "==", [ "get", "natural" ], "spring" ] ], [ ">=", [ "zoom" ], 13 ], [ "any", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "veterinary" ] ] ], [ "==", [ "get", "natural" ], "saddle" ], [ "has", "historic" ] ], [ ">=", [ "zoom" ], 14 ], [ "any", [ "==", [ "get", "amenity" ], "ice_cream" ], [ "in", [ "get", "tourism" ], [ "literal", [ "museum", "viewpoint" ] ] ] ], [ ">=", [ "zoom" ], 15 ], [ "any", [ "==", [ "get", "highway" ], "elevator" ], [ "==", [ "get", "man_made" ], "mast" ] ], [ ">=", [ "zoom" ], 17 ], [ ">=", [ "zoom" ], 16 ] ],
