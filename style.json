@@ -47,6 +47,19 @@
       "fill-antialias" : true
     }
   }, {
+    "id" : "amenity_hospital",
+    "type" : "fill",
+    "filter" : [ "any", [ "==", "amenity", "hospital" ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(255, 255, 228)",
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "amenity_grave_yard",
     "type" : "fill",
     "filter" : [ "any", [ "==", "amenity", "grave_yard" ] ],
