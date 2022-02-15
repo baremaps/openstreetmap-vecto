@@ -705,6 +705,24 @@
       "text-halo-width" : 0.8
     }
   }, {
+    "id" : "school_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "school" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 9, 17, 14 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(101, 101, 41, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "college_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "college" ], [ ">=", [ "zoom" ], 15 ] ],
