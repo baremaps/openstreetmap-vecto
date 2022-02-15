@@ -47,6 +47,19 @@
       "fill-antialias" : true
     }
   }, {
+    "id" : "amenity_hospital",
+    "type" : "fill",
+    "filter" : [ "any", [ "==", "amenity", "hospital" ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(255, 255, 228)",
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "amenity_grave_yard",
     "type" : "fill",
     "filter" : [ "any", [ "==", "amenity", "grave_yard" ] ],
@@ -629,6 +642,69 @@
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 14, 0.25, 15, 0.5, 16, 1, 17, 2, 18, 4 ]
     }
   }, {
+    "id" : "pitch_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "leisure" ], "pitch" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 10, 17, 16 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(77, 153, 122, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
+    "id" : "community_centre_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "community_centre" ], [ ">=", [ "zoom" ], 16 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "icon-image" : [ "get", "amenity" ],
+      "icon-size" : 1,
+      "icon-anchor" : "bottom",
+      "icon-allow-overlap" : true,
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 12 ],
+      "text-max-width" : 4,
+      "text-anchor" : "top",
+      "text-optional" : true
+    },
+    "paint" : {
+      "text-color" : "rgba(115, 74, 9, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8,
+      "icon-color" : "rgba(115, 74, 9, 1)",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1
+    }
+  }, {
+    "id" : "sports_hall_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "leisure" ], "sports_hall" ], [ ">=", [ "zoom" ], 16 ] ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 14 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(103, 103, 102, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "college_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "college" ], [ ">=", [ "zoom" ], 15 ] ],
@@ -647,22 +723,48 @@
       "text-halo-width" : 0.8
     }
   }, {
+    "id" : "parking_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "parking" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "icon-image" : [ "get", "amenity" ],
+      "icon-size" : 1,
+      "icon-anchor" : "bottom",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 9, 18, 11 ],
+      "text-anchor" : "top",
+      "text-optional" : true,
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(33, 118, 254, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8,
+      "icon-color" : "rgba(3, 146, 218, 1)",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1
+    }
+  }, {
     "id" : "poi",
     "type" : "symbol",
-    "filter" : [ "case", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "volcano" ] ] ], [ ">=", [ "zoom" ], 10 ], [ "any", [ "==", [ "get", "waterway" ], "waterfall" ], [ "==", [ "get", "tourism" ], "wilderness_hut" ] ], [ ">=", [ "zoom" ], 12 ], [ "any", [ "==", [ "get", "railway" ], "level_crossing" ], [ "==", [ "get", "natural" ], "spring" ] ], [ ">=", [ "zoom" ], 13 ], [ "any", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "veterinary" ] ] ], [ "==", [ "get", "natural" ], "saddle" ], [ "has", "historic" ] ], [ ">=", [ "zoom" ], 14 ], [ "any", [ "==", [ "get", "amenity" ], "ice_cream" ], [ "in", [ "get", "tourism" ], [ "literal", [ "museum", "viewpoint" ] ] ] ], [ ">=", [ "zoom" ], 15 ], [ "any", [ "==", [ "get", "highway" ], "elevator" ], [ "==", [ "get", "man_made" ], "mast" ] ], [ ">=", [ "zoom" ], 17 ], [ ">=", [ "zoom" ], 16 ] ],
+    "filter" : [ "case", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "volcano" ] ] ], [ ">=", [ "zoom" ], 10 ], [ "any", [ "==", [ "get", "tourism" ], "wilderness_hut" ] ], [ ">=", [ "zoom" ], 12 ], [ "any", [ "==", [ "get", "railway" ], "level_crossing" ], [ "==", [ "get", "natural" ], "spring" ] ], [ ">=", [ "zoom" ], 13 ], [ "any", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "hospital" ] ] ], [ "==", [ "get", "natural" ], "saddle" ], [ "has", "historic" ] ], [ ">=", [ "zoom" ], 14 ], [ "any", [ "==", [ "get", "amenity" ], "ice_cream" ], [ "in", [ "get", "tourism" ], [ "literal", [ "museum", "viewpoint" ] ] ], [ "==", [ "get", "waterway" ], "waterfall" ] ], [ ">=", [ "zoom" ], 15 ], [ "any", [ "==", [ "get", "highway" ], "elevator" ], [ "==", [ "get", "man_made" ], "mast" ] ], [ ">=", [ "zoom" ], 17 ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
       "icon-image" : [ "case", [ "has", "amenity" ], [ "get", "amenity" ], [ "has", "historic" ], [ "get", "historic" ], [ "has", "highway" ], [ "get", "highway" ], [ "has", "leisure" ], [ "get", "leisure" ], [ "has", "man_made" ], [ "get", "man_made" ], [ "has", "military" ], [ "get", "military" ], [ "has", "natural" ], [ "get", "natural" ], [ "has", "railway" ], [ "get", "railway" ], [ "has", "tourism" ], [ "get", "tourism" ], [ "has", "waterway" ], [ "get", "waterway" ], "" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : [ "case", [ "==", [ "get", "amenity" ], "ice_cream" ], "rgba(199, 116, 0, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "driving_school", "ferry_terminal", "library", "bicycle_repair_station", "car_wash", "vehicle_inspection", "bank", "bureau_de_change", "social_facility", "arts_centre", "casino", "cinema", "community_centre", "nightclub", "public_bookcase", "theatre", "courthouse", "firestation", "police", "post_box", "post_office", "prison", "townhall", "bbq", "bench", "drinking_water", "shelter", "shower", "telephone", "toilets", "recycling", "waste_basket", "waste_disposal", "internet_cafe", "public_bath" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "kick-scooter_rental", "bicycle_parking", "bicycle_rental", "boat_rental", "bus_station", "car_rental", "taxi" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "amenity" ], [ "literal", [ "clinic", "dentist", "doctors", "hospital", "veterinary" ] ] ], "rgba(191, 0, 0, 1)", [ "==", [ "get", "amenity" ], "fountain" ], "rgba(87, 104, 236, 1)", [ "==", [ "get", "amenity" ], "marketplace" ], "rgba(172, 57, 172, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "archaeological_site", "caslte", "fort", "manor", "memorial", "monument" ] ] ], "rgba(115, 74, 10, 1)", [ "in", [ "get", "historic" ], [ "literal", [ "city_gate", "wayside_shrine" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "highway" ], [ "literal", [ "bus_stop", "elevator" ] ] ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "leisure" ], [ "literal", [ "amusement_arcade", "beach_resort", "bird_hide", "bowling_alley", "fishing", "miniature_golf", "outdoor_seating", "playground", "sauna", "water_park" ] ] ], "rgba(14, 133, 24, 1)", [ "==", [ "get", "leisure" ], "firepit" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "leisure" ], "picnic_table" ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "leisure" ], "slipway" ], "rgba(0, 146, 218, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "chimney", "communications_tower" ] ] ], "rgba(85, 85, 85, 1)", [ "in", [ "get", "man_made" ], [ "literal", [ "crane", "lighthouse", "mast", "storage_tank", "water_tower", "windmill" ] ] ], "rgba(102, 102, 102, 1)", [ "==", [ "get", "man_made" ], "obelisk" ], "rgba(115, 74, 10, 1)", [ "==", [ "get", "man_made" ], "cross" ], "rgba(0, 0, 0, 1)", [ "==", [ "get", "military" ], "bunker" ], "rgba(85, 85, 85, 1)", [ "==", [ "get", "natural" ], "spring" ], "rgba(122, 188, 236, 1)", [ "in", [ "get", "natural" ], [ "literal", [ "peak", "saddle" ] ] ], "rgba(207, 143, 86, 1)", [ "==", [ "get", "natural" ], "volcano" ], "rgba(211, 0, 0, 1)", [ "==", [ "get", "railway" ], "level_crossing" ], "rgba(77, 77, 77, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "apartment", "chalet", "wilderness_hut" ] ] ], "rgba(3, 146, 218, 1)", [ "in", [ "get", "tourism" ], [ "literal", [ "artwork", "museum", "viewpoint" ] ] ], "rgba(115, 74, 9, 1)", [ "==", [ "get", "waterway" ], "waterfall" ], "rgba(77, 128, 179, 1)", "rgba(199, 116, 0, 1)" ],
@@ -683,14 +785,14 @@
     "layout" : {
       "icon-image" : "cafe",
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(199, 116, 0, 1)",
@@ -711,14 +813,14 @@
     "layout" : {
       "icon-image" : "atm",
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(115, 74, 10, 1)",
@@ -739,14 +841,14 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(0, 146, 218, 1)",
@@ -767,14 +869,14 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(0, 146, 218, 1)",
@@ -795,14 +897,14 @@
     "layout" : {
       "icon-image" : [ "get", "tourism" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(3, 146, 218, 1)",
@@ -823,14 +925,14 @@
     "layout" : {
       "icon-image" : [ "get", "shop" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : [ "case", [ "in", [ "get", "shop" ], [ "literal", [ "alcohol", "bakery", "beverages", "butcher", "coffee", "confectionery", "convenience", "deli", "dairy", "greengrocer", "tea", "department_store", "supermarket", "bag", "clothes", "fabric", "jewelry", "shoes", "charity", "second_hand", "variety_store", "beauty", "chemist", "hairdresser", "medical_supply", "optician", "perfumery", "florist", "garden_centre", "houseware", "paint", "trade", "bed", "carpet", "furniture", "interior_decoration", "computer", "electronics", "hifi", "mobile_phone", "bicycle", "boat", "car", "car_repair", "motorcycle", "outdoor", "sports", "tyres", "art", "music", "musical_instrument", "photo", "video", "video_games", "gift", "newsagent", "stationery", "ticket", "bookmaker", "copyshop", "laundry", "pet", "tobacco", "toys", "travel_agency" ] ] ], "rgba(172, 57, 172, 1)", [ "==", [ "get", "shop" ], "massage" ], "rgba(14, 133, 24, 1)", "rgba(199, 116, 0, 1)" ],
@@ -849,16 +951,16 @@
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
+      "icon-image" : "restaurant",
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false,
-      "icon-image" : "restaurant"
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(199, 116, 0, 1)",
@@ -879,14 +981,14 @@
     "layout" : {
       "icon-image" : "fast_food",
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(199, 116, 0, 1)",
@@ -907,14 +1009,14 @@
     "layout" : {
       "icon-image" : [ "get", "amenity" ],
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(199, 116, 0, 1)",
@@ -929,20 +1031,20 @@
   }, {
     "id" : "poi_pharmacies",
     "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "amenity" ], "pharmacy" ], [ ">=", [ "zoom" ], 14 ] ],
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "pharmacy" ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
       "icon-image" : "pharmacy",
       "icon-size" : 1,
-      "icon-allow-overlap" : true,
+      "icon-anchor" : "bottom",
       "text-font" : [ "Noto Sans Regular" ],
       "text-size" : 11,
-      "text-offset" : [ 0, 1.5 ],
       "text-field" : [ "get", "name" ],
+      "text-anchor" : "top",
       "visibility" : "visible",
-      "text-optional" : false,
-      "icon-optional" : false
+      "text-optional" : true,
+      "text-max-width" : 5
     },
     "paint" : {
       "text-color" : "rgba(191, 0, 0, 1)",
@@ -953,6 +1055,32 @@
       "icon-halo-width" : 1,
       "text-halo-width" : 1,
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
+    }
+  }, {
+    "id" : "hospital_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "amenity" ], "hospital" ], [ ">=", [ "zoom" ], 14 ] ],
+    "source" : "baremaps",
+    "source-layer" : "amenity",
+    "layout" : {
+      "visibility" : "visible",
+      "icon-image" : [ "get", "amenity" ],
+      "icon-size" : 1,
+      "icon-anchor" : "bottom",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "step", [ "zoom" ], "", 14, "", 15, [ "get", "name" ] ],
+      "text-size" : 11,
+      "text-max-width" : 4,
+      "text-anchor" : "top",
+      "text-optional" : true
+    },
+    "paint" : {
+      "text-color" : "rgba(191, 3, 1, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8,
+      "icon-color" : "rgba(191, 3, 1, 1)",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1
     }
   }, {
     "id" : "motorway_junction_ref",
@@ -1173,69 +1301,6 @@
     "paint" : {
       "text-halo-color" : "rgba(255, 255, 255, 0.8)",
       "text-halo-width" : 1.2
-    }
-  }, {
-    "id" : "pitch_labels",
-    "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "leisure" ], "pitch" ], [ ">=", [ "zoom" ], 15 ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "layout" : {
-      "visibility" : "visible",
-      "text-font" : [ "Noto Sans Italic" ],
-      "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 10, 17, 16 ],
-      "text-max-width" : 4
-    },
-    "paint" : {
-      "text-color" : "rgba(77, 153, 122, 1)",
-      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "text-halo-width" : 0.8
-    }
-  }, {
-    "id" : "community_centre_labels",
-    "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "amenity" ], "community_centre" ], [ ">=", [ "zoom" ], 16 ] ],
-    "source" : "baremaps",
-    "source-layer" : "amenity",
-    "layout" : {
-      "visibility" : "visible",
-      "icon-image" : [ "get", "amenity" ],
-      "icon-size" : 1,
-      "icon-anchor" : "bottom",
-      "icon-allow-overlap" : true,
-      "text-font" : [ "Noto Sans Regular" ],
-      "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 12 ],
-      "text-max-width" : 4,
-      "text-anchor" : "top",
-      "text-optional" : true
-    },
-    "paint" : {
-      "text-color" : "rgba(115, 74, 9, 1)",
-      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "text-halo-width" : 0.8,
-      "icon-color" : "rgba(115, 74, 9, 1)",
-      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "icon-halo-width" : 1
-    }
-  }, {
-    "id" : "sports_hall_labels",
-    "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "leisure" ], "sports_hall" ], [ ">=", [ "zoom" ], 16 ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "layout" : {
-      "visibility" : "visible",
-      "text-font" : [ "Noto Sans Regular" ],
-      "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 14 ],
-      "text-max-width" : 4
-    },
-    "paint" : {
-      "text-color" : "rgba(103, 103, 102, 1)",
-      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
-      "text-halo-width" : 0.8
     }
   } ],
   "center" : [ 6.6323, 46.5197 ],
