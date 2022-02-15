@@ -575,7 +575,7 @@
   }, {
     "id" : "power_station",
     "type" : "fill",
-    "filter" : [ "any", [ "==", "power", "plant" ], [ "==", "power", "substation" ] ],
+    "filter" : [ "any", [ "all", [ "==", "power", "plant" ], [ "!has", "landuse" ] ], [ "==", "power", "substation" ] ],
     "source" : "baremaps",
     "source-layer" : "power",
     "layout" : {
@@ -765,6 +765,24 @@
       "icon-color" : "rgba(3, 146, 218, 1)",
       "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
       "icon-halo-width" : 1
+    }
+  }, {
+    "id" : "industrial_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "landuse" ], "industrial" ], [ ">=", [ "zoom" ], 14 ] ],
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 17, 16 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(149, 89, 139, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
     }
   }, {
     "id" : "poi",
