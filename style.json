@@ -1172,7 +1172,7 @@
   }, {
     "id" : "locality_label",
     "type" : "symbol",
-    "filter" : [ "all", [ "==", [ "get", "place" ], "locality" ], [ ">=", [ "zoom" ], 15 ], [ "<=", [ "zoom" ], 17 ] ],
+    "filter" : [ "all", [ "==", [ "get", "place" ], "locality" ], [ "!", [ "has", "tourism" ] ], [ ">=", [ "zoom" ], 15 ], [ "<=", [ "zoom" ], 17 ] ],
     "source" : "baremaps",
     "source-layer" : "points",
     "layout" : {
