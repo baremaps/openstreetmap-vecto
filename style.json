@@ -389,7 +389,7 @@
   }, {
     "id" : "highway_polygon",
     "type" : "fill",
-    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ] ] ],
+    "filter" : [ "all", [ "==", "$type", "Polygon" ], [ "any", [ "==", "highway", "pedestrian" ], [ "==", "highway", "path" ], [ "==", "highway", "sidewalk" ], [ "==", "highway", "crossing" ], [ "==", "highway", "steps" ], [ "==", "highway", "footway" ] ] ],
     "source" : "baremaps",
     "source-layer" : "highway",
     "layout" : {
