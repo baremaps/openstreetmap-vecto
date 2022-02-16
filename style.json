@@ -642,6 +642,24 @@
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 14, 0.25, 15, 0.5, 16, 1, 17, 2, 18, 4 ]
     }
   }, {
+    "id" : "building_school_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "building" ], "school" ], [ ">=", [ "zoom" ], 16 ] ],
+    "source" : "baremaps",
+    "source-layer" : "building",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 9, 17, 10, 18, 11 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(0, 0, 0, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "building_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "any", [ "==", [ "get", "building" ], "hospital" ], [ "==", [ "get", "building" ], "yes" ] ], [ ">=", [ "zoom" ], 16 ] ],
