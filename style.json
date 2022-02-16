@@ -30,8 +30,22 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(236, 218, 233)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
+      "fill-color" : [ "match", [ "get", "landuse" ], "village_green", "rgb(205, 235, 176)", "salt_pond", "rgb(170, 211, 223)", "religious", "rgb(205, 204, 201)", "recreation_ground", "rgb(223, 252, 226)", "railway", "rgb(236, 218, 233)", "quarry", "rgb(195, 194, 194)", "plant_nursery", "rgb(174, 223, 162)", "military", "rgb(242, 228, 221)", "landfill", "rgb(182, 182, 144)", "greenhouse_horticulture", "rgb(237, 240, 214)", "greenfield", "rgb(242, 238, 232)", "garages", "rgb(222, 221, 204)", "cemetery", "rgb(170, 203, 175)", "brownfield", "rgb(182, 182, 144)", "basin", "rgb(170, 211, 223)", "vineyard", "rgb(172, 225, 161)", "orchard", "rgb(172, 225, 161)", "meadow", "rgb(205, 235, 176)", "farmyard", "rgb(238, 213, 179)", "farmland", "rgb(237, 240, 214)", "allotments", "rgb(202, 224, 191)", "retail", "rgb(254, 213, 208)", "industrial", "rgb(235, 219, 232)", "residential", "rgb(225, 225, 225)", "construction", "rgb(199, 199, 180)", "commercial", "rgb(242, 216, 217)", "pedestrian", "rgb(221, 221, 233)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
+    }
+  }, {
+    "id" : "power_station",
+    "type" : "fill",
+    "filter" : [ "any", [ "==", "power", "plant" ], [ "==", "power", "substation" ] ],
+    "source" : "baremaps",
+    "source-layer" : "power",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(226, 203, 222)",
+      "fill-antialias" : true,
+      "fill-outline-color" : "rgb(171, 171, 171)"
     }
   }, {
     "id" : "amenity_education",
@@ -573,20 +587,6 @@
       "circle-radius" : [ "interpolate", [ "exponential", 1 ], [ "zoom" ], 13, 1, 14, 2, 15, 3, 16, 4, 17, 5, 18, 6 ]
     }
   }, {
-    "id" : "power_station",
-    "type" : "fill",
-    "filter" : [ "any", [ "==", "power", "plant" ], [ "==", "power", "substation" ] ],
-    "source" : "baremaps",
-    "source-layer" : "power",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(226, 203, 222)",
-      "fill-antialias" : true,
-      "fill-outline-color" : "rgb(171, 171, 171)"
-    }
-  }, {
     "id" : "power_cable_line",
     "type" : "line",
     "filter" : [ "any", [ "==", "power", "cable" ], [ "==", "power", "line" ], [ "==", "power", "minor_line" ] ],
@@ -783,6 +783,24 @@
       "icon-color" : "rgba(3, 146, 218, 1)",
       "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
       "icon-halo-width" : 1
+    }
+  }, {
+    "id" : "industrial_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "landuse" ], "industrial" ], [ ">=", [ "zoom" ], 14 ] ],
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 17, 16 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(149, 89, 139, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
     }
   }, {
     "id" : "poi",
