@@ -1201,6 +1201,24 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
+    "id" : "cemetery_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "landuse" ], "cemetery" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 10, 17, 16 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(69, 95, 72, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "hospital_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "hospital" ], [ ">=", [ "zoom" ], 14 ] ],
