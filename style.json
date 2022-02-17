@@ -1312,6 +1312,24 @@
       "text-halo-width" : 0.8
     }
   }, {
+    "id" : "park_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "leisure" ], "park" ], [ ">=", [ "zoom" ], 14 ] ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 14, 10, 17, 18 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(31, 143, 40, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "hospital_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "hospital" ], [ ">=", [ "zoom" ], 14 ] ],
