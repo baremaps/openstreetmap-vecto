@@ -443,6 +443,19 @@
       "line-dasharray" : [ 8, 3 ]
     }
   }, {
+    "id" : "highway_track_grade5",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "highway", "track" ], [ "==", "tracktype", "grade5" ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-color" : "rgb(177, 140, 63)",
+      "line-dasharray" : [ 2, 5 ]
+    }
+  }, {
     "id" : "highway_no_tracktype",
     "type" : "line",
     "filter" : [ "all", [ "==", [ "get", "highway" ], "track" ], [ "!", [ "has", "tracktype" ] ] ],
