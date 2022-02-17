@@ -252,6 +252,15 @@
       "fill-outline-color" : "rgb(170, 211, 223)"
     }
   }, {
+    "id" : "barrier_guard_rail",
+    "type" : "line",
+    "filter" : [ "all", [ "==", "barrier", "guard_rail" ] ],
+    "source" : "baremaps",
+    "source-layer" : "barrier",
+    "paint" : {
+      "line-color" : "rgba(139, 177, 162, 1)"
+    }
+  }, {
     "id" : "railway_bridge",
     "type" : "line",
     "filter" : [ "any", [ "==", "bridge", "yes" ] ],
