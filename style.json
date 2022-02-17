@@ -662,7 +662,7 @@
   }, {
     "id" : "building_labels",
     "type" : "symbol",
-    "filter" : [ "all", [ "any", [ "==", [ "get", "building" ], "hospital" ], [ "==", [ "get", "building" ], "yes" ] ], [ "!", [ "has", "amenity" ] ], [ ">=", [ "zoom" ], 16 ] ],
+    "filter" : [ "all", [ "any", [ "==", [ "get", "building" ], "hospital" ], [ "==", [ "get", "building" ], "yes" ] ], [ "!", [ "has", "amenity" ] ], [ "!", [ "has", "historic" ] ], [ ">=", [ "zoom" ], 16 ] ],
     "source" : "baremaps",
     "source-layer" : "building",
     "layout" : {
@@ -736,7 +736,7 @@
       "icon-allow-overlap" : true,
       "text-font" : [ "Noto Sans Regular" ],
       "text-field" : [ "get", "name" ],
-      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 16, 10, 17, 12 ],
+      "text-size" : 11,
       "text-max-width" : 4,
       "text-anchor" : "top",
       "text-optional" : true
@@ -1154,6 +1154,33 @@
       "icon-halo-width" : 1,
       "text-halo-width" : 1,
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
+    }
+  }, {
+    "id" : "monument_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "historic" ], "monument" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "building",
+    "layout" : {
+      "visibility" : "visible",
+      "icon-image" : [ "get", "historic" ],
+      "icon-size" : 1,
+      "icon-anchor" : "bottom",
+      "icon-allow-overlap" : true,
+      "text-font" : [ "Noto Sans Regular" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : 11,
+      "text-max-width" : 4,
+      "text-anchor" : "top",
+      "text-optional" : true
+    },
+    "paint" : {
+      "text-color" : "rgba(115, 74, 9, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8,
+      "icon-color" : "rgba(115, 74, 9, 1)",
+      "icon-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "icon-halo-width" : 1
     }
   }, {
     "id" : "hospital_labels",
