@@ -1156,6 +1156,24 @@
       "text-halo-color" : "rgba(255, 255, 255, 0.8)"
     }
   }, {
+    "id" : "forest_labels",
+    "type" : "symbol",
+    "filter" : [ "all", [ "==", [ "get", "landuse" ], "forest" ], [ ">=", [ "zoom" ], 15 ] ],
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible",
+      "text-font" : [ "Noto Sans Italic" ],
+      "text-field" : [ "get", "name" ],
+      "text-size" : [ "interpolate", [ "exponential", 1.2 ], [ "zoom" ], 15, 12, 17, 16 ],
+      "text-max-width" : 4
+    },
+    "paint" : {
+      "text-color" : "rgba(89, 111, 82, 1)",
+      "text-halo-color" : "rgba(255, 255, 255, 0.8)",
+      "text-halo-width" : 0.8
+    }
+  }, {
     "id" : "hospital_labels",
     "type" : "symbol",
     "filter" : [ "all", [ "==", [ "get", "amenity" ], "hospital" ], [ ">=", [ "zoom" ], 14 ] ],
