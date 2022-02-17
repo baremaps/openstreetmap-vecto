@@ -426,7 +426,7 @@
       "visibility" : "visible"
     },
     "paint" : {
-      "line-color" : [ "case", [ "==", [ "get", "highway" ], "bridleway" ], "rgb(68, 159, 66)", [ "any", [ "==", [ "get", "highway" ], "cycleway" ], [ "all", [ "==", [ "get", "highway" ], "path" ], [ "==", [ "get", "bicycle" ], "designated" ] ] ], "rgba(28, 27, 254, 1)", [ "any", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "==", [ "get", "access" ], "private" ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ] ] ], "rgb(192, 192, 192)", [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "sidewalk", "crossing", "steps" ] ] ], [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "!=", [ "get", "access" ], "private" ] ], [ "all", [ "==", [ "get", "highway" ], "path" ], [ "!=", [ "get", "bicycle" ], "designated" ] ] ], "rgb(250, 132, 117)", [ "all", [ "==", [ "get", "highway" ], "track" ], [ "!", [ "has", "tracktype" ] ] ], "rgb(177, 140, 63)", "rgba(0, 0, 0, 0)" ],
+      "line-color" : [ "case", [ "==", [ "get", "highway" ], "bridleway" ], "rgb(68, 159, 66)", [ "any", [ "==", [ "get", "highway" ], "cycleway" ], [ "all", [ "==", [ "get", "highway" ], "path" ], [ "==", [ "get", "bicycle" ], "designated" ] ] ], "rgba(28, 27, 254, 1)", [ "any", [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "==", [ "get", "access" ], "private" ] ], [ "all", [ "==", [ "get", "highway" ], "service" ], [ "in", [ "get", "access" ], [ "literal", [ "private", "no" ] ] ] ] ], "rgb(192, 192, 192)", [ "any", [ "in", [ "get", "highway" ], [ "literal", [ "sidewalk", "crossing", "steps" ] ] ], [ "all", [ "==", [ "get", "highway" ], "footway" ], [ "!=", [ "get", "access" ], "private" ] ], [ "all", [ "==", [ "get", "highway" ], "path" ], [ "!=", [ "get", "bicycle" ], "designated" ] ] ], "rgb(250, 132, 117)", "rgba(0, 0, 0, 0)" ],
       "line-dasharray" : [ 2, 2 ]
     }
   }, {
@@ -441,6 +441,19 @@
     "paint" : {
       "line-color" : "rgb(177, 140, 63)",
       "line-dasharray" : [ 8, 3 ]
+    }
+  }, {
+    "id" : "highway_no_tracktype",
+    "type" : "line",
+    "filter" : [ "all", [ "==", [ "get", "highway" ], "track" ], [ "!", [ "has", "tracktype" ] ] ],
+    "source" : "baremaps",
+    "source-layer" : "highway",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "line-color" : "rgb(177, 140, 63)",
+      "line-dasharray" : [ 4, 1.5, 1.5, 1.5 ]
     }
   }, {
     "id" : "highway_label",
