@@ -1,0 +1,16 @@
+{
+  "name": "styling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "railway.js",
+  "dependencies": {
+    "csv": "^6.0.5",
+    "csv-parser": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

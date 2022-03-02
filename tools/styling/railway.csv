@@ -1,0 +1,13 @@
+source,layer,key,value,element,casing_line_width,casing_line_color,filling_line_color,filling_line_width
+railway,railway,railway,abandoned,way,6,"rgb(100, 100, 100)","rgb(255, 255, 255)",4
+railway,railway,railway,construction,way,10,"rgb(170, 170, 170)","rgb(255, 255, 255)",8
+railway,railway,railway,disused,way,6,"rgb(100, 100, 100)","rgb(255, 255, 255)",4
+railway,railway,railway,funicular,way,10,"rgb(100, 100, 100)","rgb(255, 255, 255)",8
+railway,railway,railway,light_rail,way,10,"rgb(100, 100, 100)","rgb(255, 255, 255)",8
+railway,railway,railway,miniature,way,6,"rgb(158, 158, 158)","rgb(255, 255, 255)",4
+railway,railway,railway,monorail,way,10,"rgb(126, 126, 126)","rgb(255, 255, 255)",8
+railway,railway,railway,narrow_gauge,way,6,"rgb(100, 100, 100)","rgb(255, 255, 255)",4
+railway,railway,railway,preserved,way,10,"rgb(220, 220, 220)","rgb(255, 255, 255)",8
+railway,railway,railway,rail,way,14,"rgb(112, 112, 112)","rgb(255, 255, 255)",12
+railway,railway,railway,subway,way,10,"rgb(160, 160, 160)","rgb(255, 255, 255)",8
+railway,railway,railway,tram,way,10,"rgb(77, 77, 77)","rgb(255, 255, 255)",8
