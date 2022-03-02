@@ -1,0 +1,32 @@
+layer;key;value;element;minzoom;maxzoom;line_width;line_dash;line_color;visibility;line-cap;line-join;opacity
+railway_construction;railway;construction;line;12;;6;1, 1;838383;visible;;;
+railway_disused;railway;disused;line;14;;;1, 1;AEADAE;visible;;;
+railway_funicular;railway;funicular;line;12;;2;;666666;visible;;;
+railway_light_rail;railway;light_rail;line;12;;2;;666666;visible;;;
+railway_miniature;railway;miniature;line;14;;2;;9E9E9E;visible;;;
+railway_miniature_dash;railway;miniature;line;14;;6;0.5, 4;9E9E9E;visible;;;
+railway_monorail;railway;monorail;line;13;;2;1, 0.2;777777;visible;;;
+railway_narrow_gauge;railway;narrow_gauge;line;8;13;1;;B4ACAB;visible;;;
+railway_narrow_gauge;railway;narrow_gauge;line;13;;2;;9E9E9E;visible;;;
+railway_preserved;railway;preserved;line;14;;3;;9E9E9E;visible;round;round;
+railway_preserved_dash;railway;preserved;line;14;;1;2, 2;FFFFFF;visible;round;round;
+railway_rail;railway;rail;line;7;11;0.5;;8E8E8E;visible;round;round;
+railway_rail;railway;rail;line;11;20;1;2, 4;FFFFFF;visible;round;round;
+railway_rail;railway;rail;line;20;;6;2, 4;FFFFFF;visible;round;round;
+railway_rail;service;siding;;;;;;;;;;0.7
+railway_rail;service;spur;;;;;;;;;;0.7
+railway_rail;service;yard;;;;;;;;;;0.7
+railway_rail_offset;railway;rail;line;11;20;1;;707070;visible;round;round;
+railway_rail_offset;railway;rail;line;20;;8;;707070;visible;round;round;
+railway_rail_offset;service;siding;;;;;;;;;;0.4
+railway_rail_offset;service;spur;;;;;;;;;;0.4
+railway_rail_offset;service;yard;;;;;;;;;;0.4
+railway_subway;railway;subway;line;11;;2;;9E9E9E;visible;;;
+railway_subway_dash;layer;-1;line;11;;2;1, 1;9E9E9E;visible;;;
+railway_subway_dash;tunnel;yes;line;11;;2;1, 1;9E9E9E;visible;;;
+railway_tram;railway;tram;line;11;;1;;515151;visible;;;
+railway_tram;railway;tram;line;9;11;0.5;;9E9E9E;visible;;;
+railway_bridge;bridge;yes;line;12;16;12;;CDCCCD;visible;;;
+railway_bridge;bridge;yes;line;16;;10;;CDCCCD;visible;;;
+railway_bridge_casing;bridge;yes;line;12;16;16;;000000;visible;;;
+railway_bridge_casing;bridge;yes;line;16;;14;;000000;visible;;;
