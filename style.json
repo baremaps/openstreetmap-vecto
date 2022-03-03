@@ -114,18 +114,6 @@
       "fill-antialias" : true
     }
   }, {
-    "id" : "landuse_overlay",
-    "type" : "fill",
-    "source" : "baremaps",
-    "source-layer" : "landuse",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : [ "match", [ "get", "landuse" ], "grass", "rgb(205, 235, 176)", "forest", "rgb(171, 210, 156)", "rgba(0, 0, 0, 0)" ],
-      "fill-antialias" : true
-    }
-  }, {
     "id" : "water",
     "type" : "fill",
     "source" : "baremaps",
@@ -149,6 +137,18 @@
     },
     "paint" : {
       "fill-color" : "rgb(200, 250, 204)",
+      "fill-antialias" : true
+    }
+  }, {
+    "id" : "landuse_overlay",
+    "type" : "fill",
+    "source" : "baremaps",
+    "source-layer" : "landuse",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : [ "match", [ "get", "landuse" ], "grass", "rgb(205, 235, 176)", "forest", "rgb(171, 210, 156)", "rgba(0, 0, 0, 0)" ],
       "fill-antialias" : true
     }
   }, {
