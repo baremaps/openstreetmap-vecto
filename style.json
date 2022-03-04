@@ -48,6 +48,19 @@
       "fill-outline-color" : "rgb(171, 171, 171)"
     }
   }, {
+    "id" : "leisure_park",
+    "type" : "fill",
+    "filter" : [ "all", [ "==", "leisure", "park" ], [ "==", "$type", "Polygon" ] ],
+    "source" : "baremaps",
+    "source-layer" : "leisure",
+    "layout" : {
+      "visibility" : "visible"
+    },
+    "paint" : {
+      "fill-color" : "rgb(200, 250, 204)",
+      "fill-antialias" : true
+    }
+  }, {
     "id" : "amenity_education",
     "type" : "fill",
     "filter" : [ "any", [ "==", "amenity", "kindergarten" ], [ "==", "amenity", "school" ], [ "==", "amenity", "college" ], [ "==", "amenity", "university" ] ],
@@ -125,19 +138,6 @@
       "fill-color" : "rgb(170, 211, 223)",
       "fill-antialias" : true,
       "fill-outline-color" : "rgb(170, 211, 223)"
-    }
-  }, {
-    "id" : "leisure_park",
-    "type" : "fill",
-    "filter" : [ "all", [ "==", "leisure", "park" ], [ "==", "$type", "Polygon" ] ],
-    "source" : "baremaps",
-    "source-layer" : "leisure",
-    "layout" : {
-      "visibility" : "visible"
-    },
-    "paint" : {
-      "fill-color" : "rgb(200, 250, 204)",
-      "fill-antialias" : true
     }
   }, {
     "id" : "leisure",
