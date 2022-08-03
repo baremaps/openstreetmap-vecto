@@ -1,4 +1,4 @@
-{
+export default {
   "version" : 8,
   "name" : "OpenStreetMapVecto",
   "sources" : {
@@ -1747,4 +1747,4 @@
     "maputnik:renderer" : "mbgljs"
   },
   "zoom" : 14
-}
+};

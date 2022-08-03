@@ -1,4 +1,4 @@
-{
+export default {
   "tilejson": "2.2.0",
   "center": [
     6.5743,
