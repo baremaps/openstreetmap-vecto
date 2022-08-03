@@ -1,0 +1,1 @@
+CREATE INDEX water_polygons_gix ON water_polygons_shp USING SPGIST(geometry);

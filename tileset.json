@@ -8,7 +8,7 @@
   "minzoom": 1.0,
   "maxzoom": 14.0,
   "tiles": [
-    "http://localhost:9090/tiles/{z}/{x}/{y}.mvt"
+    "http://localhost:9000/tiles/{z}/{x}/{y}.mvt"
   ],
   "vector_layers": [
     {
@@ -217,12 +217,12 @@
         {
           "minzoom": 0,
           "maxzoom": 8,
-          "sql": "SELECT ogc_fid, '{\"natural\":\"water\"}'::jsonb, geometry FROM osm_simplified_water_polygons"
+          "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM simplified_water_polygons_shp"
         },
         {
           "minzoom": 8,
           "maxzoom": 20,
-          "sql": "SELECT ogc_fid, '{\"natural\":\"water\"}'::jsonb, geometry FROM osm_water_polygons"
+          "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM water_polygons_shp"
         },
         {
           "minzoom": 8,

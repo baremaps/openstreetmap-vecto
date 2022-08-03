@@ -7,10 +7,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.7.2"
+    "vite": "^3.0.4"
   },
   "dependencies": {
-    "leaflet": "^1.7.1",
-    "maplibre-gl": "^2.1.1"
+    "leaflet": "^1.8.0",
+    "maplibre-gl": "^2.1.9"
   }
 }

@@ -4,7 +4,7 @@
   "sources" : {
     "baremaps" : {
       "type" : "vector",
-      "url" : "http://localhost:9090/tiles.json"
+      "url" : "http://localhost:9000/tiles.json"
     }
   },
   "sprite" : "https://tiles.baremaps.com/sprites/osm/sprite",
