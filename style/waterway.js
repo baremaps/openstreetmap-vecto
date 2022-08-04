@@ -1,0 +1,72 @@
+export default [
+    {
+        "id": "waterway_tunnel_casing",
+        "type": "line",
+        "filter": [
+            "any",
+            ["==", "tunnel", "yes"],
+            ["==", "tunnel", "culvert"]
+        ],
+        "source": "baremaps",
+        "source-layer": "waterway",
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-width": [
+                "interpolate", ["exponential", 1.2], ["zoom"], 4, 0, 20,
+                12
+            ],
+            "line-color": "rgb(170, 211, 223)",
+            "line-dasharray": [0.3, 0.15]
+        }
+    }, {
+        "id": "waterway_tunnel",
+        "type": "line",
+        "filter": [
+            "any",
+            ["==", "tunnel", "yes"],
+            ["==", "tunnel", "culvert"]
+        ],
+        "source": "baremaps",
+        "source-layer": "waterway",
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round",
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-width": [
+                "interpolate",
+                ["exponential", 1.2],
+                ["zoom"],
+                4, 0, 20, 8
+            ],
+            "line-color": "rgb(243, 247, 247)"
+        }
+    }, {
+        "id": "waterway",
+        "type": "line",
+        "filter": [
+            "all",
+            ["!=", "tunnel", "yes"],
+            ["!=", "tunnel", "culvert"]
+        ],
+        "source": "baremaps",
+        "source-layer": "waterway",
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round",
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-width": [
+                "interpolate",
+                ["exponential", 1.2],
+                ["zoom"],
+                4, 0, 20, 12
+            ],
+            "line-color": "rgb(170, 211, 223)"
+        }
+    }
+]
