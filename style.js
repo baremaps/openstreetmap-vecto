@@ -1,26 +1,26 @@
-import background from "./style/background.js";
-import labels from "./style/labels.js";
-import aerialway from "./style/aerialway.js";
-import highway from "./style/highway.js";
-import landuse from "./style/landuse.js";
-import amenity from "./style/amenity.js";
-import leisure from "./style/leisure.js";
-import water from "./style/water.js";
-import tree from "./style/tree.js";
-import power from "./style/power.js";
-import powerOverlay from "./style/power-overlay.js";
-import natural from "./style/natural.js";
-import naturalOverlay from "./style/natural-overlay.js";
-import waterway from "./style/waterway.js";
-import barrier from "./style/barrier.js";
-import railway from "./style/railway.js";
-import amenityOverlay from "./style/amenity-overlay.js";
-import route from "./style/route.js";
-import tourism from "./style/tourism.js";
-import building from "./style/building.js";
-import attraction from "./style/attraction.js";
-import boundary from "./style/boundary.js";
-import manMade from "./style/man-made.js";
+import background from "./layers/background/style.js";
+import labels from "./layers/labels/style.js";
+import aerialway from "./layers/aerialway/style.js";
+import highway from "./layers/highway/style.js";
+import landuse from "./layers/landuse/style.js";
+import amenity from "./layers/amenity/style.js";
+import leisure from "./layers/leisure/style.js";
+import water from "./layers/water/style.js";
+import tree from "./layers/tree/style.js";
+import power from "./layers/power/style.js";
+import power_overlay from "./layers/power/style_overlay.js";
+import natural from "./layers/natural/style.js";
+import natural_overlay from "./layers/natural/style_overlay.js";
+import waterway from "./layers/waterway/style.js";
+import barrier from "./layers/barrier/style.js";
+import railway from "./layers/railway/style.js";
+import amenity_overlay from "./layers/amenity/style_overlay.js";
+import route from "./layers/route/style.js";
+import tourism from "./layers/tourism/style.js";
+import building from "./layers/building/style.js";
+import attraction from "./layers/attraction/style.js";
+import boundary from "./layers/boundary/style.js";
+import man_made from "./layers/man_made/style.js";
 
 export default {
     "version": 8,
@@ -41,9 +41,9 @@ export default {
         ...natural,
         ...water,
         ...leisure,
-        ...naturalOverlay,
+        ...natural_overlay,
         ...waterway,
-        ...amenityOverlay,
+        ...amenity_overlay,
         ...barrier,
         ...railway,
         ...highway,
@@ -51,9 +51,9 @@ export default {
         ...tourism, 
         ...building, 
         ...attraction, 
-        ...manMade, 
+        ...man_made, 
         ...boundary,
-        ...powerOverlay,
+        ...power_overlay,
         ...aerialway,
         ...tree,
         ...labels

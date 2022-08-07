@@ -1,3 +1,21 @@
+import aerialway from "./layers/aerialway/tileset.js";
+import amenity from "./layers/amenity/tileset.js";
+import attraction from "./layers/attraction/tileset.js";
+import barrier from "./layers/barrier/tileset.js";
+import boundary from "./layers/boundary/tileset.js";
+import building from "./layers/building/tileset.js";
+import highway from "./layers/highway/tileset.js";
+import natural from "./layers/natural/tileset.js";
+import leisure from "./layers/leisure/tileset.js";
+import landuse from "./layers/landuse/tileset.js";
+import tourism from "./layers/tourism/tileset.js";
+import railway from "./layers/railway/tileset.js";
+import route from "./layers/route/tileset.js";
+import man_made from "./layers/man_made/tileset.js";
+import waterway from "./layers/waterway/tileset.js";
+import power from "./layers/power/tileset.js";
+import point from "./layers/point/tileset.js";
+
 export default {
   "tilejson": "2.2.0",
   "center": [
@@ -11,365 +29,22 @@ export default {
     "http://localhost:9000/tiles/{z}/{x}/{y}.mvt"
   ],
   "vector_layers": [
-    {
-      "id": "points",
-      "queries": [
-        {
-          "minzoom": 2,
-          "maxzoom": 3,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country')"
-        },
-        {
-          "minzoom": 3,
-          "maxzoom": 4,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'city', 'sea')"
-        },
-        {
-          "minzoom": 4,
-          "maxzoom": 8,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'city', 'sea', 'state', 'county')"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 11,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town')) OR (tags ->> 'natural' IN ('peak', 'volcano')) OR (tags ->> 'highway' IN ('motorway_junction'))"
-        },
-        {
-          "minzoom": 11,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'place' IN ('country', 'state', 'region', 'province', 'district', 'county', 'municipality', 'city', 'town', 'village')) OR (tags ->> 'natural' IN ('peak', 'volcano')) OR (tags ->> 'highway' IN ('motorway_junction'))"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 13,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'place' IN ('region', 'province', 'district', 'county', 'municipality', 'city', 'town', 'village')) OR (tags ->> 'natural' IN ('peak', 'volcano')) OR (tags ->> 'highway' IN ('motorway_junction')) OR (tags ->> 'tourism' IN ('wilderness_hut')) OR (tags ->> 'waterway' IN ('waterfall'))"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 14,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND (tags ->> 'place' IN ('region', 'province', 'district', 'county', 'municipality', 'city', 'town', 'village', 'quarter', 'hamlet')) OR (tags ->> 'natural' IN ('peak', 'volcano')) OR (tags ->> 'highway' IN ('motorway_junction')) OR (tags ->> 'tourism' IN ('wilderness_hut')) OR (tags ->> 'waterway' IN ('waterfall')) OR (tags ->> 'natural' IN ('spring')) OR (tags ->> 'railway' IN ('level_crossing'))"
-        },
-        {
-          "minzoom": 14,
-          "maxzoom": 15,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('village', 'quarter', 'hamlet', 'neighborhood', 'isolated_dwelling')"
-        },
-        {
-          "minzoom": 15,
-          "maxzoom": 16,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('hamlet', 'neighborhood', 'isolated_dwelling')"
-        },
-        {
-          "minzoom": 16,
-          "maxzoom": 18,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}' AND tags ->> 'place' IN ('neighborhood', 'isolated_dwelling', 'islet')"
-        },
-        {
-          "minzoom": 14,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_nodes WHERE tags != '{}'"
-        }
-      ]
-    },
-    {
-      "id": "aerialway",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'aerialway'"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'aerialway'"
-        }
-      ]
-    },
-    {
-      "id": "power",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'power' IN ('cable', 'line')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'power' IN ('cable', 'line', 'minor_line')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'power' IN ('cable', 'line', 'minor_line', 'plant', 'substation')"
-        }
-      ]
-    },
-    {
-      "id": "amenity",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'amenity'"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'amenity'"
-        }
-      ]
-    },
-    {
-      "id": "attraction",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'attraction'"
-        }
-      ]
-    },
-    {
-      "id": "barrier",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'barrier'"
-        }
-      ]
-    },
-    {
-      "id": "boundary",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'boundary' IN ('administrative') AND tags ->> 'admin_level' IN ('1', '2')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'boundary' IN ('administrative') AND tags ->> 'admin_level' IN ('1', '2', '3', '4', '5', '6')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'boundary'"
-        }
-      ]
-    },
-    {
-      "id": "building",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'building'"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'building'"
-        }
-      ]
-    },
-    {
-      "id": "highway",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk',  'primary', 'secondary')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link', 'trunk', 'trunk_link',  'primary', 'secondary', 'tertiary')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 13,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link',  'tertiary', 'tertiary_link', 'unclassified', 'residential')"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'highway'"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'highway'"
-        }
-      ]
-    },
-    {
-      "id": "natural",
-      "queries": [
-        {
-          "minzoom": 0,
-          "maxzoom": 8,
-          "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM simplified_water_polygons_shp"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 20,
-          "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM water_polygons_shp"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'natural' IN ('wood', 'scrub', 'heath', 'grassland', 'bare_rock', 'scree', 'shingle', 'sand', 'mud', 'water', 'wetland', 'glacier', 'beach')"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'natural' IN ('wood', 'scrub', 'heath', 'grassland', 'bare_rock', 'scree', 'shingle', 'sand', 'mud', 'water', 'wetland', 'glacier', 'beach')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'natural' AND tags ->> 'natural' NOT IN ('coastline')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'natural' AND tags ->> 'natural' NOT IN ('coastline')"
-        }
-      ]
-    },
-    {
-      "id": "leisure",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways WHERE tags ? 'leisure'"
-        },
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'leisure'"
-        }
-      ]
-    },
-    {
-      "id": "landuse",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest')"
-        },
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'landuse'"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'landuse'"
-        }
-      ]
-    },
-    {
-      "id": "tourism",
-      "queries": [
-        {
-          "minzoom": 13,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_relations WHERE tags ? 'tourism'"
-        }
-      ]
-    },
-    {
-      "id": "railway",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'railway' IN ('rail') AND NOT tags ? 'service'"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'railway' AND NOT tags ? 'service'"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'railway'"
-        }
-      ]
-    },
-    {
-      "id": "route",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'route'"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'route'"
-        }
-      ]
-    },
-    {
-      "id": "man_made",
-      "queries": [
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'man_made'"
-        }
-      ]
-    },
-    {
-      "id": "waterway",
-      "queries": [
-        {
-          "minzoom": 8,
-          "maxzoom": 10,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'waterway' IN ('river')"
-        },
-        {
-          "minzoom": 10,
-          "maxzoom": 12,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'waterway' IN ('river', 'stream')"
-        },
-        {
-          "minzoom": 12,
-          "maxzoom": 20,
-          "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'waterway'"
-        }
-      ]
-    }
+    ...point,
+    ...aerialway,
+    ...power,
+    ...amenity,
+    ...attraction,
+    ...barrier,
+    ...boundary,
+    ...building,
+    ...highway,
+    ...natural,
+    ...leisure,
+    ...landuse,
+    ...tourism,
+    ...railway,
+    ...route,
+    ...man_made,
+    ...waterway
   ]
 }
