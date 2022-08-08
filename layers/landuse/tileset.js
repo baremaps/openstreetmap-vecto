@@ -3,32 +3,32 @@ export default [
         "id": "landuse",
         "queries": [
           {
-            "minzoom": 8,
-            "maxzoom": 10,
-            "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest')"
+            "minzoom": 3,
+            "maxzoom": 6,
+            "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow')"
           },
           {
-            "minzoom": 8,
-            "maxzoom": 10,
-            "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest')"
+            "minzoom": 3,
+            "maxzoom": 6,
+            "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow')"
           },
           {
-            "minzoom": 10,
-            "maxzoom": 12,
+            "minzoom": 6,
+            "maxzoom": 10,
             "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
           },
           {
-            "minzoom": 10,
-            "maxzoom": 12,
+            "minzoom": 6,
+            "maxzoom": 10,
             "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ->> 'landuse' IN ('farmland', 'forest', 'meadow', 'residential')"
           },
           {
-            "minzoom": 12,
+            "minzoom": 10,
             "maxzoom": 20,
             "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'landuse'"
           },
           {
-            "minzoom": 12,
+            "minzoom": 10,
             "maxzoom": 20,
             "sql": "SELECT id, tags, geom FROM osm_relations_z$zoom WHERE tags ? 'landuse'"
           }

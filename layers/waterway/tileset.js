@@ -3,7 +3,7 @@ export default [
         "id": "waterway",
         "queries": [
           {
-            "minzoom": 8,
+            "minzoom": 6,
             "maxzoom": 10,
             "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'waterway' IN ('river')"
           },
