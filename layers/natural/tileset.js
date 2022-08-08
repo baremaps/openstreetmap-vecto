@@ -4,14 +4,14 @@ export default [
         "queries": [
           {
             "minzoom": 0,
-            "maxzoom": 8,
+            "maxzoom": 10,
             "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM simplified_water_polygons_shp"
-          },
-          {
-            "minzoom": 8,
+        },
+        {
+            "minzoom": 10,
             "maxzoom": 20,
             "sql": "SELECT row_number() OVER () as id, '{\"natural\":\"water\"}'::jsonb, geometry FROM water_polygons_shp"
-          },
+        },
           {
             "minzoom": 8,
             "maxzoom": 12,

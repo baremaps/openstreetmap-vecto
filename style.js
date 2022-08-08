@@ -5,7 +5,6 @@ import highway from "./layers/highway/style.js";
 import landuse from "./layers/landuse/style.js";
 import amenity from "./layers/amenity/style.js";
 import leisure from "./layers/leisure/style.js";
-import water from "./layers/water/style.js";
 import tree from "./layers/tree/style.js";
 import power from "./layers/power/style.js";
 import power_overlay from "./layers/power/style_overlay.js";
@@ -39,7 +38,6 @@ export default {
         ...power,
         ...amenity ,
         ...natural,
-        ...water,
         ...leisure,
         ...natural_overlay,
         ...waterway,
@@ -56,7 +54,7 @@ export default {
         ...power_overlay,
         ...aerialway,
         ...tree,
-        ...labels
+        ...labels,
     ],
     "center": [6.6323, 46.5197],
     "metadata": {

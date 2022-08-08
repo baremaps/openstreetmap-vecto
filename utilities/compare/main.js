@@ -5,7 +5,7 @@ import maplibregl from 'maplibre-gl/dist/maplibre-gl.js'
 
 var map1 = new maplibregl.Map({
   container: 'map1',
-  style: 'http://localhost:9090/style.json',
+  style: 'http://localhost:9000/style.json',
   center: [6.6323, 46.5197],
   zoom: 14,
   hash: true

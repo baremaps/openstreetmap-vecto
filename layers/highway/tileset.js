@@ -3,7 +3,7 @@ export default [
         "id": "highway",
         "queries": [
           {
-            "minzoom": 8,
+            "minzoom": 0,
             "maxzoom": 10,
             "sql": "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk',  'primary', 'secondary')"
           },

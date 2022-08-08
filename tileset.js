@@ -12,9 +12,9 @@ import tourism from "./layers/tourism/tileset.js";
 import railway from "./layers/railway/tileset.js";
 import route from "./layers/route/tileset.js";
 import man_made from "./layers/man_made/tileset.js";
-import waterway from "./layers/waterway/tileset.js";
 import power from "./layers/power/tileset.js";
 import point from "./layers/point/tileset.js";
+import waterway from "./layers/waterway/tileset.js";
 
 export default {
   "tilejson": "2.2.0",
@@ -45,6 +45,6 @@ export default {
     ...railway,
     ...route,
     ...man_made,
-    ...waterway
+    ...waterway,
   ]
 }

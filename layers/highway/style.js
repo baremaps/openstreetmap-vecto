@@ -166,7 +166,8 @@ export default [{
             ]
         ],
             "line-color": [
-            "case", ["==", ["get", "highway"], "pedestrian"],
+            "case", 
+            ["==", ["get", "highway"], "pedestrian"],
             "rgba(221, 221, 232, 1)", [
                 "in", ["get", "highway"],
                 ["literal", ["service", "residential", "unclassified"]]

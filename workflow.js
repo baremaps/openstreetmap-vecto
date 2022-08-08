@@ -51,7 +51,7 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_osm_water_spgist.sql",
+          "file": "queries/create_index_water_spgist.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         }
       ]
@@ -79,12 +79,11 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_osm_water_simplified_spgist.sql",
+          "file": "queries/create_index_simplified_water_spgist.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         }
       ]
     },
-
     {
       "id": "openstreetmap",
       "needs": [],
