@@ -2,7 +2,10 @@ export default [
     {
         "id": "railway_bridge",
         "type": "line",
-        "filter": ["any", ["==", "bridge", "yes"]],
+        "filter": [
+            "any",
+            ["==", "bridge", "yes"]
+        ],
         "source": "baremaps",
         "source-layer": "railway",
         "layout": {
@@ -12,18 +15,23 @@ export default [
         },
         "paint": {
             "line-width": [
-                "interpolate", ["exponential", 1.2], ["zoom"], 4, 0, 20,
-                24
+                "interpolate",
+                ["exponential", 1.2],
+                ["zoom"],
+                4, 0, 20, 22
             ],
-            "line-color": "rgb(197, 197, 196)"
+            "line-color": "rgb(200, 200, 200)"
         }
     }, {
-        "id": "railway_rail_offset",
+        "id": "railway_rail",
         "type": "line",
         "filter": [
-            "any", ["==", "railway", "rail"],
-            ["==", "railway", "funicular"], ["==", "railway", "light_rail"],
-            ["==", "railway", "monorail"], ["==", "railway", "tram"],
+            "any", 
+            ["==", "railway", "rail"],
+            ["==", "railway", "funicular"], 
+            ["==", "railway", "light_rail"],
+            ["==", "railway", "monorail"], 
+            ["==", "railway", "tram"],
             ["==", "railway", "subway"]
         ],
         "source": "baremaps",
@@ -35,41 +43,26 @@ export default [
         },
         "paint": {
             "line-width": [
-                "interpolate", ["exponential", 1.2], ["zoom"], 4, 0, 20,
-                8
+                "interpolate", 
+                ["exponential", 1.2], 
+                ["zoom"], 
+                4, 0, 20, 8
             ],
-            "line-color": "rgb(112, 112, 112)",
-            "line-opacity": ["match", ["get", "service"], "spur", 0.4, 1]
-        }
-    }, {
-        "id": "railway_rail",
-        "type": "line",
-        "filter": [
-            "any", ["==", "railway", "rail"],
-            ["==", "railway", "funicular"]
-        ],
-        "source": "baremaps",
-        "source-layer": "railway",
-        "layout": {
-            "visibility": "visible",
-            "line-cap": "round",
-            "line-join": "round"
-        },
-        "paint": {
-            "line-width": [
-                "interpolate", ["exponential", 1.2], ["zoom"], 4, 0, 20,
-                6
+            "line-color": [
+                "case",
+                ["has", "service"],
+                "rgb(160, 160, 160)",  
+                "rgb(80, 80, 80)"
             ],
-            "line-color": "rgb(255, 255, 255)",
-            "line-dasharray": [2, 4],
-            "line-opacity": ["match", ["get", "service"], "spur", 0.7, 1]
         }
     }, {
         "id": "railway_light_rail",
         "type": "line",
         "filter": [
-            "any", ["==", "railway", "miniature"],
-            ["==", "railway", "narrow_gauge"], ["==", "railway", "preserved"],
+            "any", 
+            ["==", "railway", "miniature"],
+            ["==", "railway", "narrow_gauge"], 
+            ["==", "railway", "preserved"],
             ["==", "railway", "turntable"]
         ],
         "source": "baremaps",
@@ -81,10 +74,12 @@ export default [
         },
         "paint": {
             "line-width": [
-                "interpolate", ["exponential", 1.2], ["zoom"], 4, 0, 20,
-                4
+                "interpolate", 
+                ["exponential", 1.2], 
+                ["zoom"], 
+                4, 0, 20, 4
             ],
-            "line-color": "rgb(102, 102, 102)"
+            "line-color": "rgb(100, 100, 100)"
         }
     }
 ]
