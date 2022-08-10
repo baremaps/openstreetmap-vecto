@@ -5,7 +5,7 @@ import highway from "./layers/highway/style.js";
 import landuse from "./layers/landuse/style.js";
 import amenity from "./layers/amenity/style.js";
 import leisure from "./layers/leisure/style.js";
-import tree from "./layers/tree/style.js";
+import tree from "./layers/natural/tree.js";
 import power from "./layers/power/style.js";
 import power_overlay from "./layers/power/style_overlay.js";
 import natural from "./layers/natural/style.js";

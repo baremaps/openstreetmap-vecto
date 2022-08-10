@@ -1,7 +1,6 @@
 export default {
     "id": "highway_label",
     "type": "symbol",
-    "filter": ["all"],
     "source": "baremaps",
     "source-layer": "highway",
     "layout": {

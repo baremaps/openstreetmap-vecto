@@ -14,11 +14,12 @@ import highway_label from './highway_label.js'
 // https://wiki.openstreetmap.org/wiki/Key:construction
 
 export default [
+
+    ...layer(tunnel_outline),
+    ...layer(tunnel_line),
     ...layer(highway_outline),
     ...layer(highway_line),
     ...layer(highway_dash),
     ...layer(highway_label),
-    ...layer(tunnel_outline),
-    ...layer(tunnel_line),
     ...layer(pedestrian_area),
 ];

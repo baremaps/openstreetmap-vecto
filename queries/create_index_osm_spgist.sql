@@ -1,5 +1,20 @@
 -- Nodes
 CREATE INDEX IF NOT EXISTS osm_nodes_spgist ON osm_nodes USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z0_spgist ON osm_nodes_z0 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z1_spgist ON osm_nodes_z1 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z2_spgist ON osm_nodes_z2 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z3_spgist ON osm_nodes_z3 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z4_spgist ON osm_nodes_z4 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z5_spgist ON osm_nodes_z5 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z6_spgist ON osm_nodes_z6 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z7_spgist ON osm_nodes_z7 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z8_spgist ON osm_nodes_z8 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z9_spgist ON osm_nodes_z9 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z10_spgist ON osm_nodes_z10 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z11_spgist ON osm_nodes_z11 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z12_spgist ON osm_nodes_z12 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z13_spgist ON osm_nodes_z13 USING SPGIST (geom);
+CREATE INDEX IF NOT EXISTS osm_nodes_z14_spgist ON osm_nodes_z14 USING SPGIST (geom);
 
 -- Ways
 CREATE INDEX IF NOT EXISTS osm_ways_spgist ON osm_ways USING SPGIST (geom);
