@@ -24,6 +24,8 @@ import man_made from "./layers/man_made/style.js";
 export default {
     "version": 8,
     "name": "OpenStreetMapVecto",
+    "center": [6.6323, 46.5197],
+    "zoom": 14,
     "sources": {
         "baremaps": {
             "type": "vector",
@@ -36,7 +38,7 @@ export default {
         ...background,
         ...landuse,
         ...power,
-        ...amenity ,
+        ...amenity,
         ...natural,
         ...leisure,
         ...natural_overlay,
@@ -45,20 +47,15 @@ export default {
         ...barrier,
         ...railway,
         ...highway,
-        ...route , 
-        ...tourism, 
-        ...building, 
-        ...attraction, 
-        ...man_made, 
+        ...route,
+        ...tourism,
+        ...building,
+        ...attraction,
+        ...man_made,
         ...boundary,
         ...power_overlay,
         ...aerialway,
         ...tree,
         ...labels,
     ],
-    "center": [6.6323, 46.5197],
-    "metadata": {
-        "maputnik:renderer": "mbgljs"
-    },
-    "zoom": 14
 };

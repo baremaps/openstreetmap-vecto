@@ -1,11 +1,12 @@
 import layer from '../utils.js'
 
-import highwayLine from './highway_line.js'
-import highwayOutline from './highway_outline.js'
-import highwayDash from './highway_dash.js'
-import tunnelLine from './tunnel_line.js'
-import tunnelOutline from './tunnel_outline.js'
-import pedestrianArea from './pedestrian_area.js'
+import highway_line from './highway_line.js'
+import highway_outline from './highway_outline.js'
+import highway_dash from './highway_dash.js'
+import tunnel_line from './tunnel_line.js'
+import tunnel_outline from './tunnel_outline.js'
+import pedestrian_area from './pedestrian_area.js'
+import highway_label from './highway_label.js'
 
 // TODO:
 // recover construction styles.
@@ -13,11 +14,11 @@ import pedestrianArea from './pedestrian_area.js'
 // https://wiki.openstreetmap.org/wiki/Key:construction
 
 export default [
-    ...layer(highwayOutline),
-    ...layer(highwayLine),
-    ...layer(highwayDash),
-    ...layer(tunnelOutline),
-    ...layer(tunnelLine),
-    ...layer(constructionDash),
-    ...layer(pedestrianArea),
+    ...layer(highway_outline),
+    ...layer(highway_line),
+    ...layer(highway_dash),
+    ...layer(highway_label),
+    ...layer(tunnel_outline),
+    ...layer(tunnel_line),
+    ...layer(pedestrian_area),
 ];
