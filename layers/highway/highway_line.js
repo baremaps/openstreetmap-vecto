@@ -11,7 +11,7 @@ export default {
     },
     'filter':  [
         'all',
-        //['!=', ['get', 'bridge'], 'yes'],
+        ['!=', ['get', 'bridge'], 'yes'],
         ['!=', ['get', 'tunnel'], 'yes'],
         ['!=', ['get', 'layer'], '-1'],
         ['!=', ['get', 'covered'], 'yes'],
@@ -25,7 +25,7 @@ export default {
             ],
             'line-color': 'rgb(233, 144, 161)',
             'line-width': 12,
-            'line-sort-key': 6,
+            'line-sort-key': 2,
         },
         {
             'filter': [
