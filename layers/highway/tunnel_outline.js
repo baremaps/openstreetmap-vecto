@@ -6,8 +6,8 @@ export default {
     'type': 'line',
     'layout': {
         'visibility': 'visible',
-        'line-cap': 'round',
-        'line-join': 'round',
+        'line-cap': 'square',
+        'line-join': 'miter',
     },
     'filter':  [
         'any',
@@ -36,7 +36,7 @@ export default {
                 ['==', ['get', 'highway'], 'primary_link'],
             ],
             'line-color': 'rgba(192, 147, 62, 1)',
-            'line-gap-width': 8,
+            'line-gap-width': 10,
             'line-width': 2,
         },
         {

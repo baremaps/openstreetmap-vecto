@@ -1,4 +1,4 @@
-import layer from '../utils.js'
+import layer from '../layer.js'
 
 import highway_line from './highway_line.js'
 import highway_outline from './highway_outline.js'
@@ -22,8 +22,8 @@ export default [
     ...layer(highway_outline),
     ...layer(highway_line),
     ...layer(highway_dash),
-    ...layer(highway_label),
     ...layer(pedestrian_area),
     ...layer(bridge_line),
     ...layer(bridge_outline),
+    ...layer(highway_label),
 ];

@@ -11,7 +11,7 @@ export default {
     },
     'filter':  [
         'all',
-        ['!=', ['get', 'bridge'], 'yes'],
+        //['!=', ['get', 'bridge'], 'yes'],
         ['!=', ['get', 'tunnel'], 'yes'],
         ['!=', ['get', 'layer'], '-1'],
         ['!=', ['get', 'covered'], 'yes'],
@@ -23,9 +23,10 @@ export default {
                 ['==', ['get', 'highway'], 'motorway'],
                 ['==', ['get', 'highway'], 'motorway_link'],
             ],
-            'line-color': 'rgba(227, 82, 126, 1)',
+            'line-color': 'rgb(227, 82, 126)',
             'line-gap-width': 12,
             'line-width': 2,
+            'line-sort-key': 6,
         },
         {
             'filter': [
@@ -33,9 +34,11 @@ export default {
                 ['==', ['get', 'highway'], 'primary'],
                 ['==', ['get', 'highway'], 'primary_link'],
             ],
-            'line-color': 'rgba(192, 147, 62, 1)',
-            'line-gap-width': 8,
+            'line-color': 'rgb(192, 147, 62)',
+            'line-gap-width': 10,
             'line-width': 2,
+
+            'line-sort-key': 5,
         },
         {
             'filter': [
@@ -43,9 +46,10 @@ export default {
                 ['==', ['get', 'highway'], 'secondary'],
                 ['==', ['get', 'highway'], 'secondary_link'],
             ],
-            'line-color': 'rgba(154, 166, 67, 1)',
+            'line-color': 'rgb(154, 166, 67)',
             'line-gap-width': 8,
             'line-width': 2,
+            'line-sort-key': 4,
         },
         {
             'filter': [
@@ -53,9 +57,10 @@ export default {
                 ['==', ['get', 'highway'], 'tertiary'],
                 ['==', ['get', 'highway'], 'tertiary_link'],
             ],
-            'line-color': 'rgba(190, 189, 188, 1)',
+            'line-color': 'rgb(190, 189, 188)',
             'line-gap-width': 8,
             'line-width': 2,
+            'line-sort-key': 3,
         },
         {
             'filter': [
@@ -63,39 +68,45 @@ export default {
                 ['==', ['get', 'highway'], 'trunk'],
                 ['==', ['get', 'highway'], 'trunk_link'],
             ],
-            'line-color': 'rgba(217, 111, 78, 1)',
+            'line-color': 'rgb(217, 111, 78)',
             'line-gap-width': 8,
             'line-width': 2,
+            'line-sort-key': 2,
         },
         {
             'filter': ['==', ['get', 'highway'], 'unclassified'],
-            'line-color': 'rgba(211, 207, 206, 1)',
+            'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': ['==', ['get', 'highway'], 'living_street'],
-            'line-color': 'rgba(207, 207, 207, 1)',
+            'line-color': 'rgb(207, 207, 207)',
             'line-gap-width': 4,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': ['==', ['get', 'highway'], 'service'],
-            'line-color': 'rgba(213, 211, 211, 1)',
+            'line-color': 'rgb(213, 211, 211)',
             'line-gap-width': 4,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': ['==', ['get', 'highway'], 'residential'],
-            'line-color': 'rgba(211, 207, 206, 1)',
+            'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': [
@@ -103,9 +114,10 @@ export default {
                 ['==', ['get', 'highway'], 'pedestrian'],
                 ['!=', ['get', 'area'], 'yes'],
             ],
-            'line-color': 'rgba(184, 183, 182, 1)',
+            'line-color': 'rgb(184, 183, 182)',
             'line-gap-width': 2,
             'line-width': 2,
+            'line-sort-key': 1,
         },
         {
             'filter': [
@@ -113,8 +125,9 @@ export default {
                 ['==', ['get', 'highway'], 'pedestrian'],
                 ['==', ['get', 'area'], 'yes'],
             ],
-            'line-color': 'rgba(184, 183, 182, 1)',
+            'line-color': 'rgb(184, 183, 182)',
             'line-width': 2,
+            'line-sort-key': 1,
         },
     ]
 };
