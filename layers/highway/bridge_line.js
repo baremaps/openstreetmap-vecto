@@ -1,6 +1,6 @@
 
 export default {
-    'id': 'highway_outline', 
+    'id': 'bridge_line', 
     'source': 'baremaps', 
     'source-layer': 'highway',
     'type': 'line',
@@ -10,11 +10,8 @@ export default {
         'line-join': 'round',
     },
     'filter':  [
-        'all',
-        ['!=', ['get', 'bridge'], 'yes'],
-        ['!=', ['get', 'tunnel'], 'yes'],
-        ['!=', ['get', 'layer'], '-1'],
-        ['!=', ['get', 'covered'], 'yes'],
+        'any',
+        ['==', ['get', 'bridge'], 'yes'],
       ],
     'directives': [
         {
@@ -23,9 +20,8 @@ export default {
                 ['==', ['get', 'highway'], 'motorway'],
                 ['==', ['get', 'highway'], 'motorway_link'],
             ],
-            'line-color': 'rgba(227, 82, 126, 1)',
-            'line-gap-width': 12,
-            'line-width': 2,
+            'line-color': 'rgba(241, 188, 198, 1)',
+            'line-width': 12,
         },
         {
             'filter': [
@@ -33,9 +29,8 @@ export default {
                 ['==', ['get', 'highway'], 'primary'],
                 ['==', ['get', 'highway'], 'primary_link'],
             ],
-            'line-color': 'rgba(192, 147, 62, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'line-color': 'rgba(254, 237, 213, 1)',
+            'line-width': 8,
         },
         {
             'filter': [
@@ -43,9 +38,8 @@ export default {
                 ['==', ['get', 'highway'], 'secondary'],
                 ['==', ['get', 'highway'], 'secondary_link'],
             ],
-            'line-color': 'rgba(154, 166, 67, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'line-color': 'rgba(249, 253, 215, 1)',
+            'line-width': 8,
         },
         {
             'filter': [
@@ -53,9 +47,8 @@ export default {
                 ['==', ['get', 'highway'], 'tertiary'],
                 ['==', ['get', 'highway'], 'tertiary_link'],
             ],
-            'line-color': 'rgba(190, 189, 188, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'line-color': 'rgba(255, 255, 255, 1)',
+            'line-width': 8,
         },
         {
             'filter': [
@@ -63,57 +56,51 @@ export default {
                 ['==', ['get', 'highway'], 'trunk'],
                 ['==', ['get', 'highway'], 'trunk_link'],
             ],
-            'line-color': 'rgba(217, 111, 78, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'line-color': 'rgba(252, 215, 204, 1)',
+            'line-width': 8,
         },
         {
             'filter': ['==', ['get', 'highway'], 'unclassified'],
-            'line-color': 'rgba(211, 207, 206, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'line-color': 'rgba(242, 242, 242, 1)',
+            'line-width': 4,
         },
         {
             'filter': ['==', ['get', 'highway'], 'residential'],
-            'line-color': 'rgb(211, 207, 206)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'line-color': 'rgba(211, 207, 206, 1)',
+            'line-width': 4,
         },
         {
             'filter': ['==', ['get', 'highway'], 'living_street'],
-            'line-color': 'rgba(207, 207, 207, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'line-color': 'rgba(245, 245, 245, 1)',
+            'line-width': 4,
         },
         {
             'filter': ['==', ['get', 'highway'], 'service'],
-            'line-color': 'rgba(213, 211, 211, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'line-color': 'rgba(242, 242, 242, 1)',
+            'line-width': 4,
         },
         {
             'filter': ['==', ['get', 'highway'], 'residential'],
-            'line-color': 'rgba(211, 207, 206, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'line-color': 'rgba(242, 242, 242, 1)',
+            'line-width': 4,
         },
         {
             'filter': [
                 'all',
                 ['==', ['get', 'highway'], 'pedestrian'],
-                ['!=', ['get', 'area'], 'yes'],
+                ['!=', ['get', '$type'], 'Polygon'],
             ],
-            'line-color': 'rgba(184, 183, 182, 1)',
-            'line-gap-width': 2,
+            'line-color': 'rgba(221, 221, 232, 1)',
             'line-width': 2,
         },
         {
-            'filter': [
-                'all',
-                ['==', ['get', 'highway'], 'pedestrian'],
-                ['==', ['get', 'area'], 'yes'],
-            ],
-            'line-color': 'rgba(184, 183, 182, 1)',
+            'filter': ['==', ['get', 'highway'], 'track'],
+            'line-color': 'rgb(177, 140, 63)',
+            'line-width': 2,
+        },
+        {
+            'filter': ['==', ['get', 'highway'], 'raceway'],
+            'line-color': 'rgba(255, 192, 203, 1)',
             'line-width': 2,
         },
     ]

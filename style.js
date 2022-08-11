@@ -20,6 +20,7 @@ import building from "./layers/building/style.js";
 import attraction from "./layers/attraction/style.js";
 import boundary from "./layers/boundary/style.js";
 import man_made from "./layers/man_made/style.js";
+import point from "./layers/point/style.js";
 
 export default {
     "version": 8,
@@ -56,6 +57,7 @@ export default {
         ...power_overlay,
         ...aerialway,
         ...tree,
-        ...labels,
+        ...point,
+        //...labels,
     ],
 };

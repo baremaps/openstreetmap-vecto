@@ -7,6 +7,8 @@ import tunnel_line from './tunnel_line.js'
 import tunnel_outline from './tunnel_outline.js'
 import pedestrian_area from './pedestrian_area.js'
 import highway_label from './highway_label.js'
+import bridge_line from './bridge_line.js'
+import bridge_outline from './bridge_outline.js'
 
 // TODO:
 // recover construction styles.
@@ -22,4 +24,6 @@ export default [
     ...layer(highway_dash),
     ...layer(highway_label),
     ...layer(pedestrian_area),
+    ...layer(bridge_line),
+    ...layer(bridge_outline),
 ];

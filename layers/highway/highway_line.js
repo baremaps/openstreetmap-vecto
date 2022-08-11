@@ -10,6 +10,7 @@ export default {
     },
     'filter':  [
         'all',
+        ['!=', ['get', 'bridge'], 'yes'],
         ['!=', ['get', 'tunnel'], 'yes'],
         ['!=', ['get', 'layer'], '-1'],
         ['!=', ['get', 'covered'], 'yes'],
