@@ -894,6 +894,6 @@ let point = layer({
     ],
   });
 
-  console.log(JSON.stringify(point))
+  //console.log(JSON.stringify(point))
 
   export default point;

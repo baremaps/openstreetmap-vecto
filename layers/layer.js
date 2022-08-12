@@ -1,12 +1,12 @@
 export default function layer(layer) {
   return [
     {
-      id: layer['id'],
-      type: layer['type'],
-      filter: filter(layer),
-      source: layer['source'],
+      'id': layer['id'],
+      'type': layer['type'],
+      'filter': filter(layer),
+      'source': layer['source'],
       'source-layer': layer['source-layer'],
-      layout: layer['directives']
+      'layout': layer['directives']
         ? Object.assign(
             {
               ...iconImage(layer),
@@ -15,7 +15,7 @@ export default function layer(layer) {
             layer['layout'],
           )
         : layer['layout'],
-      paint: layer['directives']
+      'paint': layer['directives']
         ? Object.assign(
             {
               ...textColor(layer),
@@ -23,6 +23,8 @@ export default function layer(layer) {
               ...lineColor(layer),
               ...iconColor(layer),
               ...lineGapWidth(layer),
+              ...fillColor(layer),
+              ...fillOutlineColor(layer),
             },
             layer['paint'],
           )
@@ -48,33 +50,45 @@ function filter(layer) {
 }
 
 function lineWidth(layer) {
-  let cases = layer['directives'].flatMap((rule) => {
-    if (rule['line-width']) {
-      return [rule['filter'], rule['line-width']]
-    } else {
-      return []
-    }
-  })
-  if (cases.length == 0) {
-    return {}
-  }
-  return {
-    'line-width': [
-      'interpolate',
-      ['exponential', 1.2],
-      ['zoom'],
-      4,
-      1,
-      20,
-      ['case', ...cases, 1],
-    ],
-  }
+  return mergeInterpolatedDirective(layer, 'line-width', 1)
 }
 
 function lineGapWidth(layer) {
+  return mergeInterpolatedDirective(layer, 'line-gap-width', 1)
+}
+
+function fillColor(layer) {
+  return mergeDirectives(layer, 'fill-color', 'rgba(0, 0, 0, 0)')
+}
+
+function fillOutlineColor(layer) {
+  return mergeDirectives(layer, 'fill-outline-color', 'rgba(0, 0, 0, 0)')
+}
+
+function lineColor(layer) {
+  return mergeDirectives(layer, 'line-color', 'rgba(0, 0, 0, 0)')
+}
+
+function iconImage(layer) {
+  return mergeDirectives(layer, 'icon-image', 'none')
+}
+
+function iconColor(layer) {
+  return mergeDirectives(layer, 'icon-color', 'rgba(0, 0, 0, 0)')
+}
+
+function textColor(layer) {
+  return mergeDirectives(layer, 'text-color', 'rgba(0, 0, 0, 0)')
+}
+
+function lineSortKey(layer) {
+  return mergeDirectives(layer, 'line-sort-key', 0)
+}
+
+function mergeDirectives(layer, property, value) {
   let cases = layer['directives'].flatMap((rule) => {
-    if (rule['line-gap-width']) {
-      return [rule['filter'], rule['line-gap-width']]
+    if (rule[property]) {
+      return [rule['filter'], rule[property]]
     } else {
       return []
     }
@@ -83,99 +97,33 @@ function lineGapWidth(layer) {
     return {}
   }
   return {
-    'line-gap-width': [
+    [property]: ['case', ...cases, value],
+  }
+}
+
+function mergeInterpolatedDirective(layer, property, value) {
+  let cases = layer['directives'].flatMap((rule) => {
+    if (rule[property]) {
+      return [rule['filter'], rule[property]]
+    } else {
+      return []
+    }
+  })
+  if (cases.length == 0) {
+    return {}
+  }
+  return {
+    [property]: [
       'interpolate',
       ['exponential', 1.2],
       ['zoom'],
       4,
       1,
       20,
-      ['case', ...cases, 1],
+      ['case', ...cases, value],
     ],
   }
 }
-
-function lineColor(layer) {
-  let cases = layer['directives'].flatMap((rule) => {
-    if (rule['line-color']) {
-      return [rule['filter'], rule['line-color']]
-    } else {
-      return []
-    }
-  })
-  if (cases.length == 0) {
-    return {}
-  }
-  return {
-    'line-color': ['case', ...cases, 'rgba(0, 0, 0, 0)'],
-  }
-}
-
-function iconImage(layer) {
-  let cases = layer['directives'].flatMap((rule) => {
-    if (rule['icon-image']) {
-      return [rule['filter'], rule['icon-image']]
-    } else {
-      return []
-    }
-  })
-  if (cases.length == 0) {
-    return {}
-  }
-  return {
-    'icon-image': ['case', ...cases, 'none'],
-  }
-}
-
-function iconColor(layer) {
-    let cases = layer['directives'].flatMap((rule) => {
-      if (rule['icon-color']) {
-        return [rule['filter'], rule['icon-color']]
-      } else {
-        return []
-      }
-    })
-    console.log(JSON.stringify(cases))
-    if (cases.length == 0) {
-      return {}
-    }
-    return {
-      'icon-color': ['case', ...cases, 'rgba(0, 0, 0, 0)'],
-    }
-  }
-
-  function textColor(layer) {
-    let cases = layer['directives'].flatMap((rule) => {
-      if (rule['text-color']) {
-        return [rule['filter'], rule['text-color']]
-      } else {
-        return []
-      }
-    })
-    if (cases.length == 0) {
-      return {}
-    }
-    return {
-      'text-color': ['case', ...cases, 'rgba(0, 0, 0, 0)'],
-    }
-  }
-
-  function lineSortKey(layer) {
-    let cases = layer['directives'].flatMap((rule) => {
-      if (rule['line-sort-key']) {
-        return [rule['filter'], rule['line-sort-key']]
-      } else {
-        return []
-      }
-    })
-    if (cases.length == 0) {
-      return {}
-    }
-    return {
-      'line-sort-key': ['case', ...cases, 0],
-    }
-  }
-
 
 function groupBy(xs, key) {
   return xs.reduce(function (rv, x) {

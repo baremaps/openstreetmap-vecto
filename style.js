@@ -13,7 +13,6 @@ import natural_overlay from "./layers/natural/style_overlay.js";
 import waterway from "./layers/waterway/style.js";
 import barrier from "./layers/barrier/style.js";
 import railway from "./layers/railway/style.js";
-import amenity_overlay from "./layers/amenity/style_overlay.js";
 import route from "./layers/route/style.js";
 import tourism from "./layers/tourism/style.js";
 import building from "./layers/building/style.js";
@@ -44,14 +43,13 @@ export default {
         ...leisure,
         ...natural_overlay,
         ...waterway,
-        ...amenity_overlay,
         ...barrier,
         ...railway,
         ...highway,
         ...route,
         ...tourism,
         ...building,
-        ...attraction,
+        //...attraction,
         ...man_made,
         ...boundary,
         ...power_overlay,
