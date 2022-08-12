@@ -1,24 +1,23 @@
-
 export default {
-    'id': 'highway_outline', 
-    'source': 'baremaps', 
+    id: 'highway_outline',
+    source: 'baremaps',
     'source-layer': 'highway',
-    'type': 'line',
-    'layout': {
-        'visibility': 'visible',
+    type: 'line',
+    layout: {
+        visibility: 'visible',
         'line-cap': 'round',
         'line-join': 'round',
     },
-    'filter':  [
+    filter: [
         'all',
         ['!=', ['get', 'bridge'], 'yes'],
         ['!=', ['get', 'tunnel'], 'yes'],
         ['!=', ['get', 'layer'], '-1'],
         ['!=', ['get', 'covered'], 'yes'],
-      ],
-    'directives': [
+    ],
+    directives: [
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'motorway'],
                 ['==', ['get', 'highway'], 'motorway_link'],
@@ -28,7 +27,7 @@ export default {
             'line-width': 2,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'primary'],
                 ['==', ['get', 'highway'], 'primary_link'],
@@ -40,7 +39,7 @@ export default {
             'line-sort-key': 5,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'secondary'],
                 ['==', ['get', 'highway'], 'secondary_link'],
@@ -51,7 +50,7 @@ export default {
             'line-sort-key': 4,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'tertiary'],
                 ['==', ['get', 'highway'], 'tertiary_link'],
@@ -62,7 +61,7 @@ export default {
             'line-sort-key': 3,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'trunk'],
                 ['==', ['get', 'highway'], 'trunk_link'],
@@ -73,42 +72,42 @@ export default {
             'line-sort-key': 2,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'unclassified'],
+            filter: ['==', ['get', 'highway'], 'unclassified'],
             'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
             'line-sort-key': 1,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'residential'],
+            filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
             'line-sort-key': 1,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'living_street'],
+            filter: ['==', ['get', 'highway'], 'living_street'],
             'line-color': 'rgb(207, 207, 207)',
             'line-gap-width': 4,
             'line-width': 2,
             'line-sort-key': 1,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'service'],
+            filter: ['==', ['get', 'highway'], 'service'],
             'line-color': 'rgb(213, 211, 211)',
             'line-gap-width': 4,
             'line-width': 2,
             'line-sort-key': 1,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'residential'],
+            filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgb(211, 207, 206)',
             'line-gap-width': 4,
             'line-width': 2,
             'line-sort-key': 1,
         },
         {
-            'filter': [
+            filter: [
                 'all',
                 ['==', ['get', 'highway'], 'pedestrian'],
                 ['!=', ['get', 'area'], 'yes'],
@@ -119,7 +118,7 @@ export default {
             'line-sort-key': 1,
         },
         {
-            'filter': [
+            filter: [
                 'all',
                 ['==', ['get', 'highway'], 'pedestrian'],
                 ['==', ['get', 'area'], 'yes'],
@@ -128,5 +127,5 @@ export default {
             'line-width': 2,
             'line-sort-key': 1,
         },
-    ]
-};
+    ],
+}

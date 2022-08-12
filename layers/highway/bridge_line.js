@@ -1,21 +1,17 @@
-
 export default {
-    'id': 'bridge_line', 
-    'source': 'baremaps', 
+    id: 'bridge_line',
+    source: 'baremaps',
     'source-layer': 'highway',
-    'type': 'line',
-    'layout': {
-        'visibility': 'visible',
+    type: 'line',
+    layout: {
+        visibility: 'visible',
         'line-cap': 'square',
         'line-join': 'miter',
     },
-    'filter':  [
-        'any',
-        ['==', ['get', 'bridge'], 'yes'],
-      ],
-    'directives': [
+    filter: ['any', ['==', ['get', 'bridge'], 'yes']],
+    directives: [
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'motorway'],
                 ['==', ['get', 'highway'], 'motorway_link'],
@@ -24,7 +20,7 @@ export default {
             'line-width': 12,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'primary'],
                 ['==', ['get', 'highway'], 'primary_link'],
@@ -33,7 +29,7 @@ export default {
             'line-width': 10,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'secondary'],
                 ['==', ['get', 'highway'], 'secondary_link'],
@@ -42,7 +38,7 @@ export default {
             'line-width': 8,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'tertiary'],
                 ['==', ['get', 'highway'], 'tertiary_link'],
@@ -51,7 +47,7 @@ export default {
             'line-width': 8,
         },
         {
-            'filter': [
+            filter: [
                 'any',
                 ['==', ['get', 'highway'], 'trunk'],
                 ['==', ['get', 'highway'], 'trunk_link'],
@@ -60,32 +56,32 @@ export default {
             'line-width': 8,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'unclassified'],
+            filter: ['==', ['get', 'highway'], 'unclassified'],
             'line-color': 'rgb(229, 229, 229)',
             'line-width': 4,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'residential'],
+            filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgb(229, 229, 229)',
             'line-width': 4,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'living_street'],
+            filter: ['==', ['get', 'highway'], 'living_street'],
             'line-color': 'rgb(213, 213, 213)',
             'line-width': 4,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'service'],
+            filter: ['==', ['get', 'highway'], 'service'],
             'line-color': 'rgb(229, 229, 229)',
             'line-width': 4,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'residential'],
+            filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgb(229, 229, 229)',
             'line-width': 4,
         },
         {
-            'filter': [
+            filter: [
                 'all',
                 ['==', ['get', 'highway'], 'pedestrian'],
                 ['!=', ['get', '$type'], 'Polygon'],
@@ -94,14 +90,14 @@ export default {
             'line-width': 2,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'track'],
+            filter: ['==', ['get', 'highway'], 'track'],
             'line-color': 'rgb(159, 126, 57)',
             'line-width': 2,
         },
         {
-            'filter': ['==', ['get', 'highway'], 'raceway'],
+            filter: ['==', ['get', 'highway'], 'raceway'],
             'line-color': 'rgb(255, 147, 166)',
             'line-width': 2,
         },
-    ]
-};
+    ],
+}

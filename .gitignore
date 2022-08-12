@@ -2,3 +2,4 @@ data/
 static/
 .DS_Store/
 .env
+.idea

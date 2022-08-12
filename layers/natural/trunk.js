@@ -1,5 +1,5 @@
 export default {
-    id: 'natural_tree',
+    id: 'natural_trunk',
     type: 'circle',
     filter: ['all', ['==', 'natural', 'tree']],
     source: 'baremaps',
@@ -8,7 +8,7 @@ export default {
         visibility: 'visible',
     },
     paint: {
-        'circle-color': 'rgb(113, 205, 111)',
+        'circle-color': 'rgb(129, 94, 39)',
         'circle-radius': [
             'interpolate',
             ['exponential', 2],
@@ -16,7 +16,7 @@ export default {
             14,
             0,
             22,
-            200,
+            50,
         ],
     },
-}
+};

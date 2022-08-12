@@ -1,8 +1,6 @@
-import layer from '../layer.js'
-
-let railwayLine = {
-    'id': 'railway_line', 
-    'source': 'baremaps', 
+export default {
+    'id': 'railway_line',
+    'source': 'baremaps',
     'source-layer': 'railway',
     'type': 'line',
     'layout': {
@@ -81,6 +79,4 @@ let railwayLine = {
             'line-width': 6,
         },
     ]
-};
-
-export default layer(railwayLine)
+}
