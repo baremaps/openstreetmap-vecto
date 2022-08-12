@@ -1,4 +1,4 @@
-import layer from './layers/layer.js';
+import layer from './utils/layer.js';
 
 import background from "./layers/background/style.js";
 import amenity_fill_1 from "./layers/amenity/fill_1.js";

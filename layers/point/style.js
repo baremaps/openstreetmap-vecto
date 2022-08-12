@@ -1,4 +1,4 @@
-import layer from '../layer.js'
+import layer from '../../utils/layer.js'
 
 export default {
     id: 'point',
