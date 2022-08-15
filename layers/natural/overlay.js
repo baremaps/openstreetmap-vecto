@@ -16,11 +16,12 @@ export default {
         },
         {
             filter: ['==', ['get', 'natural'], 'water'],
-            'fill-color': 'rgb(170, 211, 223)'
+            'fill-color': 'rgb(170, 211, 223)',
+            'fill-sort-key': 10,
         },
         {
             filter: ['==', ['get', 'natural'], 'wetland'],
-            'fill-color': 'rgba(184, 224,189, .5)'
+            'fill-color': 'rgb(213, 231, 211)'
         },
         {
             filter: ['==', ['get', 'natural'], 'scrub'],

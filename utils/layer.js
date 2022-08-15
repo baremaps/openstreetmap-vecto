@@ -5,11 +5,14 @@ export default function layer(layer) {
         filter: filter(layer),
         source: layer['source'],
         'source-layer': layer['source-layer'],
+        minzoom: layer['minzoom'],
+        maxzoom: layer['maxzoom'],
         layout: layer['directives']
             ? Object.assign(
                 {
                     ...iconImage(layer),
                     ...lineSortKey(layer),
+                    ...fillSortKey(layer),
                 },
                 layer['layout'],
             )
@@ -18,12 +21,14 @@ export default function layer(layer) {
             ? Object.assign(
                 {
                     ...textColor(layer),
-                    ...lineWidth(layer),
-                    ...lineColor(layer),
                     ...iconColor(layer),
-                    ...lineGapWidth(layer),
                     ...fillColor(layer),
                     ...fillOutlineColor(layer),
+                    ...lineColor(layer),
+                    ...lineWidth(layer),
+                    ...lineGapWidth(layer),
+                    ...roadWidth(layer),
+                    ...roadGapWidth(layer),
                 },
                 layer['paint'],
             )
@@ -47,12 +52,17 @@ function filter(layer) {
     }
 }
 
-function lineWidth(layer) {
-    return mergeInterpolatedDirective(layer, 'line-width', 1)
+
+function iconImage(layer) {
+    return mergeDirectives(layer, 'icon-image', 'none')
 }
 
-function lineGapWidth(layer) {
-    return mergeInterpolatedDirective(layer, 'line-gap-width', 1)
+function iconColor(layer) {
+    return mergeDirectives(layer, 'icon-color', 'rgba(0, 0, 0, 0)')
+}
+
+function textColor(layer) {
+    return mergeDirectives(layer, 'text-color', 'rgba(0, 0, 0, 0)')
 }
 
 function fillColor(layer) {
@@ -67,20 +77,20 @@ function lineColor(layer) {
     return mergeDirectives(layer, 'line-color', 'rgba(0, 0, 0, 0)')
 }
 
-function iconImage(layer) {
-    return mergeDirectives(layer, 'icon-image', 'none')
+function lineWidth(layer) {
+    return mergeDirectives(layer, 'line-width', 0)
 }
 
-function iconColor(layer) {
-    return mergeDirectives(layer, 'icon-color', 'rgba(0, 0, 0, 0)')
-}
-
-function textColor(layer) {
-    return mergeDirectives(layer, 'text-color', 'rgba(0, 0, 0, 0)')
+function lineGapWidth(layer) {
+    return mergeDirectives(layer, 'line-gap-width', 0)
 }
 
 function lineSortKey(layer) {
     return mergeDirectives(layer, 'line-sort-key', 0)
+}
+
+function fillSortKey(layer) {
+    return mergeDirectives(layer, 'fill-sort-key', 0)
 }
 
 function mergeDirectives(layer, property, value) {
@@ -99,7 +109,15 @@ function mergeDirectives(layer, property, value) {
     }
 }
 
-function mergeInterpolatedDirective(layer, property, value) {
+function roadWidth(layer) {
+    return mergeInterpolatedDirective(layer, 'road-width', 'line-width', 1)
+}
+
+function roadGapWidth(layer) {
+    return mergeInterpolatedDirective(layer, 'road-gap-width', 'line-gap-width', 1)
+}
+
+function mergeInterpolatedDirective(layer, property, alias, value) {
     let cases = layer['directives'].flatMap((rule) => {
         if (rule[property]) {
             return [rule['filter'], rule[property]]
@@ -111,12 +129,12 @@ function mergeInterpolatedDirective(layer, property, value) {
         return {}
     }
     return {
-        [property]: [
+        [alias]: [
             'interpolate',
             ['exponential', 1.2],
             ['zoom'],
-            4,
-            1,
+            5,
+            0.1,
             20,
             ['case', ...cases, value],
         ],

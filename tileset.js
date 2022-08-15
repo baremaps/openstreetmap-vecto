@@ -8,7 +8,7 @@ import highway from "./layers/highway/tileset.js";
 import natural from "./layers/natural/tileset.js";
 import leisure from "./layers/leisure/tileset.js";
 import landuse from "./layers/landuse/tileset.js";
-import tourism from "./layers/tourism/tileset.js";
+import ocean from "./layers/ocean/tileset.js";
 import railway from "./layers/railway/tileset.js";
 import route from "./layers/route/tileset.js";
 import man_made from "./layers/man_made/tileset.js";
@@ -29,22 +29,23 @@ export default {
     "http://localhost:9000/tiles/{z}/{x}/{y}.mvt"
   ],
   "vector_layers": [
-    point,
     aerialway,
-    power,
     amenity,
     attraction,
     barrier,
     boundary,
     building,
     highway,
-    natural,
-    leisure,
     landuse,
-    tourism,
+    leisure,
+    man_made,
+    natural,
+    ocean,
+    point,
+    power,
     railway,
     route,
-    man_made,
+    //tourism,
     waterway,
   ]
 }

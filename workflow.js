@@ -1,5 +1,6 @@
 export default {
   "steps": [
+      /*
     {
       "id": "natural-earth",
       "needs": [],
@@ -23,7 +24,7 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_ne_spgist.sql",
+          "file": "queries/ne_index.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         }
       ]
@@ -51,7 +52,7 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_water_spgist.sql",
+          "file": "queries/osm_water_index.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         }
       ]
@@ -79,11 +80,12 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_simplified_water_spgist.sql",
+          "file": "queries/osm_simplified_water_index.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         }
       ]
     },
+    */
     {
       "id": "openstreetmap",
       "needs": [],
@@ -101,19 +103,54 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_view_osm.sql",
+          "file": "queries/osm_node.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_osm_gin.sql",
+          "file": "queries/osm_way.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/create_index_osm_spgist.sql",
+          "file": "queries/osm_relation.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
-        }
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_way_member.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_point.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_linestring.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_polygon.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_boundary.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_highway.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_railway.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
       ]
     }
   ]

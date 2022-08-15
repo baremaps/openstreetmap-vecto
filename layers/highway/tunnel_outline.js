@@ -25,8 +25,8 @@ export default {
                 ['==', ['get', 'highway'], 'motorway_link'],
             ],
             'line-color': 'rgba(227, 82, 126, 1)',
-            'line-gap-width': 12,
-            'line-width': 2,
+            'road-gap-width': 12,
+            'road-width': 2,
         },
         {
             filter: [
@@ -35,8 +35,8 @@ export default {
                 ['==', ['get', 'highway'], 'primary_link'],
             ],
             'line-color': 'rgba(192, 147, 62, 1)',
-            'line-gap-width': 10,
-            'line-width': 2,
+            'road-gap-width': 10,
+            'road-width': 2,
         },
         {
             filter: [
@@ -45,8 +45,8 @@ export default {
                 ['==', ['get', 'highway'], 'secondary_link'],
             ],
             'line-color': 'rgba(154, 166, 67, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'road-gap-width': 8,
+            'road-width': 2,
         },
         {
             filter: [
@@ -55,8 +55,8 @@ export default {
                 ['==', ['get', 'highway'], 'tertiary_link'],
             ],
             'line-color': 'rgba(190, 189, 188, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'road-gap-width': 8,
+            'road-width': 2,
         },
         {
             filter: [
@@ -65,38 +65,38 @@ export default {
                 ['==', ['get', 'highway'], 'trunk_link'],
             ],
             'line-color': 'rgba(217, 111, 78, 1)',
-            'line-gap-width': 8,
-            'line-width': 2,
+            'road-gap-width': 8,
+            'road-width': 2,
         },
         {
             filter: ['==', ['get', 'highway'], 'unclassified'],
             'line-color': 'rgba(211, 207, 206, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'road-gap-width': 4,
+            'road-width': 2,
         },
         {
             filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgba(211, 207, 206, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'road-gap-width': 4,
+            'road-width': 2,
         },
         {
             filter: ['==', ['get', 'highway'], 'living_street'],
             'line-color': 'rgba(207, 207, 207, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'road-gap-width': 4,
+            'road-width': 2,
         },
         {
             filter: ['==', ['get', 'highway'], 'service'],
             'line-color': 'rgba(213, 211, 211, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'road-gap-width': 4,
+            'road-width': 2,
         },
         {
             filter: ['==', ['get', 'highway'], 'residential'],
             'line-color': 'rgba(211, 207, 206, 1)',
-            'line-gap-width': 4,
-            'line-width': 2,
+            'road-gap-width': 4,
+            'road-width': 2,
         },
         {
             filter: [
@@ -105,8 +105,8 @@ export default {
                 ['!=', ['get', '$type'], 'Polygon'],
             ],
             'line-color': 'rgba(184, 183, 182, 1)',
-            'line-gap-width': 2,
-            'line-width': 2,
+            'road-gap-width': 2,
+            'road-width': 2,
         },
     ],
 }

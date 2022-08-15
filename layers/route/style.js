@@ -8,13 +8,11 @@ export default {
         'line-join': 'round',
         visibility: 'visible',
     },
-    paint: {
-        'line-dasharray': [4, 4],
-    },
     directives: [
         {
             filter: ['==', ['get', 'route'], 'ferry'],
-            'line-color': 'rgb(102, 102, 255)',
+            'line-color': 'rgb(112, 181, 201)',
+            'line-width': 1
         },
     ],
 }

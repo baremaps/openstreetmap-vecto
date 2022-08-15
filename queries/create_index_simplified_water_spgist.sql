@@ -1,1 +1,0 @@
-CREATE INDEX simplified_water_polygons_gix ON simplified_water_polygons_shp USING SPGIST(geometry);

@@ -4,29 +4,28 @@ export default {
     source: 'baremaps',
     'source-layer': 'boundary',
     layout: {
-        'line-cap': 'round',
-        'line-join': 'round',
         visibility: 'visible',
     },
     paint: {
-        'line-dasharray': [8, 2, 2, 2],
+        'line-dasharray': [4, 1, 1, 1],
     },
     directives: [
         {
-            filter: ['==', ['get', 'admin_level'], 1],
+            filter: ['==', ['get', 'admin_level'], "1"],
             'line-color': 'rgb(207, 155, 203)',
         },
         {
-            filter: ['==', ['get', 'admin_level'], 2],
+            filter: ['==', ['get', 'admin_level'], "2"],
             'line-color': 'rgb(207, 155, 203)',
         },
         {
-            filter: ['==', ['get', 'admin_level'], 3],
+            filter: ['==', ['get', 'admin_level'], "3"],
             'line-color': 'rgb(207, 155, 203)',
         },
         {
-            filter: ['==', ['get', 'admin_level'], 4],
+            filter: ['==', ['get', 'admin_level'], "4"],
             'line-color': 'rgb(207, 155, 203)',
         },
     ],
+
 }

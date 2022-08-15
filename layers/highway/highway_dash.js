@@ -15,7 +15,7 @@ export default {
         {
             filter: ['==', ['get', 'highway'], 'bridleway'],
             'line-color': 'rgb(68, 159, 66)',
-            'line-width': 1,
+            'road-width': 1,
         },
         {
             filter: [
@@ -28,7 +28,7 @@ export default {
                 ],
             ],
             'line-color': 'rgba(28, 27, 254, 1)',
-            'line-width': 1,
+            'road-width': 1,
         },
         {
             filter: [
@@ -45,7 +45,7 @@ export default {
                 ],
             ],
             'line-color': 'rgb(192, 192, 192)',
-            'line-width': 1,
+            'road-width': 1,
         },
         {
             filter: [
@@ -67,12 +67,12 @@ export default {
                 ],
             ],
             'line-color': 'rgb(250, 132, 117)',
-            'line-width': 1,
+            'road-width': 1,
         },
         {
             filter: ['all', ['==', ['get', 'highway'], 'track']],
             'line-color': 'rgb(177, 140, 63)',
-            'line-width': 1,
+            'road-width': 1,
         },
     ],
 }

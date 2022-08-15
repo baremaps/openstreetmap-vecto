@@ -2,28 +2,40 @@ export default {
     id: 'highway',
     queries: [
         {
-            minzoom: 0,
+            minzoom: 4,
+            maxzoom: 6,
+            sql:
+                "SELECT id, tags, geom FROM osm_highway_z$zoom WHERE tags ->> 'highway' IN ( 'motorway')",
+        },
+        {
+            minzoom: 6,
+            maxzoom: 9,
+            sql:
+                "SELECT id, tags, geom FROM osm_highway_z$zoom WHERE tags ->> 'highway' IN ( 'motorway',  'trunk',  'primary')",
+        },
+        {
+            minzoom: 9,
             maxzoom: 10,
             sql:
-                "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk',  'primary', 'secondary')",
+                "SELECT id, tags, geom FROM osm_highway_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link')",
         },
         {
             minzoom: 10,
-            maxzoom: 12,
+            maxzoom: 11,
             sql:
-                "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link', 'trunk', 'trunk_link',  'primary', 'secondary', 'tertiary')",
+                "SELECT id, tags, geom FROM osm_highway_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link',  'tertiary', 'tertiary_link')",
         },
         {
-            minzoom: 12,
-            maxzoom: 13,
+            minzoom: 11,
+            maxzoom: 14,
             sql:
-                "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link',  'tertiary', 'tertiary_link', 'unclassified', 'residential')",
+                "SELECT id, tags, geom FROM osm_highway_z$zoom WHERE tags ->> 'highway' IN ( 'motorway', 'motorway_link',  'trunk', 'trunk_link',  'primary', 'primary_link',  'secondary', 'secondary_link',  'tertiary', 'tertiary_link', 'unclassified', 'residential')",
         },
         {
-            minzoom: 13,
+            minzoom: 14,
             maxzoom: 20,
             sql:
-                "SELECT id, tags, geom FROM osm_ways_z$zoom WHERE tags ? 'highway'",
+                "SELECT id, tags, geom FROM osm_way_z$zoom WHERE tags ? 'highway'",
         },
     ],
 }

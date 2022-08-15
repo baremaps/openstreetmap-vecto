@@ -1,8 +1,8 @@
 export default {
-    id: 'leisure_park',
+    id: 'ocean',
     type: 'fill',
     source: 'baremaps',
-    'source-layer': 'leisure',
+    'source-layer': 'ocean',
     layout: {
         visibility: 'visible',
     },
@@ -11,8 +11,9 @@ export default {
     },
     directives: [
         {
-            filter: ['==', ['get', 'leisure'], 'park'],
-            'fill-color': 'rgb(200, 250, 204)',
+            filter: ['==', ['get', 'ocean'], 'water'],
+            'fill-color': 'rgb(170, 211, 223)',
+            'fill-sort-key': 10,
         },
-    ],
+    ]
 }
