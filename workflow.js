@@ -1,6 +1,5 @@
 export default {
   "steps": [
-      /*
     {
       "id": "natural-earth",
       "needs": [],
@@ -85,7 +84,6 @@ export default {
         }
       ]
     },
-    */
     {
       "id": "openstreetmap",
       "needs": [],
@@ -101,11 +99,23 @@ export default {
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps",
           "databaseSrid": 3857
         },
+      ]
+    },
+    {
+      "id": "openstreetmap-node",
+      "needs": ["openstreetmap"],
+      "tasks": [
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_node.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
+      ]
+    },
+    {
+      "id": "openstreetmap-way",
+      "needs": ["openstreetmap"],
+      "tasks": [
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_way.sql",
@@ -113,17 +123,7 @@ export default {
         },
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/osm_relation.sql",
-          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
-        },
-        {
-          "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_way_member.sql",
-          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
-        },
-        {
-          "type": "com.baremaps.workflow.tasks.ExecuteSql",
-          "file": "queries/osm_point.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
         {
@@ -149,6 +149,17 @@ export default {
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_railway.sql",
+          "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
+        },
+      ]
+    },
+    {
+      "id": "openstreetmap-relation",
+      "needs": ["openstreetmap"],
+      "tasks": [
+        {
+          "type": "com.baremaps.workflow.tasks.ExecuteSql",
+          "file": "queries/osm_relation.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
       ]
