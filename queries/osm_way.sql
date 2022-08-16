@@ -2,6 +2,9 @@ DROP VIEW IF EXISTS osm_way CASCADE;
 
 CREATE VIEW osm_way AS SELECT * FROM osm_ways;
 
+DROP INDEX IF EXISTS osm_way_tags_index;
+DROP INDEX IF EXISTS osm_way_geom_index;
+
 CREATE INDEX osm_way_tags_index ON osm_ways USING gin (tags);
 CREATE INDEX osm_way_geom_index ON osm_ways USING spgist (geom);
 

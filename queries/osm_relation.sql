@@ -2,6 +2,9 @@ DROP VIEW IF EXISTS osm_relation CASCADE;
 
 CREATE VIEW osm_relation AS SELECT * FROM osm_relations;
 
+DROP INDEX IF EXISTS osm_relation_tags_index;
+DROP INDEX IF EXISTS osm_relation_geom_index;
+
 CREATE INDEX osm_relation_tags_index ON osm_relations USING gin (tags);
 CREATE INDEX osm_relation_geom_index ON osm_relations USING spgist (geom);
 
