@@ -40,7 +40,7 @@ export default {
         {
           "type": "com.baremaps.workflow.tasks.UnzipFile",
           "file": "data/water-polygons-split-3857.zip",
-          "directory": "data/water-polygons-split-3857"
+          "directory": "data"
         },
         {
           "type": "com.baremaps.workflow.tasks.ImportShapefile",
@@ -68,7 +68,7 @@ export default {
         {
           "type": "com.baremaps.workflow.tasks.UnzipFile",
           "file": "data/simplified-water-polygons-split-3857.zip",
-          "directory": "data/simplified-water-polygons-split-3857"
+          "directory": "data"
         },
         {
           "type": "com.baremaps.workflow.tasks.ImportShapefile",
@@ -81,7 +81,7 @@ export default {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_simplified_water_index.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
-        }
+        },
       ]
     },
     {
@@ -99,23 +99,11 @@ export default {
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps",
           "databaseSrid": 3857
         },
-      ]
-    },
-    {
-      "id": "openstreetmap-node",
-      "needs": ["openstreetmap"],
-      "tasks": [
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_node.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
-      ]
-    },
-    {
-      "id": "openstreetmap-way",
-      "needs": ["openstreetmap"],
-      "tasks": [
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_way.sql",
@@ -151,12 +139,6 @@ export default {
           "file": "queries/osm_railway.sql",
           "database": "jdbc:postgresql://localhost:5432/baremaps?&user=baremaps&password=baremaps"
         },
-      ]
-    },
-    {
-      "id": "openstreetmap-relation",
-      "needs": ["openstreetmap"],
-      "tasks": [
         {
           "type": "com.baremaps.workflow.tasks.ExecuteSql",
           "file": "queries/osm_relation.sql",
