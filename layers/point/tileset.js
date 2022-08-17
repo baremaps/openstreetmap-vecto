@@ -1,5 +1,5 @@
 export default {
-    "id": "points",
+    "id": "point",
     "queries": [
         {
             "minzoom": 10,

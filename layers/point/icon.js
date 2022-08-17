@@ -1,10 +1,10 @@
 import layer from '../../utils/layer.js'
 
 export default {
-    id: 'point_icon',
+    id: 'icon',
     type: 'symbol',
     source: 'baremaps',
-    'source-layer': 'points',
+    'source-layer': 'point',
     'minzoom': 14,
     layout: {
         visibility: 'visible',

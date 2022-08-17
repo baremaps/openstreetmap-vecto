@@ -35,7 +35,8 @@ import man_made_pier_label from "./layers/man_made/pier_label.js";
 import waterway_line from "./layers/waterway/line.js"
 import waterway_tunnel_line from "./layers/waterway/tunnel_line.js"
 import waterway_tunnel_casing from "./layers/waterway/tunnel_casing.js"
-import point from "./layers/point/icon.js";
+import icon from "./layers/point/icon.js";
+import label from './layers/point/label.js';
 
 export default {
     "version": 8,
@@ -86,6 +87,7 @@ export default {
         layer(natural_tree),
         layer(natural_trunk),
         layer(boundary_line),
-        layer(point),
+        layer(icon),
+        //layer(label),
     ],
 };

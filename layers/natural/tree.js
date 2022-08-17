@@ -3,7 +3,7 @@ export default {
     type: 'circle',
     filter: ['all', ['==', 'natural', 'tree']],
     source: 'baremaps',
-    'source-layer': 'points',
+    'source-layer': 'point',
     layout: {
         visibility: 'visible',
     },

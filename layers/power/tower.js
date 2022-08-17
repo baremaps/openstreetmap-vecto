@@ -9,7 +9,7 @@ export default {
         ["==", "power", "catenary_mast"]
     ],
     "source": "baremaps",
-    "source-layer": "points",
+    "source-layer": "point",
     "layout": {
         "visibility": "visible"
     },
