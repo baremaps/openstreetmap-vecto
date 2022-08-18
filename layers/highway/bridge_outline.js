@@ -5,7 +5,7 @@ export default {
     type: 'line',
     layout: {
         visibility: 'visible',
-        'line-cap': 'square',
+        'line-cap': 'butt',
         'line-join': 'miter',
     },
     filter: ['any', ['==', ['get', 'bridge'], 'yes']],

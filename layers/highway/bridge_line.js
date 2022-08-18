@@ -5,7 +5,7 @@ export default {
     type: 'line',
     layout: {
         visibility: 'visible',
-        'line-cap': 'square',
+        'line-cap': 'butt',
         'line-join': 'miter',
     },
     filter: ['any', ['==', ['get', 'bridge'], 'yes']],
@@ -17,7 +17,7 @@ export default {
                 ['==', ['get', 'highway'], 'motorway_link'],
             ],
             'line-color': 'rgb(227, 113, 134)',
-            'road-width': 10,
+            'road-width': 12,
         },
         {
             filter: [

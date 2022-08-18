@@ -10,6 +10,10 @@ export default function layer(layer) {
         layout: layer['directives']
             ? Object.assign(
                 {
+                    ...textFont(layer),
+                    ...textField(layer),
+                    ...textSize(layer),
+                    ...textMaxWidth(layer),
                     ...iconImage(layer),
                     ...lineSortKey(layer),
                     ...fillSortKey(layer),
@@ -21,6 +25,8 @@ export default function layer(layer) {
             ? Object.assign(
                 {
                     ...textColor(layer),
+                    ...textHaloColor(layer),
+                    ...textHaloWidth(layer),
                     ...iconColor(layer),
                     ...fillColor(layer),
                     ...fillOutlineColor(layer),
@@ -61,8 +67,32 @@ function iconColor(layer) {
     return mergeDirectives(layer, 'icon-color', 'rgba(0, 0, 0, 0)')
 }
 
+function textFont(layer) {
+    return mergeDirectives(layer, 'text-font', "Arial")
+}
+
+function textField(layer) {
+    return mergeDirectives(layer, 'text-field', null)
+}
+
+function textSize(layer) {
+    return mergeDirectives(layer, 'text-size', 12)
+}
+
+function textMaxWidth(layer) {
+    return mergeDirectives(layer, 'text-max-width', 4)
+}
+
 function textColor(layer) {
     return mergeDirectives(layer, 'text-color', 'rgba(0, 0, 0, 0)')
+}
+
+function textHaloColor(layer) {
+    return mergeDirectives(layer, 'text-halo-color', 'rgba(0, 0, 0, 0)')
+}
+
+function textHaloWidth(layer) {
+    return mergeDirectives(layer, 'text-halo-width', 0)
 }
 
 function fillColor(layer) {
@@ -134,7 +164,7 @@ function mergeInterpolatedDirective(layer, property, alias, value) {
             ['exponential', 1.2],
             ['zoom'],
             5,
-            0.1,
+            0.2,
             20,
             ['case', ...cases, value],
         ],

@@ -59,7 +59,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'ice_cream'],
-            'icon-image': '	ice_cream',
+            'icon-image': 'ice_cream',
             'icon-color': 'rgb(199, 116, 0)',
             'text-color': 'rgb(199, 116, 0)',
         },
@@ -77,12 +77,12 @@ export default {
         },
 
         // Amenity: education
-        {
-            filter: ['==', ['get', 'amenity'], 'driving_school'],
-            'icon-image': 'driving_school',
-            'icon-color': 'rgb(172, 58, 173)',
-            'text-color': 'rgb(172, 58, 173)',
-        },
+        // {
+        //     filter: ['==', ['get', 'amenity'], 'driving_school'],
+        //     'icon-image': 'driving_school',
+        //     'icon-color': 'rgb(172, 58, 173)',
+        //     'text-color': 'rgb(172, 58, 173)',
+        // },
         {
             filter: ['==', ['get', 'amenity'], 'library'],
             'icon-image': 'library',
@@ -105,7 +105,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'bicycle_rental'],
-            'icon-image': 'bicycle_rental',
+            'icon-image': 'rental_bicycle',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
@@ -123,7 +123,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'car_rental'],
-            'icon-image': 'car_rental',
+            'icon-image': 'rental_car',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
@@ -147,7 +147,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'ferry_terminal'],
-            'icon-image': 'ferry_terminal',
+            'icon-image': 'ferry',
             'icon-color': 'rgb(132, 97, 196)',
             'text-color': 'rgb(132, 97, 196)',
         },
@@ -171,7 +171,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'parking_entrance'],
-            'icon-image': 'parking_entrance',
+            'icon-image': 'entrance',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
@@ -205,7 +205,7 @@ export default {
         // Amenity: healthcare
         {
             filter: ['==', ['get', 'amenity'], 'clinic'],
-            'icon-image': 'clinic',
+            'icon-image': 'hospital',
             'icon-color': 'rgb(191, 0, 0)',
             'text-color': 'rgb(191, 0, 0)',
         },
@@ -311,7 +311,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'fire_station'],
-            'icon-image': 'fire_station',
+            'icon-image': 'firestation',
             'icon-color': 'rgb(115, 74, 7)',
             'text-color': 'rgb(115, 74, 7)',
         },
@@ -341,7 +341,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'amenity'], 'townhall'],
-            'icon-image': 'townhall',
+            'icon-image': 'town_hall',
             'icon-color': 'rgb(115, 74, 7)',
             'text-color': 'rgb(115, 74, 7)',
         },
@@ -413,7 +413,7 @@ export default {
         // Amenity: Others
         {
             filter: ['==', ['get', 'amenity'], 'childcare'],
-            'icon-image': 'childcare',
+            'icon-image': 'place-6',
             'icon-color': 'rgb(76, 76, 0)',
             'text-color': 'rgb(76, 76, 0)',
         },
@@ -543,13 +543,13 @@ export default {
         },
         {
             filter: ['==', ['get', 'leisure'], 'fitness_centre'],
-            'icon-image': 'fitness_centre',
+            'icon-image': 'sports',
             'icon-color': 'rgb(13, 134, 22)',
             'text-color': 'rgb(13, 134, 22)',
         },
         {
             filter: ['==', ['get', 'leisure'], 'fitness_station'],
-            'icon-image': 'fitness_station',
+            'icon-image': 'sports',
             'icon-color': 'rgb(13, 134, 22)',
             'text-color': 'rgb(13, 134, 22)',
         },
@@ -573,7 +573,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'leisure'], 'picnic_table'],
-            'icon-image': 'picnic_table',
+            'icon-image': 'picnic',
             'icon-color': 'rgb(102, 102, 102)',
             'text-color': 'rgb(102, 102, 102)',
         },
@@ -671,7 +671,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'man_made'], 'tower'],
-            'icon-image': 'tower',
+            'icon-image': 'tower_generic',
             'icon-color': 'rgb(85, 85, 85)',
             'text-color': 'rgb(85, 85, 85)',
         },
@@ -705,7 +705,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'natural'], 'cave_entrance'],
-            'icon-image': 'cave_entrance',
+            'icon-image': 'entrance',
             'icon-color': 'rgb(85, 85, 85)',
             'text-color': 'rgb(85, 85, 85)',
         },
@@ -731,19 +731,19 @@ export default {
         // Railway: stations and stops
         {
             filter: ['==', ['get', 'railway'], 'halt'],
-            'icon-image': 'halt',
+            'icon-image': 'place-6',
             'icon-color': 'rgb(122, 129, 177)',
             'text-color': 'rgb(122, 129, 177)',
         },
         {
             filter: ['==', ['get', 'railway'], 'station'],
-            'icon-image': 'station',
+            'icon-image': 'place-6',
             'icon-color': 'rgb(122, 129, 177)',
             'text-color': 'rgb(122, 129, 177)',
         },
         {
             filter: ['==', ['get', 'railway'], 'subway_entrance'],
-            'icon-image': 'subway_entrance',
+            'icon-image': 'entrance',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
@@ -757,7 +757,7 @@ export default {
         // Railway: other railways
         {
             filter: ['==', ['get', 'railway'], 'crossing'],
-            'icon-image': 'crossing',
+            'icon-image': 'level_crossing',
             'icon-color': 'rgb(102, 102, 102)',
             'text-color': 'rgb(102, 102, 102)',
         },
@@ -795,13 +795,13 @@ export default {
         },
         {
             filter: ['==', ['get', 'tourism'], 'camp_site'],
-            'icon-image': 'camp_site',
+            'icon-image': 'camping',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
         {
             filter: ['==', ['get', 'tourism'], 'caravan_site'],
-            'icon-image': 'caravan_site',
+            'icon-image': 'caravan_park',
             'icon-color': 'rgb(0, 146, 219)',
             'text-color': 'rgb(0, 146, 219)',
         },
@@ -813,7 +813,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'tourism'], 'gallery'],
-            'icon-image': 'gallery',
+            'icon-image': 'art',
             'icon-color': 'rgb(115, 74, 7)',
             'text-color': 'rgb(115, 74, 7)',
         },
@@ -849,7 +849,7 @@ export default {
         },
         {
             filter: ['==', ['get', 'tourism'], 'picnic_site'],
-            'icon-image': 'picnic_site',
+            'icon-image': 'picnic',
             'icon-color': 'rgb(102, 102, 102)',
             'text-color': 'rgb(102, 102, 102)',
         },

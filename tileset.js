@@ -28,6 +28,7 @@ export default {
   "tiles": [
     "http://localhost:9000/tiles/{z}/{x}/{y}.mvt"
   ],
+  attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
   "vector_layers": [
     aerialway,
     amenity,

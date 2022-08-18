@@ -33,6 +33,7 @@ import building_number from "./layers/building/number.js";
 import man_made_pier_line from "./layers/man_made/pier_line.js";
 import man_made_pier_label from "./layers/man_made/pier_label.js";
 import waterway_line from "./layers/waterway/line.js"
+import waterway_label from "./layers/waterway/label.js"
 import waterway_tunnel_line from "./layers/waterway/tunnel_line.js"
 import waterway_tunnel_casing from "./layers/waterway/tunnel_casing.js"
 import icon from "./layers/point/icon.js";
@@ -74,8 +75,8 @@ export default {
         layer(highway_dash),
         layer(highway_pedestrian_area),
         layer(railway_line),
-        layer(highway_bridge_line),
         layer(highway_bridge_outline),
+        layer(highway_bridge_line),
         layer(highway_label),
         layer(route_line),
         layer(power_cable),
@@ -87,7 +88,8 @@ export default {
         layer(natural_tree),
         layer(natural_trunk),
         layer(boundary_line),
+        layer(waterway_label),
         layer(icon),
-        //layer(label),
+        layer(label),
     ],
 };
