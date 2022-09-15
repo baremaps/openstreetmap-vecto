@@ -1,6 +1,6 @@
 # OpenStreetMap Vecto
 
-🚧 🚧 Work in progress 🚧 🚧
+🚧 🚧 The development of openstreetmap-vecto moved to the [Baremaps](https://github.com/baremaps/baremaps) repository. 🚧 🚧
 
 OpenStreetMap Vecto is a general-purpose configuration for [Baremaps](https://github.com/baremaps/baremaps).
 It is used to generate vector tiles and to produce a Mapbox style inspired by [OpenStreetMap Carto](https://github.com/gravitystorm/openstreetmap-carto).
